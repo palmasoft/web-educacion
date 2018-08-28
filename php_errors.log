@@ -1,0 +1,993 @@
+[02-Aug-2018 14:44:28 UTC] PHP Warning:  simplexml_load_file(): I/O warning : failed to load external entity "/home/ubuntu/workspace/templates//templateDetails.xml" in /home/ubuntu/workspace/plugins/system/helixultimate/layout/settings/settings.php on line 418
+[02-Aug-2018 14:44:28 UTC] PHP Stack trace:
+[02-Aug-2018 14:44:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[02-Aug-2018 14:44:28 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[02-Aug-2018 14:44:28 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[02-Aug-2018 14:44:28 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->route() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:144
+[02-Aug-2018 14:44:28 UTC] PHP   5. Joomla\CMS\Application\BaseApplication->triggerEvent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:478
+[02-Aug-2018 14:44:28 UTC] PHP   6. JEventDispatcher->trigger() /home/ubuntu/workspace/libraries/src/Application/BaseApplication.php:108
+[02-Aug-2018 14:44:28 UTC] PHP   7. JEvent->update() /home/ubuntu/workspace/libraries/joomla/event/dispatcher.php:160
+[02-Aug-2018 14:44:28 UTC] PHP   8. call_user_func_array:{/home/ubuntu/workspace/libraries/joomla/event/event.php:70}() /home/ubuntu/workspace/libraries/joomla/event/event.php:70
+[02-Aug-2018 14:44:28 UTC] PHP   9. plgSystemHelixultimate->onAfterRoute() /home/ubuntu/workspace/libraries/joomla/event/event.php:70
+[02-Aug-2018 14:44:28 UTC] PHP  10. Joomla\CMS\Application\BaseApplication->triggerEvent() /home/ubuntu/workspace/plugins/system/helixultimate/helixultimate.php:159
+[02-Aug-2018 14:44:28 UTC] PHP  11. JEventDispatcher->trigger() /home/ubuntu/workspace/libraries/src/Application/BaseApplication.php:108
+[02-Aug-2018 14:44:28 UTC] PHP  12. JEvent->update() /home/ubuntu/workspace/libraries/joomla/event/dispatcher.php:160
+[02-Aug-2018 14:44:28 UTC] PHP  13. call_user_func_array:{/home/ubuntu/workspace/libraries/joomla/event/event.php:70}() /home/ubuntu/workspace/libraries/joomla/event/event.php:70
+[02-Aug-2018 14:44:28 UTC] PHP  14. plgSystemHelixultimate->onAfterRespond() /home/ubuntu/workspace/libraries/joomla/event/event.php:70
+[02-Aug-2018 14:44:28 UTC] PHP  15. HelixUltimate\Platform->initialize() /home/ubuntu/workspace/plugins/system/helixultimate/helixultimate.php:203
+[02-Aug-2018 14:44:28 UTC] PHP  16. HelixUltimate\Options->renderBuilderSidebar() /home/ubuntu/workspace/plugins/system/helixultimate/platform/platform.php:68
+[02-Aug-2018 14:44:28 UTC] PHP  17. HelixUltimate\Options->renderInputField() /home/ubuntu/workspace/plugins/system/helixultimate/platform/options.php:62
+[02-Aug-2018 14:44:28 UTC] PHP  18. Joomla\CMS\Form\FormField->__get() /home/ubuntu/workspace/plugins/system/helixultimate/platform/options.php:164
+[02-Aug-2018 14:44:28 UTC] PHP  19. JFormFieldHelixlayout->getInput() /home/ubuntu/workspace/libraries/src/Form/FormField.php:425
+[02-Aug-2018 14:44:28 UTC] PHP  20. JFormFieldHelixlayout->generateLayout() /home/ubuntu/workspace/plugins/system/helixultimate/fields/helixlayout.php:43
+[02-Aug-2018 14:44:28 UTC] PHP  21. include_once() /home/ubuntu/workspace/plugins/system/helixultimate/fields/helixlayout.php:54
+[02-Aug-2018 14:44:28 UTC] PHP  22. RowColumnSettings::getColumnSettings() /home/ubuntu/workspace/plugins/system/helixultimate/layout/generated.php:20
+[02-Aug-2018 14:44:28 UTC] PHP  23. RowColumnSettings::getPositions() /home/ubuntu/workspace/plugins/system/helixultimate/layout/settings/settings.php:338
+[02-Aug-2018 14:44:28 UTC] PHP  24. simplexml_load_file() /home/ubuntu/workspace/plugins/system/helixultimate/layout/settings/settings.php:418
+[02-Aug-2018 14:44:28 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/plugins/system/helixultimate/layout/settings/settings.php on line 426
+[02-Aug-2018 14:44:28 UTC] PHP Stack trace:
+[02-Aug-2018 14:44:28 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[02-Aug-2018 14:44:28 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[02-Aug-2018 14:44:28 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[02-Aug-2018 14:44:28 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->route() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:144
+[02-Aug-2018 14:44:28 UTC] PHP   5. Joomla\CMS\Application\BaseApplication->triggerEvent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:478
+[02-Aug-2018 14:44:28 UTC] PHP   6. JEventDispatcher->trigger() /home/ubuntu/workspace/libraries/src/Application/BaseApplication.php:108
+[02-Aug-2018 14:44:28 UTC] PHP   7. JEvent->update() /home/ubuntu/workspace/libraries/joomla/event/dispatcher.php:160
+[02-Aug-2018 14:44:28 UTC] PHP   8. call_user_func_array:{/home/ubuntu/workspace/libraries/joomla/event/event.php:70}() /home/ubuntu/workspace/libraries/joomla/event/event.php:70
+[02-Aug-2018 14:44:28 UTC] PHP   9. plgSystemHelixultimate->onAfterRoute() /home/ubuntu/workspace/libraries/joomla/event/event.php:70
+[02-Aug-2018 14:44:28 UTC] PHP  10. Joomla\CMS\Application\BaseApplication->triggerEvent() /home/ubuntu/workspace/plugins/system/helixultimate/helixultimate.php:159
+[02-Aug-2018 14:44:28 UTC] PHP  11. JEventDispatcher->trigger() /home/ubuntu/workspace/libraries/src/Application/BaseApplication.php:108
+[02-Aug-2018 14:44:28 UTC] PHP  12. JEvent->update() /home/ubuntu/workspace/libraries/joomla/event/dispatcher.php:160
+[02-Aug-2018 14:44:28 UTC] PHP  13. call_user_func_array:{/home/ubuntu/workspace/libraries/joomla/event/event.php:70}() /home/ubuntu/workspace/libraries/joomla/event/event.php:70
+[02-Aug-2018 14:44:28 UTC] PHP  14. plgSystemHelixultimate->onAfterRespond() /home/ubuntu/workspace/libraries/joomla/event/event.php:70
+[02-Aug-2018 14:44:28 UTC] PHP  15. HelixUltimate\Platform->initialize() /home/ubuntu/workspace/plugins/system/helixultimate/helixultimate.php:203
+[02-Aug-2018 14:44:28 UTC] PHP  16. HelixUltimate\Options->renderBuilderSidebar() /home/ubuntu/workspace/plugins/system/helixultimate/platform/platform.php:68
+[02-Aug-2018 14:44:28 UTC] PHP  17. HelixUltimate\Options->renderInputField() /home/ubuntu/workspace/plugins/system/helixultimate/platform/options.php:62
+[02-Aug-2018 14:44:28 UTC] PHP  18. Joomla\CMS\Form\FormField->__get() /home/ubuntu/workspace/plugins/system/helixultimate/platform/options.php:164
+[02-Aug-2018 14:44:28 UTC] PHP  19. JFormFieldHelixlayout->getInput() /home/ubuntu/workspace/libraries/src/Form/FormField.php:425
+[02-Aug-2018 14:44:28 UTC] PHP  20. JFormFieldHelixlayout->generateLayout() /home/ubuntu/workspace/plugins/system/helixultimate/fields/helixlayout.php:43
+[02-Aug-2018 14:44:28 UTC] PHP  21. include_once() /home/ubuntu/workspace/plugins/system/helixultimate/fields/helixlayout.php:54
+[02-Aug-2018 14:44:28 UTC] PHP  22. RowColumnSettings::getColumnSettings() /home/ubuntu/workspace/plugins/system/helixultimate/layout/generated.php:20
+[02-Aug-2018 14:44:28 UTC] PHP  23. RowColumnSettings::getPositions() /home/ubuntu/workspace/plugins/system/helixultimate/layout/settings/settings.php:338
+[06-Aug-2018 15:27:09 UTC] PHP Warning:  gzfile(educacion.santamarta.gov.co): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_j2xml/controllers/cpanel.php on line 130
+[06-Aug-2018 15:27:09 UTC] PHP Stack trace:
+[06-Aug-2018 15:27:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[06-Aug-2018 15:27:09 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[06-Aug-2018 15:27:09 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[06-Aug-2018 15:27:09 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[06-Aug-2018 15:27:09 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[06-Aug-2018 15:27:09 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[06-Aug-2018 15:27:09 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[06-Aug-2018 15:27:09 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_j2xml/j2xml.php:119
+[06-Aug-2018 15:27:09 UTC] PHP   9. J2xmlControllerCpanel->import() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[06-Aug-2018 15:27:09 UTC] PHP  10. gzfile() /home/ubuntu/workspace/administrator/components/com_j2xml/controllers/cpanel.php:130
+[06-Aug-2018 15:27:09 UTC] PHP Warning:  implode(): Argument must be an array in /home/ubuntu/workspace/administrator/components/com_j2xml/controllers/cpanel.php on line 130
+[06-Aug-2018 15:27:09 UTC] PHP Stack trace:
+[06-Aug-2018 15:27:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[06-Aug-2018 15:27:09 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[06-Aug-2018 15:27:09 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[06-Aug-2018 15:27:09 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[06-Aug-2018 15:27:09 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[06-Aug-2018 15:27:09 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[06-Aug-2018 15:27:09 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[06-Aug-2018 15:27:09 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_j2xml/j2xml.php:119
+[06-Aug-2018 15:27:09 UTC] PHP   9. J2xmlControllerCpanel->import() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[06-Aug-2018 15:27:09 UTC] PHP  10. implode() /home/ubuntu/workspace/administrator/components/com_j2xml/controllers/cpanel.php:130
+[06-Aug-2018 15:27:09 UTC] PHP Warning:  file_get_contents(educacion.santamarta.gov.co): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_j2xml/controllers/cpanel.php on line 132
+[06-Aug-2018 15:27:09 UTC] PHP Stack trace:
+[06-Aug-2018 15:27:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[06-Aug-2018 15:27:09 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[06-Aug-2018 15:27:09 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[06-Aug-2018 15:27:09 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[06-Aug-2018 15:27:09 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[06-Aug-2018 15:27:09 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[06-Aug-2018 15:27:09 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[06-Aug-2018 15:27:09 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_j2xml/j2xml.php:119
+[06-Aug-2018 15:27:09 UTC] PHP   9. J2xmlControllerCpanel->import() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[06-Aug-2018 15:27:09 UTC] PHP  10. file_get_contents() /home/ubuntu/workspace/administrator/components/com_j2xml/controllers/cpanel.php:132
+[06-Aug-2018 15:29:30 UTC] PHP Warning:  gzfile(/home/ubuntu/workspace/educacion.santamarta.gov.co/feed/): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_j2xml/controllers/cpanel.php on line 130
+[06-Aug-2018 15:29:30 UTC] PHP Stack trace:
+[06-Aug-2018 15:29:30 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[06-Aug-2018 15:29:30 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[06-Aug-2018 15:29:30 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[06-Aug-2018 15:29:30 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[06-Aug-2018 15:29:30 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[06-Aug-2018 15:29:30 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[06-Aug-2018 15:29:30 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[06-Aug-2018 15:29:30 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_j2xml/j2xml.php:119
+[06-Aug-2018 15:29:30 UTC] PHP   9. J2xmlControllerCpanel->import() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[06-Aug-2018 15:29:30 UTC] PHP  10. gzfile() /home/ubuntu/workspace/administrator/components/com_j2xml/controllers/cpanel.php:130
+[06-Aug-2018 15:29:30 UTC] PHP Warning:  implode(): Argument must be an array in /home/ubuntu/workspace/administrator/components/com_j2xml/controllers/cpanel.php on line 130
+[06-Aug-2018 15:29:30 UTC] PHP Stack trace:
+[06-Aug-2018 15:29:30 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[06-Aug-2018 15:29:30 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[06-Aug-2018 15:29:30 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[06-Aug-2018 15:29:30 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[06-Aug-2018 15:29:30 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[06-Aug-2018 15:29:30 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[06-Aug-2018 15:29:30 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[06-Aug-2018 15:29:30 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_j2xml/j2xml.php:119
+[06-Aug-2018 15:29:30 UTC] PHP   9. J2xmlControllerCpanel->import() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[06-Aug-2018 15:29:30 UTC] PHP  10. implode() /home/ubuntu/workspace/administrator/components/com_j2xml/controllers/cpanel.php:130
+[06-Aug-2018 15:29:30 UTC] PHP Warning:  file_get_contents(/home/ubuntu/workspace/educacion.santamarta.gov.co/feed/): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_j2xml/controllers/cpanel.php on line 132
+[06-Aug-2018 15:29:30 UTC] PHP Stack trace:
+[06-Aug-2018 15:29:30 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[06-Aug-2018 15:29:30 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[06-Aug-2018 15:29:30 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[06-Aug-2018 15:29:30 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[06-Aug-2018 15:29:30 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[06-Aug-2018 15:29:30 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[06-Aug-2018 15:29:30 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[06-Aug-2018 15:29:30 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_j2xml/j2xml.php:119
+[06-Aug-2018 15:29:30 UTC] PHP   9. J2xmlControllerCpanel->import() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[06-Aug-2018 15:29:30 UTC] PHP  10. file_get_contents() /home/ubuntu/workspace/administrator/components/com_j2xml/controllers/cpanel.php:132
+[06-Aug-2018 15:34:07 UTC] PHP Warning:  gzfile(/home/ubuntu/workspace/educacion.santamarta.gov.co): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_j2xml/controllers/cpanel.php on line 130
+[06-Aug-2018 15:34:07 UTC] PHP Stack trace:
+[06-Aug-2018 15:34:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[06-Aug-2018 15:34:07 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[06-Aug-2018 15:34:07 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[06-Aug-2018 15:34:07 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[06-Aug-2018 15:34:07 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[06-Aug-2018 15:34:07 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[06-Aug-2018 15:34:07 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[06-Aug-2018 15:34:07 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_j2xml/j2xml.php:119
+[06-Aug-2018 15:34:07 UTC] PHP   9. J2xmlControllerCpanel->import() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[06-Aug-2018 15:34:07 UTC] PHP  10. gzfile() /home/ubuntu/workspace/administrator/components/com_j2xml/controllers/cpanel.php:130
+[06-Aug-2018 15:34:07 UTC] PHP Warning:  implode(): Argument must be an array in /home/ubuntu/workspace/administrator/components/com_j2xml/controllers/cpanel.php on line 130
+[06-Aug-2018 15:34:07 UTC] PHP Stack trace:
+[06-Aug-2018 15:34:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[06-Aug-2018 15:34:07 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[06-Aug-2018 15:34:07 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[06-Aug-2018 15:34:07 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[06-Aug-2018 15:34:07 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[06-Aug-2018 15:34:07 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[06-Aug-2018 15:34:07 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[06-Aug-2018 15:34:07 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_j2xml/j2xml.php:119
+[06-Aug-2018 15:34:07 UTC] PHP   9. J2xmlControllerCpanel->import() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[06-Aug-2018 15:34:07 UTC] PHP  10. implode() /home/ubuntu/workspace/administrator/components/com_j2xml/controllers/cpanel.php:130
+[06-Aug-2018 15:34:07 UTC] PHP Warning:  file_get_contents(/home/ubuntu/workspace/educacion.santamarta.gov.co): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_j2xml/controllers/cpanel.php on line 132
+[06-Aug-2018 15:34:07 UTC] PHP Stack trace:
+[06-Aug-2018 15:34:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[06-Aug-2018 15:34:07 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[06-Aug-2018 15:34:07 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[06-Aug-2018 15:34:07 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[06-Aug-2018 15:34:07 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[06-Aug-2018 15:34:07 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[06-Aug-2018 15:34:07 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[06-Aug-2018 15:34:07 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_j2xml/j2xml.php:119
+[06-Aug-2018 15:34:07 UTC] PHP   9. J2xmlControllerCpanel->import() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[06-Aug-2018 15:34:07 UTC] PHP  10. file_get_contents() /home/ubuntu/workspace/administrator/components/com_j2xml/controllers/cpanel.php:132
+[07-Aug-2018 01:03:39 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/libraries/joomla/filesystem/folder.php on line 688
+[07-Aug-2018 01:03:39 UTC] PHP Stack trace:
+[07-Aug-2018 01:03:39 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[07-Aug-2018 01:03:39 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[07-Aug-2018 01:03:39 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[07-Aug-2018 01:03:39 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[07-Aug-2018 01:03:39 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[07-Aug-2018 01:03:39 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[07-Aug-2018 01:03:39 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[07-Aug-2018 01:03:39 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_modules/modules.php:23
+[07-Aug-2018 01:03:39 UTC] PHP   9. ModulesController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[07-Aug-2018 01:03:39 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_modules/controller.php:121
+[07-Aug-2018 01:03:39 UTC] PHP  11. ModulesViewModule->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[07-Aug-2018 01:03:39 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_modules/views/module/view.html.php:46
+[07-Aug-2018 01:03:39 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[07-Aug-2018 01:03:39 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[07-Aug-2018 01:03:39 UTC] PHP  15. Joomla\CMS\Layout\LayoutHelper::render() /home/ubuntu/workspace/administrator/components/com_modules/views/module/tmpl/edit.php:231
+[07-Aug-2018 01:03:39 UTC] PHP  16. Joomla\CMS\Layout\FileLayout->render() /home/ubuntu/workspace/libraries/src/Layout/LayoutHelper.php:73
+[07-Aug-2018 01:03:39 UTC] PHP  17. include() /home/ubuntu/workspace/libraries/src/Layout/FileLayout.php:125
+[07-Aug-2018 01:03:39 UTC] PHP  18. Joomla\CMS\Form\FormField->renderField() /home/ubuntu/workspace/layouts/joomla/edit/fieldset.php:47
+[07-Aug-2018 01:03:39 UTC] PHP  19. JFormFieldFolderTree->getInput() /home/ubuntu/workspace/libraries/src/Form/FormField.php:975
+[07-Aug-2018 01:03:39 UTC] PHP  20. JFolder::listFolderTree() /home/ubuntu/workspace/modules/mod_shaper_carousel/elements/foldertree.php:24
+[07-Aug-2018 01:05:06 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/libraries/joomla/filesystem/folder.php on line 688
+[07-Aug-2018 01:05:06 UTC] PHP Stack trace:
+[07-Aug-2018 01:05:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[07-Aug-2018 01:05:06 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[07-Aug-2018 01:05:06 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[07-Aug-2018 01:05:06 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[07-Aug-2018 01:05:06 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[07-Aug-2018 01:05:06 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[07-Aug-2018 01:05:06 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[07-Aug-2018 01:05:06 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_modules/modules.php:23
+[07-Aug-2018 01:05:06 UTC] PHP   9. ModulesController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[07-Aug-2018 01:05:06 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_modules/controller.php:121
+[07-Aug-2018 01:05:06 UTC] PHP  11. ModulesViewModule->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[07-Aug-2018 01:05:06 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_modules/views/module/view.html.php:46
+[07-Aug-2018 01:05:06 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[07-Aug-2018 01:05:06 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[07-Aug-2018 01:05:06 UTC] PHP  15. Joomla\CMS\Layout\LayoutHelper::render() /home/ubuntu/workspace/administrator/components/com_modules/views/module/tmpl/edit.php:231
+[07-Aug-2018 01:05:06 UTC] PHP  16. Joomla\CMS\Layout\FileLayout->render() /home/ubuntu/workspace/libraries/src/Layout/LayoutHelper.php:73
+[07-Aug-2018 01:05:06 UTC] PHP  17. include() /home/ubuntu/workspace/libraries/src/Layout/FileLayout.php:125
+[07-Aug-2018 01:05:06 UTC] PHP  18. Joomla\CMS\Form\FormField->renderField() /home/ubuntu/workspace/layouts/joomla/edit/fieldset.php:47
+[07-Aug-2018 01:05:06 UTC] PHP  19. JFormFieldFolderTree->getInput() /home/ubuntu/workspace/libraries/src/Form/FormField.php:975
+[07-Aug-2018 01:05:06 UTC] PHP  20. JFolder::listFolderTree() /home/ubuntu/workspace/modules/mod_shaper_carousel/elements/foldertree.php:24
+[07-Aug-2018 01:16:02 UTC] PHP Warning:  Invalid argument supplied for foreach() in /home/ubuntu/workspace/libraries/joomla/filesystem/folder.php on line 688
+[07-Aug-2018 01:16:02 UTC] PHP Stack trace:
+[07-Aug-2018 01:16:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[07-Aug-2018 01:16:02 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[07-Aug-2018 01:16:02 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[07-Aug-2018 01:16:02 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[07-Aug-2018 01:16:02 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[07-Aug-2018 01:16:02 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[07-Aug-2018 01:16:02 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[07-Aug-2018 01:16:02 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_modules/modules.php:23
+[07-Aug-2018 01:16:02 UTC] PHP   9. ModulesController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[07-Aug-2018 01:16:02 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_modules/controller.php:121
+[07-Aug-2018 01:16:02 UTC] PHP  11. ModulesViewModule->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[07-Aug-2018 01:16:02 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_modules/views/module/view.html.php:46
+[07-Aug-2018 01:16:02 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[07-Aug-2018 01:16:02 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[07-Aug-2018 01:16:02 UTC] PHP  15. Joomla\CMS\Layout\LayoutHelper::render() /home/ubuntu/workspace/administrator/components/com_modules/views/module/tmpl/edit.php:231
+[07-Aug-2018 01:16:02 UTC] PHP  16. Joomla\CMS\Layout\FileLayout->render() /home/ubuntu/workspace/libraries/src/Layout/LayoutHelper.php:73
+[07-Aug-2018 01:16:02 UTC] PHP  17. include() /home/ubuntu/workspace/libraries/src/Layout/FileLayout.php:125
+[07-Aug-2018 01:16:02 UTC] PHP  18. Joomla\CMS\Form\FormField->renderField() /home/ubuntu/workspace/layouts/joomla/edit/fieldset.php:47
+[07-Aug-2018 01:16:02 UTC] PHP  19. JFormFieldFolderTree->getInput() /home/ubuntu/workspace/libraries/src/Form/FormField.php:975
+[07-Aug-2018 01:16:02 UTC] PHP  20. JFolder::listFolderTree() /home/ubuntu/workspace/modules/mod_shaper_carousel/elements/foldertree.php:24
+[08-Aug-2018 04:43:41 UTC] PHP Warning:  mysqli_query(): MySQL server has gone away in /home/ubuntu/workspace/libraries/joomla/database/driver/mysqli.php on line 177
+[08-Aug-2018 04:43:41 UTC] PHP Stack trace:
+[08-Aug-2018 04:43:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[08-Aug-2018 04:43:41 UTC] PHP   2. Joomla\CMS\Factory::getApplication() /home/ubuntu/workspace/administrator/index.php:48
+[08-Aug-2018 04:43:41 UTC] PHP   3. Joomla\CMS\Application\CMSApplication::getInstance() /home/ubuntu/workspace/libraries/src/Factory.php:140
+[08-Aug-2018 04:43:41 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->__construct() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:343
+[08-Aug-2018 04:43:41 UTC] PHP   5. Joomla\CMS\Application\CMSApplication->__construct() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:48
+[08-Aug-2018 04:43:41 UTC] PHP   6. Joomla\CMS\Application\WebApplication->__construct() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:108
+[08-Aug-2018 04:43:41 UTC] PHP   7. Joomla\CMS\Input\Input->__construct() /home/ubuntu/workspace/libraries/src/Application/WebApplication.php:203
+[08-Aug-2018 04:43:41 UTC] PHP   8. Joomla\CMS\Filter\InputFilter::getInstance() /home/ubuntu/workspace/libraries/src/Input/Input.php:64
+[08-Aug-2018 04:43:41 UTC] PHP   9. Joomla\CMS\Filter\InputFilter->__construct() /home/ubuntu/workspace/libraries/src/Filter/InputFilter.php:105
+[08-Aug-2018 04:43:41 UTC] PHP  10. JDatabaseDriverMysqli->connect() /home/ubuntu/workspace/libraries/src/Filter/InputFilter.php:72
+[08-Aug-2018 04:43:41 UTC] PHP  11. mysqli_query() /home/ubuntu/workspace/libraries/joomla/database/driver/mysqli.php:177
+[08-Aug-2018 04:43:41 UTC] PHP Warning:  mysqli_query(): Error reading result set's header in /home/ubuntu/workspace/libraries/joomla/database/driver/mysqli.php on line 177
+[08-Aug-2018 04:43:41 UTC] PHP Stack trace:
+[08-Aug-2018 04:43:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[08-Aug-2018 04:43:41 UTC] PHP   2. Joomla\CMS\Factory::getApplication() /home/ubuntu/workspace/administrator/index.php:48
+[08-Aug-2018 04:43:41 UTC] PHP   3. Joomla\CMS\Application\CMSApplication::getInstance() /home/ubuntu/workspace/libraries/src/Factory.php:140
+[08-Aug-2018 04:43:41 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->__construct() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:343
+[08-Aug-2018 04:43:41 UTC] PHP   5. Joomla\CMS\Application\CMSApplication->__construct() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:48
+[08-Aug-2018 04:43:41 UTC] PHP   6. Joomla\CMS\Application\WebApplication->__construct() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:108
+[08-Aug-2018 04:43:41 UTC] PHP   7. Joomla\CMS\Input\Input->__construct() /home/ubuntu/workspace/libraries/src/Application/WebApplication.php:203
+[08-Aug-2018 04:43:41 UTC] PHP   8. Joomla\CMS\Filter\InputFilter::getInstance() /home/ubuntu/workspace/libraries/src/Input/Input.php:64
+[08-Aug-2018 04:43:41 UTC] PHP   9. Joomla\CMS\Filter\InputFilter->__construct() /home/ubuntu/workspace/libraries/src/Filter/InputFilter.php:105
+[08-Aug-2018 04:43:41 UTC] PHP  10. JDatabaseDriverMysqli->connect() /home/ubuntu/workspace/libraries/src/Filter/InputFilter.php:72
+[08-Aug-2018 04:43:41 UTC] PHP  11. mysqli_query() /home/ubuntu/workspace/libraries/joomla/database/driver/mysqli.php:177
+[09-Aug-2018 16:58:29 UTC] PHP Warning:  Creating default object from empty value in /home/ubuntu/workspace/administrator/components/com_jdownloads/tables/download.php on line 612
+[09-Aug-2018 16:58:29 UTC] PHP Stack trace:
+[09-Aug-2018 16:58:29 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[09-Aug-2018 16:58:29 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[09-Aug-2018 16:58:29 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[09-Aug-2018 16:58:29 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[09-Aug-2018 16:58:29 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[09-Aug-2018 16:58:29 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[09-Aug-2018 16:58:29 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[09-Aug-2018 16:58:29 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[09-Aug-2018 16:58:29 UTC] PHP   9. Joomla\CMS\MVC\Controller\FormController->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[09-Aug-2018 16:58:29 UTC] PHP  10. jdownloadsModelDownload->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/FormController.php:747
+[09-Aug-2018 16:58:29 UTC] PHP  11. jdownloadsTabledownload->checkData() /home/ubuntu/workspace/administrator/components/com_jdownloads/models/download.php:242
+[09-Aug-2018 17:03:11 UTC] PHP Warning:  Creating default object from empty value in /home/ubuntu/workspace/administrator/components/com_jdownloads/tables/download.php on line 612
+[09-Aug-2018 17:03:11 UTC] PHP Stack trace:
+[09-Aug-2018 17:03:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[09-Aug-2018 17:03:11 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[09-Aug-2018 17:03:11 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[09-Aug-2018 17:03:11 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[09-Aug-2018 17:03:11 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[09-Aug-2018 17:03:11 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[09-Aug-2018 17:03:11 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[09-Aug-2018 17:03:11 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[09-Aug-2018 17:03:11 UTC] PHP   9. Joomla\CMS\MVC\Controller\FormController->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[09-Aug-2018 17:03:11 UTC] PHP  10. jdownloadsModelDownload->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/FormController.php:747
+[09-Aug-2018 17:03:11 UTC] PHP  11. jdownloadsTabledownload->checkData() /home/ubuntu/workspace/administrator/components/com_jdownloads/models/download.php:242
+[09-Aug-2018 17:03:15 UTC] PHP Warning:  Creating default object from empty value in /home/ubuntu/workspace/administrator/components/com_jdownloads/tables/download.php on line 612
+[09-Aug-2018 17:03:15 UTC] PHP Stack trace:
+[09-Aug-2018 17:03:15 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[09-Aug-2018 17:03:15 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[09-Aug-2018 17:03:15 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[09-Aug-2018 17:03:15 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[09-Aug-2018 17:03:15 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[09-Aug-2018 17:03:15 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[09-Aug-2018 17:03:15 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[09-Aug-2018 17:03:15 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[09-Aug-2018 17:03:15 UTC] PHP   9. Joomla\CMS\MVC\Controller\FormController->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[09-Aug-2018 17:03:15 UTC] PHP  10. jdownloadsModelDownload->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/FormController.php:747
+[09-Aug-2018 17:03:15 UTC] PHP  11. jdownloadsTabledownload->checkData() /home/ubuntu/workspace/administrator/components/com_jdownloads/models/download.php:242
+[09-Aug-2018 17:03:19 UTC] PHP Warning:  Creating default object from empty value in /home/ubuntu/workspace/administrator/components/com_jdownloads/tables/download.php on line 612
+[09-Aug-2018 17:03:19 UTC] PHP Stack trace:
+[09-Aug-2018 17:03:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[09-Aug-2018 17:03:19 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[09-Aug-2018 17:03:19 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[09-Aug-2018 17:03:19 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[09-Aug-2018 17:03:19 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[09-Aug-2018 17:03:19 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[09-Aug-2018 17:03:19 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[09-Aug-2018 17:03:19 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[09-Aug-2018 17:03:19 UTC] PHP   9. Joomla\CMS\MVC\Controller\FormController->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[09-Aug-2018 17:03:19 UTC] PHP  10. jdownloadsModelDownload->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/FormController.php:747
+[09-Aug-2018 17:03:19 UTC] PHP  11. jdownloadsTabledownload->checkData() /home/ubuntu/workspace/administrator/components/com_jdownloads/models/download.php:242
+[09-Aug-2018 17:03:26 UTC] PHP Warning:  Creating default object from empty value in /home/ubuntu/workspace/administrator/components/com_jdownloads/tables/download.php on line 612
+[09-Aug-2018 17:03:26 UTC] PHP Stack trace:
+[09-Aug-2018 17:03:26 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[09-Aug-2018 17:03:26 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[09-Aug-2018 17:03:26 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[09-Aug-2018 17:03:26 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[09-Aug-2018 17:03:26 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[09-Aug-2018 17:03:26 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[09-Aug-2018 17:03:26 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[09-Aug-2018 17:03:26 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[09-Aug-2018 17:03:26 UTC] PHP   9. Joomla\CMS\MVC\Controller\FormController->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[09-Aug-2018 17:03:26 UTC] PHP  10. jdownloadsModelDownload->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/FormController.php:747
+[09-Aug-2018 17:03:26 UTC] PHP  11. jdownloadsTabledownload->checkData() /home/ubuntu/workspace/administrator/components/com_jdownloads/models/download.php:242
+[09-Aug-2018 17:03:32 UTC] PHP Warning:  Creating default object from empty value in /home/ubuntu/workspace/administrator/components/com_jdownloads/tables/download.php on line 612
+[09-Aug-2018 17:03:32 UTC] PHP Stack trace:
+[09-Aug-2018 17:03:32 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[09-Aug-2018 17:03:32 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[09-Aug-2018 17:03:32 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[09-Aug-2018 17:03:32 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[09-Aug-2018 17:03:32 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[09-Aug-2018 17:03:32 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[09-Aug-2018 17:03:32 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[09-Aug-2018 17:03:32 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[09-Aug-2018 17:03:32 UTC] PHP   9. Joomla\CMS\MVC\Controller\FormController->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[09-Aug-2018 17:03:32 UTC] PHP  10. jdownloadsModelDownload->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/FormController.php:747
+[09-Aug-2018 17:03:32 UTC] PHP  11. jdownloadsTabledownload->checkData() /home/ubuntu/workspace/administrator/components/com_jdownloads/models/download.php:242
+[09-Aug-2018 17:23:02 UTC] PHP Warning:  Creating default object from empty value in /home/ubuntu/workspace/administrator/components/com_jdownloads/tables/download.php on line 612
+[09-Aug-2018 17:23:02 UTC] PHP Stack trace:
+[09-Aug-2018 17:23:02 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[09-Aug-2018 17:23:02 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[09-Aug-2018 17:23:02 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[09-Aug-2018 17:23:02 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[09-Aug-2018 17:23:02 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[09-Aug-2018 17:23:02 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[09-Aug-2018 17:23:02 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[09-Aug-2018 17:23:02 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[09-Aug-2018 17:23:02 UTC] PHP   9. Joomla\CMS\MVC\Controller\FormController->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[09-Aug-2018 17:23:02 UTC] PHP  10. jdownloadsModelDownload->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/FormController.php:747
+[09-Aug-2018 17:23:02 UTC] PHP  11. jdownloadsTabledownload->checkData() /home/ubuntu/workspace/administrator/components/com_jdownloads/models/download.php:242
+[09-Aug-2018 17:23:07 UTC] PHP Warning:  Creating default object from empty value in /home/ubuntu/workspace/administrator/components/com_jdownloads/tables/download.php on line 612
+[09-Aug-2018 17:23:07 UTC] PHP Stack trace:
+[09-Aug-2018 17:23:07 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[09-Aug-2018 17:23:07 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[09-Aug-2018 17:23:07 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[09-Aug-2018 17:23:07 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[09-Aug-2018 17:23:07 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[09-Aug-2018 17:23:07 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[09-Aug-2018 17:23:07 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[09-Aug-2018 17:23:07 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[09-Aug-2018 17:23:07 UTC] PHP   9. Joomla\CMS\MVC\Controller\FormController->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[09-Aug-2018 17:23:07 UTC] PHP  10. jdownloadsModelDownload->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/FormController.php:747
+[09-Aug-2018 17:23:07 UTC] PHP  11. jdownloadsTabledownload->checkData() /home/ubuntu/workspace/administrator/components/com_jdownloads/models/download.php:242
+[09-Aug-2018 17:23:11 UTC] PHP Warning:  Creating default object from empty value in /home/ubuntu/workspace/administrator/components/com_jdownloads/tables/download.php on line 612
+[09-Aug-2018 17:23:11 UTC] PHP Stack trace:
+[09-Aug-2018 17:23:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[09-Aug-2018 17:23:11 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[09-Aug-2018 17:23:11 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[09-Aug-2018 17:23:11 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[09-Aug-2018 17:23:11 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[09-Aug-2018 17:23:11 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[09-Aug-2018 17:23:11 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[09-Aug-2018 17:23:11 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[09-Aug-2018 17:23:11 UTC] PHP   9. Joomla\CMS\MVC\Controller\FormController->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[09-Aug-2018 17:23:11 UTC] PHP  10. jdownloadsModelDownload->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/FormController.php:747
+[09-Aug-2018 17:23:11 UTC] PHP  11. jdownloadsTabledownload->checkData() /home/ubuntu/workspace/administrator/components/com_jdownloads/models/download.php:242
+[10-Aug-2018 21:16:43 UTC] PHP Warning:  sha1_file(/home/ubuntu/workspace/docs/_uncategorised_files/DIR.-RURAL.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2514
+[10-Aug-2018 21:16:43 UTC] PHP Stack trace:
+[10-Aug-2018 21:16:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:16:43 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:16:43 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:16:43 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:16:43 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:16:43 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:16:43 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:16:43 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:16:43 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:16:43 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:16:43 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:16:43 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:16:43 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:16:43 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:16:43 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:16:43 UTC] PHP  16. sha1_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2514
+[10-Aug-2018 21:16:43 UTC] PHP Warning:  md5_file(/home/ubuntu/workspace/docs/_uncategorised_files/DIR.-RURAL.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2515
+[10-Aug-2018 21:16:43 UTC] PHP Stack trace:
+[10-Aug-2018 21:16:43 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:16:43 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:16:43 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:16:43 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:16:43 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:16:43 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:16:43 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:16:43 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:16:43 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:16:43 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:16:43 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:16:43 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:16:43 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:16:43 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:16:43 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:16:43 UTC] PHP  16. md5_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2515
+[10-Aug-2018 21:16:46 UTC] PHP Warning:  sha1_file(/home/ubuntu/workspace/docs/_uncategorised_files/RECTOR.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2514
+[10-Aug-2018 21:16:46 UTC] PHP Stack trace:
+[10-Aug-2018 21:16:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:16:46 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:16:46 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:16:46 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:16:46 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:16:46 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:16:46 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:16:46 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:16:46 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:16:46 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:16:46 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:16:46 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:16:46 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:16:46 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:16:46 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:16:46 UTC] PHP  16. sha1_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2514
+[10-Aug-2018 21:16:46 UTC] PHP Warning:  md5_file(/home/ubuntu/workspace/docs/_uncategorised_files/RECTOR.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2515
+[10-Aug-2018 21:16:46 UTC] PHP Stack trace:
+[10-Aug-2018 21:16:46 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:16:46 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:16:46 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:16:46 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:16:46 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:16:46 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:16:46 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:16:46 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:16:46 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:16:46 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:16:46 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:16:46 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:16:46 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:16:46 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:16:46 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:16:46 UTC] PHP  16. md5_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2515
+[10-Aug-2018 21:16:47 UTC] PHP Warning:  sha1_file(/home/ubuntu/workspace/docs/_uncategorised_files/CIENCIAS-SOCIALES.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2514
+[10-Aug-2018 21:16:47 UTC] PHP Stack trace:
+[10-Aug-2018 21:16:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:16:47 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:16:47 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:16:47 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:16:47 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:16:47 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:16:47 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:16:47 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:16:47 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:16:47 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:16:47 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:16:47 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:16:47 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:16:47 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:16:47 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:16:47 UTC] PHP  16. sha1_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2514
+[10-Aug-2018 21:16:47 UTC] PHP Warning:  md5_file(/home/ubuntu/workspace/docs/_uncategorised_files/CIENCIAS-SOCIALES.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2515
+[10-Aug-2018 21:16:47 UTC] PHP Stack trace:
+[10-Aug-2018 21:16:47 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:16:47 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:16:47 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:16:47 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:16:47 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:16:47 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:16:47 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:16:47 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:16:47 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:16:47 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:16:47 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:16:47 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:16:47 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:16:47 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:16:47 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:16:47 UTC] PHP  16. md5_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2515
+[10-Aug-2018 21:16:55 UTC] PHP Warning:  sha1_file(/home/ubuntu/workspace/docs/_uncategorised_files/Flujograma-D02_02.xlsx): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2514
+[10-Aug-2018 21:16:55 UTC] PHP Stack trace:
+[10-Aug-2018 21:16:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:16:55 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:16:55 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:16:55 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:16:55 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:16:55 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:16:55 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:16:55 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:16:55 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:16:55 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:16:55 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:16:55 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:16:55 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:16:55 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:16:55 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:16:55 UTC] PHP  16. sha1_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2514
+[10-Aug-2018 21:16:55 UTC] PHP Warning:  md5_file(/home/ubuntu/workspace/docs/_uncategorised_files/Flujograma-D02_02.xlsx): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2515
+[10-Aug-2018 21:16:55 UTC] PHP Stack trace:
+[10-Aug-2018 21:16:55 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:16:55 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:16:55 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:16:55 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:16:55 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:16:55 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:16:55 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:16:55 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:16:55 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:16:55 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:16:55 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:16:55 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:16:55 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:16:55 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:16:55 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:16:55 UTC] PHP  16. md5_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2515
+[10-Aug-2018 21:16:59 UTC] PHP Warning:  sha1_file(/home/ubuntu/workspace/docs/_uncategorised_files/MACROPORCESO-D01.doc): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2514
+[10-Aug-2018 21:16:59 UTC] PHP Stack trace:
+[10-Aug-2018 21:16:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:16:59 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:16:59 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:16:59 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:16:59 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:16:59 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:16:59 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:16:59 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:16:59 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:16:59 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:16:59 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:16:59 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:16:59 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:16:59 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:16:59 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:16:59 UTC] PHP  16. sha1_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2514
+[10-Aug-2018 21:16:59 UTC] PHP Warning:  md5_file(/home/ubuntu/workspace/docs/_uncategorised_files/MACROPORCESO-D01.doc): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2515
+[10-Aug-2018 21:16:59 UTC] PHP Stack trace:
+[10-Aug-2018 21:16:59 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:16:59 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:16:59 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:16:59 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:16:59 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:16:59 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:16:59 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:16:59 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:16:59 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:16:59 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:16:59 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:16:59 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:16:59 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:16:59 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:16:59 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:16:59 UTC] PHP  16. md5_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2515
+[10-Aug-2018 21:17:06 UTC] PHP Warning:  sha1_file(/home/ubuntu/workspace/docs/_uncategorised_files/ORIENTADOR.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2514
+[10-Aug-2018 21:17:06 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:06 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:06 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:06 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:06 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:06 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:06 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:06 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:06 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:06 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:06 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:06 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:06 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:06 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:06 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:06 UTC] PHP  16. sha1_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2514
+[10-Aug-2018 21:17:06 UTC] PHP Warning:  md5_file(/home/ubuntu/workspace/docs/_uncategorised_files/ORIENTADOR.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2515
+[10-Aug-2018 21:17:06 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:06 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:06 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:06 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:06 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:06 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:06 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:06 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:06 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:06 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:06 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:06 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:06 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:06 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:06 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:06 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:06 UTC] PHP  16. md5_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2515
+[10-Aug-2018 21:17:09 UTC] PHP Warning:  sha1_file(/home/ubuntu/workspace/docs/_uncategorised_files/RESOLUCION-0490-Por-medio-de-la-cual-se-modifica-el-Calendario-Escolar-del-año-lectivo-2015.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2514
+[10-Aug-2018 21:17:09 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:09 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:09 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:09 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:09 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:09 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:09 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:09 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:09 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:09 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:09 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:09 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:09 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:09 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:09 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:09 UTC] PHP  16. sha1_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2514
+[10-Aug-2018 21:17:09 UTC] PHP Warning:  md5_file(/home/ubuntu/workspace/docs/_uncategorised_files/RESOLUCION-0490-Por-medio-de-la-cual-se-modifica-el-Calendario-Escolar-del-año-lectivo-2015.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2515
+[10-Aug-2018 21:17:09 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:09 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:09 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:09 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:09 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:09 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:09 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:09 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:09 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:09 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:09 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:09 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:09 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:09 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:09 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:09 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:09 UTC] PHP  16. md5_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2515
+[10-Aug-2018 21:17:11 UTC] PHP Warning:  sha1_file(/home/ubuntu/workspace/docs/_uncategorised_files/CIRCULAR-031-CAPACITACIÓN-JORNADA-LABORAL-ESCANEADA.1.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2514
+[10-Aug-2018 21:17:11 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:11 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:11 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:11 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:11 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:11 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:11 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:11 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:11 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:11 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:11 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:11 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:11 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:11 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:11 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:11 UTC] PHP  16. sha1_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2514
+[10-Aug-2018 21:17:11 UTC] PHP Warning:  md5_file(/home/ubuntu/workspace/docs/_uncategorised_files/CIRCULAR-031-CAPACITACIÓN-JORNADA-LABORAL-ESCANEADA.1.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2515
+[10-Aug-2018 21:17:11 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:11 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:11 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:11 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:11 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:11 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:11 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:11 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:11 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:11 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:11 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:11 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:11 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:11 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:11 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:11 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:11 UTC] PHP  16. md5_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2515
+[10-Aug-2018 21:17:13 UTC] PHP Warning:  sha1_file(/home/ubuntu/workspace/docs/_uncategorised_files/LISTADO-ADICIONAL-1.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2514
+[10-Aug-2018 21:17:13 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:13 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:13 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:13 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:13 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:13 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:13 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:13 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:13 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:13 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:13 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:13 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:13 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:13 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:13 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:13 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:13 UTC] PHP  16. sha1_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2514
+[10-Aug-2018 21:17:13 UTC] PHP Warning:  md5_file(/home/ubuntu/workspace/docs/_uncategorised_files/LISTADO-ADICIONAL-1.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2515
+[10-Aug-2018 21:17:13 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:13 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:13 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:13 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:13 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:13 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:13 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:13 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:13 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:13 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:13 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:13 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:13 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:13 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:13 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:13 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:13 UTC] PHP  16. md5_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2515
+[10-Aug-2018 21:17:14 UTC] PHP Warning:  sha1_file(/home/ubuntu/workspace/docs/_uncategorised_files/COMUNICADO-DOTACIÓN-DOCENTES-Y-ADMINISTRATIVOS-ADSCRITOS-SED-1.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2514
+[10-Aug-2018 21:17:14 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:14 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:14 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:14 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:14 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:14 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:14 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:14 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:14 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:14 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:14 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:14 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:14 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:14 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:14 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:14 UTC] PHP  16. sha1_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2514
+[10-Aug-2018 21:17:14 UTC] PHP Warning:  md5_file(/home/ubuntu/workspace/docs/_uncategorised_files/COMUNICADO-DOTACIÓN-DOCENTES-Y-ADMINISTRATIVOS-ADSCRITOS-SED-1.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2515
+[10-Aug-2018 21:17:14 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:14 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:14 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:14 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:14 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:14 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:14 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:14 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:14 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:14 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:14 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:14 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:14 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:14 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:14 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:14 UTC] PHP  16. md5_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2515
+[10-Aug-2018 21:17:16 UTC] PHP Warning:  sha1_file(/home/ubuntu/workspace/docs/_uncategorised_files/RESOLUCION-N°-0437.1.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2514
+[10-Aug-2018 21:17:16 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:16 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:16 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:16 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:16 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:16 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:16 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:16 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:16 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:16 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:16 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:16 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:16 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:16 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:16 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:16 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:16 UTC] PHP  16. sha1_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2514
+[10-Aug-2018 21:17:16 UTC] PHP Warning:  md5_file(/home/ubuntu/workspace/docs/_uncategorised_files/RESOLUCION-N°-0437.1.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2515
+[10-Aug-2018 21:17:16 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:16 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:16 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:16 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:16 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:16 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:16 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:16 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:16 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:16 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:16 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:16 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:16 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:16 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:16 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:16 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:16 UTC] PHP  16. md5_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2515
+[10-Aug-2018 21:17:17 UTC] PHP Warning:  sha1_file(/home/ubuntu/workspace/docs/_uncategorised_files/Análisis-de-resulatdos-ECDF.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2514
+[10-Aug-2018 21:17:17 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:17 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:17 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:17 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:17 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:17 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:17 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:17 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:17 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:17 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:17 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:17 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:17 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:17 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:17 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:17 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:17 UTC] PHP  16. sha1_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2514
+[10-Aug-2018 21:17:17 UTC] PHP Warning:  md5_file(/home/ubuntu/workspace/docs/_uncategorised_files/Análisis-de-resulatdos-ECDF.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2515
+[10-Aug-2018 21:17:17 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:17 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:17 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:17 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:17 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:17 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:17 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:17 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:17 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:17 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:17 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:17 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:17 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:17 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:17 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:17 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:17 UTC] PHP  16. md5_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2515
+[10-Aug-2018 21:17:19 UTC] PHP Warning:  sha1_file(/home/ubuntu/workspace/docs/_uncategorised_files/TALLERES-DE-CREACIÓN-LITERARIA-PROYECTO-SANTA-MARTA-LEE-FIRMADO.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2514
+[10-Aug-2018 21:17:19 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:19 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:19 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:19 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:19 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:19 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:19 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:19 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:19 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:19 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:19 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:19 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:19 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:19 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:19 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:19 UTC] PHP  16. sha1_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2514
+[10-Aug-2018 21:17:19 UTC] PHP Warning:  md5_file(/home/ubuntu/workspace/docs/_uncategorised_files/TALLERES-DE-CREACIÓN-LITERARIA-PROYECTO-SANTA-MARTA-LEE-FIRMADO.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2515
+[10-Aug-2018 21:17:19 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:19 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:19 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:19 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:19 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:19 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:19 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:19 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:19 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:19 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:19 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:19 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:19 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:19 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:19 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:19 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:19 UTC] PHP  16. md5_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2515
+[10-Aug-2018 21:17:23 UTC] PHP Warning:  sha1_file(/home/ubuntu/workspace/docs/_uncategorised_files/Flujograma-D02_01_.xlsx): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2514
+[10-Aug-2018 21:17:23 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:23 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:23 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:23 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:23 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:23 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:23 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:23 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:23 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:23 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:23 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:23 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:23 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:23 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:23 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:23 UTC] PHP  16. sha1_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2514
+[10-Aug-2018 21:17:23 UTC] PHP Warning:  md5_file(/home/ubuntu/workspace/docs/_uncategorised_files/Flujograma-D02_01_.xlsx): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2515
+[10-Aug-2018 21:17:23 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:23 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:23 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:23 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:23 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:23 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:23 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:23 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:23 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:23 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:23 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:23 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:23 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:23 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:23 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:23 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:23 UTC] PHP  16. md5_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2515
+[10-Aug-2018 21:17:24 UTC] PHP Warning:  sha1_file(/home/ubuntu/workspace/docs/_uncategorised_files/SUBPROCESO-D01_04.doc): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2514
+[10-Aug-2018 21:17:24 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:24 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:24 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:24 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:24 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:24 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:24 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:24 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:24 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:24 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:24 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:24 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:24 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:24 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:24 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:24 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:24 UTC] PHP  16. sha1_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2514
+[10-Aug-2018 21:17:24 UTC] PHP Warning:  md5_file(/home/ubuntu/workspace/docs/_uncategorised_files/SUBPROCESO-D01_04.doc): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2515
+[10-Aug-2018 21:17:24 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:24 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:24 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:24 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:24 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:24 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:24 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:24 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:24 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:24 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:24 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:24 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:24 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:24 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:24 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:24 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:24 UTC] PHP  16. md5_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2515
+[10-Aug-2018 21:17:27 UTC] PHP Warning:  sha1_file(/home/ubuntu/workspace/docs/_uncategorised_files/Flujograma-D01_01.xlsx): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2514
+[10-Aug-2018 21:17:27 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:27 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:27 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:27 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:27 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:27 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:27 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:27 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:27 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:27 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:27 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:27 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:27 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:27 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:27 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:27 UTC] PHP  16. sha1_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2514
+[10-Aug-2018 21:17:27 UTC] PHP Warning:  md5_file(/home/ubuntu/workspace/docs/_uncategorised_files/Flujograma-D01_01.xlsx): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2515
+[10-Aug-2018 21:17:27 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:27 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:27 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:27 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:27 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:27 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:27 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:27 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:27 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:27 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:27 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:27 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:27 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:27 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:27 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:27 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:27 UTC] PHP  16. md5_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2515
+[10-Aug-2018 21:17:29 UTC] PHP Warning:  sha1_file(/home/ubuntu/workspace/docs/_uncategorised_files/LISTADO-ADICIONAL.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2514
+[10-Aug-2018 21:17:29 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:29 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:29 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:29 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:29 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:29 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:29 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:29 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:29 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:29 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:29 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:29 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:29 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:29 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:29 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:29 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:29 UTC] PHP  16. sha1_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2514
+[10-Aug-2018 21:17:29 UTC] PHP Warning:  md5_file(/home/ubuntu/workspace/docs/_uncategorised_files/LISTADO-ADICIONAL.pdf): failed to open stream: No such file or directory in /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php on line 2515
+[10-Aug-2018 21:17:29 UTC] PHP Stack trace:
+[10-Aug-2018 21:17:29 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[10-Aug-2018 21:17:29 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[10-Aug-2018 21:17:29 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[10-Aug-2018 21:17:29 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[10-Aug-2018 21:17:29 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[10-Aug-2018 21:17:29 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[10-Aug-2018 21:17:29 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[10-Aug-2018 21:17:29 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[10-Aug-2018 21:17:29 UTC] PHP   9. jdownloadsController->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[10-Aug-2018 21:17:29 UTC] PHP  10. Joomla\CMS\MVC\Controller\BaseController->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/controller.php:44
+[10-Aug-2018 21:17:29 UTC] PHP  11. jdownloadsViewjdownloads->display() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:672
+[10-Aug-2018 21:17:29 UTC] PHP  12. Joomla\CMS\MVC\View\HtmlView->display() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/view.html.php:35
+[10-Aug-2018 21:17:29 UTC] PHP  13. Joomla\CMS\MVC\View\HtmlView->loadTemplate() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:230
+[10-Aug-2018 21:17:29 UTC] PHP  14. include() /home/ubuntu/workspace/libraries/src/MVC/View/HtmlView.php:695
+[10-Aug-2018 21:17:29 UTC] PHP  15. JDownloadsHelper::runMonitoring() /home/ubuntu/workspace/administrator/components/com_jdownloads/views/jdownloads/tmpl/default.php:206
+[10-Aug-2018 21:17:29 UTC] PHP  16. md5_file() /home/ubuntu/workspace/administrator/components/com_jdownloads/helpers/jdownloadshelper.php:2515
+[13-Aug-2018 13:09:37 UTC] PHP Warning:  Creating default object from empty value in /home/ubuntu/workspace/administrator/components/com_jdownloads/tables/download.php on line 612
+[13-Aug-2018 13:09:37 UTC] PHP Stack trace:
+[13-Aug-2018 13:09:37 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[13-Aug-2018 13:09:37 UTC] PHP   2. Joomla\CMS\Application\CMSApplication->execute() /home/ubuntu/workspace/administrator/index.php:51
+[13-Aug-2018 13:09:37 UTC] PHP   3. Joomla\CMS\Application\AdministratorApplication->doExecute() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:195
+[13-Aug-2018 13:09:37 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->dispatch() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:159
+[13-Aug-2018 13:09:37 UTC] PHP   5. Joomla\CMS\Component\ComponentHelper::renderComponent() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:101
+[13-Aug-2018 13:09:37 UTC] PHP   6. Joomla\CMS\Component\ComponentHelper::executeComponent() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:357
+[13-Aug-2018 13:09:37 UTC] PHP   7. require_once() /home/ubuntu/workspace/libraries/src/Component/ComponentHelper.php:382
+[13-Aug-2018 13:09:37 UTC] PHP   8. Joomla\CMS\MVC\Controller\BaseController->execute() /home/ubuntu/workspace/administrator/components/com_jdownloads/jdownloads.php:39
+[13-Aug-2018 13:09:37 UTC] PHP   9. Joomla\CMS\MVC\Controller\FormController->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
+[13-Aug-2018 13:09:37 UTC] PHP  10. jdownloadsModelDownload->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/FormController.php:747
+[13-Aug-2018 13:09:37 UTC] PHP  11. jdownloadsTabledownload->checkData() /home/ubuntu/workspace/administrator/components/com_jdownloads/models/download.php:242

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="j2xml" method="upgrade">
+  <name>PLG_J2XML_WORDPRESS</name>
+  <author>Helios Ciancio</author>
+  <creationDate>July 2016</creationDate>
+  <copyright>(C) 2014, 2016, Helios Ciancio. All rights reserved.</copyright>
+  <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL v3</license>
+  <authorEmail>info@eshiol.it</authorEmail>
+  <authorUrl>www.eshiol.it</authorUrl>
+  <version>4.4.23.60</version>
+  <description>PLG_J2XML_WORDPRESS_XML_DESCRIPTION</description>
+  <scriptfile>enable.php</scriptfile>
+  <files>
+    <filename plugin="wordpress">wordpress.php</filename>
+    <filename>11.xsl</filename>
+    <filename>12.xsl</filename>
+    <filename>index.html</filename>
+    <folder>language</folder>
+  </files>
+  <config>
+    <fields name="params">
+      <fieldset name="basic">
+        <field name="readmore" type="radio" class="btn-group" default="1" label="PLG_J2XML_WORDPRESS_READMORE_LABEL" description="PLG_J2XML_WORDPRESS_READMORE_DESC">
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+        <field name="post_type" type="text" default="" label="PLG_J2XML_WORDPRESS_POSTTYPE_LABEL" description="PLG_J2XML_WORDPRESS_POSTTYPE_DESC"/>
+      </fieldset>
+    </fields>
+  </config>
+</extension>

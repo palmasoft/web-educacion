@@ -1,0 +1,14 @@
+ALTER TABLE `#__jdownloads_categories` ENGINE=innodb;
+ALTER TABLE `#__jdownloads_files` ENGINE=innodb;
+ALTER TABLE `#__jdownloads_config` ENGINE=innodb;
+ALTER TABLE `#__jdownloads_licenses` ENGINE=innodb;
+ALTER TABLE `#__jdownloads_logs` ENGINE=innodb;
+ALTER TABLE `#__jdownloads_ratings` ENGINE=innodb;
+ALTER TABLE `#__jdownloads_templates` ENGINE=innodb;
+ALTER TABLE `#__jdownloads_usergroups_limits` ENGINE=innodb;
+ALTER TABLE `#__jdownloads_files` ADD INDEX `idx_cat_id` (`cat_id`);
+ALTER TABLE `#__jdownloads_files` ADD INDEX `idx_published` (`published`);
+ALTER TABLE `#__jdownloads_files` ADD INDEX `idx_created_id` (`created_id`);
+ALTER TABLE `#__jdownloads_templates` ADD INDEX `idx_template_typ` (`template_typ`);
+ALTER TABLE `#__jdownloads_logs` ADD INDEX `idx_type` (`type`);
+ALTER TABLE `#__jdownloads_logs` ADD INDEX `idx_log_user` (`log_user`);
