@@ -1,0 +1,250 @@
+/**
+ *------------------------------------------------------------------------------
+ * @package       T3 Framework for Joomla!
+ *------------------------------------------------------------------------------
+ * @copyright     Copyright (C) 2004-2013 JoomlArt.com. All Rights Reserved.
+ * @license       GNU General Public License version 2 or later; see LICENSE.txt
+ * @authors       JoomlArt, JoomlaBamboo, (contribute to this project at github
+ *                & Google group to become co-author)
+ * @Google group: https://groups.google.com/forum/#!forum/t3fw
+ * @Link:         http://t3-framework.org
+ * @credits       Mary Lou - http://tympanus.net/codrops/2013/08/28/transitions-for-off-canvas-navigations/
+ *------------------------------------------------------------------------------
+ */
+
+
+// VARIABLES & MIXINS
+// ------------------
+@import "vars.less"; // Include Variables and Mixins
+
+
+// EXTEND STYLE IN BASE
+// --------------------
+@import "../../../plugins/system/t3/base-bs3/less/off-canvas.less";
+
+
+
+//
+// OFF-CANVAS
+// -------------------------------------
+// Toggle Button
+// -------------------
+.off-canvas-toggle {
+  border-radius: 0;
+  border: 0;
+  padding: 0;
+  width: @navbar-height;
+  height: @navbar-height;
+  line-height: @navbar-height;
+  &:focus {
+    outline: none;
+  }
+}
+
+
+//
+// OFF-CANVAS CONTENT STYLES
+// -------------------------------------
+.t3-off-canvas {
+
+  // Generic
+  // -----------------------------------
+  background: @t3-off-canvas-background;
+  color: @t3-off-canvas-text-color;
+
+
+  // Header
+  // -----------------------------------
+  .t3-off-canvas-header {
+    background: @t3-off-canvas-header-background;
+    color: @t3-off-canvas-header-text-color;
+    padding: @t3-global-padding/2 0 @t3-global-padding/2 @t3-global-padding;
+    height: 56px;
+    line-height: 56px;
+
+    // Title
+    h2 {
+      margin: 0;
+      line-height: 35px;
+      font-size: @font-size-base;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+  }
+
+  // Close Button
+  .close {
+    margin: 0;
+    height: 56px;
+    line-height: 56px;
+    width: 56px;
+    background: @t3-off-canvas-header-background;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: @t3-off-canvas-header-text-color;
+    text-shadow: none;
+    .opacity(1);
+  }
+
+
+  // Body
+  // -----------------------------------
+  .t3-off-canvas-body {
+
+    padding: @t3-global-padding/2 @t3-global-padding;
+    background:@gray-darker;
+
+    // Links
+    // ------------
+    a {
+      color: @t3-off-canvas-link-color;
+      text-decoration: none;
+      font-size:14px;
+
+      &:hover,
+      &:focus {
+        color: @t3-off-canvas-link-hover-color;
+        text-decoration: none;
+      }
+
+      &:focus {
+        .tab-focus();
+      }
+    }
+
+
+
+    // Navigations
+    // ------------
+    .menu {
+      li{
+        background: transparent !important;
+      }
+      > li,
+      .dropdown-toggle {
+        *border-bottom: 1px solid #1e1e1e;
+
+        > a,
+        > .dropdown-toggle {
+          background: none !important;
+          border-bottom:none !important;
+          text-transform: none;
+          color: #999;
+          padding: @t3-global-padding/2 @t3-global-padding;
+
+          .caret {
+            float: right;
+            margin-top: @t3-global-margin/2;
+            border-top-color: @link-color;
+          }
+
+          &:before {
+            content: "\f00a";
+            position: absolute;
+            left: 0;
+            display: inline-block;
+            font-family: FontAwesome;
+            font-style: normal;
+            font-weight: normal;
+            line-height: 1;
+            margin-top: 7px;
+            font-size: 10px;
+          }
+        }
+
+        &.active {
+          > a,
+          > .dropdown-toggle {
+            background: transparent !important ;
+            text-transform: none;
+            color: @brand-primary;
+
+            .caret {
+              border-top-color: @white;
+            }
+          }
+        }
+
+        > a:hover, > a:focus, > a:active {
+          background: none;
+          text-transform: none;
+          color: @brand-primary;
+
+          .caret {
+            border-top-color: @link-color;
+          }
+        }
+      }
+    }
+
+   // Dropdown Menu
+    .dropdown-menu {
+      background: none !important;
+      padding-left: @t3-global-padding;
+      color:#999999;
+
+      .divider{
+		height:auto !important;
+		background:transparent !important;
+      }
+
+      > li {
+        > a,
+        > .nav-header {
+		  border-bottom:none !important;
+		  background:transparent !important;
+		  padding: 5px 0;
+          color: @white;
+          display: inline-block;
+          .opacity(0.4);
+        }
+
+        &.open > a,
+        > a:hover,
+        > a:focus,
+        > a:active {
+          background: none;
+          color: @t3-off-canvas-link-color;
+          .opacity(1);
+        }
+
+        &.active > a {
+          background: none;
+          color: @brand-primary;
+          .opacity(1);
+        }
+      }
+
+      .caret {
+        display: none;
+      }
+    }
+
+    // Dropdown SubMenu
+    .dropdown-submenu {
+      > a,
+      > .nav-header {
+        &:after {
+          display: none;
+        }
+      }
+    }
+
+    // Modules
+    // ------------
+    .t3-module {
+      margin-bottom: @line-height-computed;
+    }
+
+    .module-title  {
+      margin-bottom: @line-height-computed / 2;
+      color: @white;
+    }
+
+  // End Off-Canvas Body
+  }
+
+// End Off-Canvas Content Styles
+}

@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 class SppagebuilderRouter extends JComponentRouterBase {
 
@@ -55,7 +55,7 @@ class SppagebuilderRouter extends JComponentRouterBase {
 				}
 				unset($query['id']);
 			}
-
+			
 			unset($query['view']);
 		}
 

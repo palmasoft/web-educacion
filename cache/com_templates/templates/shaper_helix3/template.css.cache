@@ -846,7 +846,7 @@ dl.article-info dd.hits span[class*=" icon-"] {
   display: none;
 }
 .sp-megamenu-parent .sp-dropdown .sp-dropdown-inner {
-  background: #ffffff;
+  background: #00a5ea;
   box-shadow: 0 3px 5px 0 rgba(0,0,0,0.2);
   padding: 20px;
 }
@@ -1186,7 +1186,7 @@ dl.article-info dd.hits span[class*=" icon-"] {
   transform: translate(0,100px);
   opacity: 0;
   padding: 0 20px !important;
-  background-color: #ffffff;
+  background-color: #00a5ea;
 }
 .menu-drop-in .sp-has-child .sp-menu-item:first-child {
   padding-top: 20px !important;
@@ -2844,7 +2844,7 @@ table.category tbody >tr td {
   transition: 300ms;
 }
 .sp-pre-loader {
-  background: #3cabc3;
+  background: #00a5ea;
   height: 100%;
   left: 0;
   position: fixed;
@@ -3439,4 +3439,4 @@ table.category tbody >tr td {
   display: inline-block;
   margin-bottom: 10px;
 }
-";s:5:"files";a:14:{s:73:"/home/ubuntu/workspace/templates/shaper_helix3/less/legacy/bootstrap.less";i:1532104750;s:73:"/home/ubuntu/workspace/templates/shaper_helix3/less/legacy/variables.less";i:1532104750;s:70:"/home/ubuntu/workspace/templates/shaper_helix3/less/legacy/mixins.less";i:1532104750;s:68:"/home/ubuntu/workspace/templates/shaper_helix3/less/legacy/grid.less";i:1532104750;s:69:"/home/ubuntu/workspace/templates/shaper_helix3/less/legacy/forms.less";i:1532104750;s:69:"/home/ubuntu/workspace/templates/shaper_helix3/less/legacy/wells.less";i:1532104750;s:73:"/home/ubuntu/workspace/templates/shaper_helix3/less/legacy/accordion.less";i:1532104750;s:91:"/home/ubuntu/workspace/templates/shaper_helix3/less/legacy/responsive-767px-max.joomla.less";i:1532104750;s:63:"/home/ubuntu/workspace/templates/shaper_helix3/less/master.less";i:1532104750;s:66:"/home/ubuntu/workspace/templates/shaper_helix3/less/variables.less";i:1532104750;s:63:"/home/ubuntu/workspace/templates/shaper_helix3/less/mixins.less";i:1532104750;s:64:"/home/ubuntu/workspace/templates/shaper_helix3/less/icomoon.less";i:1532104750;s:61:"/home/ubuntu/workspace/templates/shaper_helix3/less/menu.less";i:1532104750;s:62:"/home/ubuntu/workspace/templates/shaper_helix3/less/theme.less";i:1532104750;}s:7:"updated";i:1534166939;}
+";s:5:"files";a:14:{s:73:"/home/ubuntu/workspace/templates/shaper_helix3/less/legacy/bootstrap.less";i:1532104750;s:73:"/home/ubuntu/workspace/templates/shaper_helix3/less/legacy/variables.less";i:1532104750;s:70:"/home/ubuntu/workspace/templates/shaper_helix3/less/legacy/mixins.less";i:1532104750;s:68:"/home/ubuntu/workspace/templates/shaper_helix3/less/legacy/grid.less";i:1532104750;s:69:"/home/ubuntu/workspace/templates/shaper_helix3/less/legacy/forms.less";i:1532104750;s:69:"/home/ubuntu/workspace/templates/shaper_helix3/less/legacy/wells.less";i:1532104750;s:73:"/home/ubuntu/workspace/templates/shaper_helix3/less/legacy/accordion.less";i:1532104750;s:91:"/home/ubuntu/workspace/templates/shaper_helix3/less/legacy/responsive-767px-max.joomla.less";i:1532104750;s:63:"/home/ubuntu/workspace/templates/shaper_helix3/less/master.less";i:1532104750;s:66:"/home/ubuntu/workspace/templates/shaper_helix3/less/variables.less";i:1532104750;s:63:"/home/ubuntu/workspace/templates/shaper_helix3/less/mixins.less";i:1532104750;s:64:"/home/ubuntu/workspace/templates/shaper_helix3/less/icomoon.less";i:1532104750;s:61:"/home/ubuntu/workspace/templates/shaper_helix3/less/menu.less";i:1532104750;s:62:"/home/ubuntu/workspace/templates/shaper_helix3/less/theme.less";i:1532104750;}s:7:"updated";i:1536722801;}

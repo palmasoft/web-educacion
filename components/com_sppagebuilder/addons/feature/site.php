@@ -508,16 +508,22 @@ class SppagebuilderAddonFeature extends SppagebuilderAddons {
 
 				feature_title += \'<\'+data.heading_selector+\' class="sppb-addon-title sppb-feature-box-title  \'+heading_class+\'">\';
 				if( (data.title_url && data.url_appear == "title") || (data.title_url && data.url_appear == "both" ) ){
-					feature_title += \'<a href="\'+data.title_url+\'">\';
+					feature_title += \'<a href="\'+data.title_url+\'" class="sp-inline-editable-element" data-id="\'+data.id+\'" data-fieldName="title" contenteditable="true">\';
 				}
-				feature_title += data.title;
+				if(_.isEmpty(data.title_url)){
+					feature_title += \'<span class="sp-inline-editable-element" data-id="\'+data.id+\'" data-fieldName="title" contenteditable="true">\';
+				}
+				feature_title +=data.title;
+				if(_.isEmpty(data.title_url)){
+					feature_title +=\'</span>\';
+				}
 				if( (data.title_url && data.url_appear == "title") || (data.title_url && data.url_appear == "both" ) ){
 					feature_title += \'</a>\';
 				}
 				feature_title += \'</\'+data.heading_selector+\'>\';
 			}
 
-			var feature_text  = \'<div class="sppb-addon-text">\';
+			var feature_text  = \'<div id="addon-text-\'+data.id+\'" class="sppb-addon-text sp-editable-content" data-id="\'+data.id+\'" data-fieldName="text">\';
 			feature_text += data.text;
 			feature_text += \'</div>\';
 
@@ -669,100 +675,100 @@ class SppagebuilderAddonFeature extends SppagebuilderAddons {
 					}
 				}
 			<# } #>
-		<# } if(data.feature_type == "image" || data.feature_type == "both") { #>
-			#sppb-addon-{{ data.id }} .sppb-img-container {
-				display:block;
-			}
-                        <# if(!_.isEmpty(data.feature_image_margin) && (data.title_position == "left" || data.title_position == "right")){ #>
-                            #sppb-addon-{{ data.id }} .sppb-media .pull-left, #sppb-addon-{{ data.id }} .sppb-media .pull-right {
-                                <# if(_.isObject(data.feature_image_margin)){ #>
-                                    margin: {{data.feature_image_margin.md}};
-                                <# } else { #>
-                                    margin: {{data.feature_image_margin}};
-                                <# } #>
-                            }
-                        <# }
-                        if(_.isObject(data.feature_image_width) && data.feature_image_width.md === "100"){ #>
-                            #sppb-addon-{{ data.id }} .sppb-media .sppb-media-body {
-                                width: 100%;
-                            }
-                        <# }
-                        if(!_.isEmpty(data.feature_image_margin) && (data.title_position == "after" || data.title_position == "before")) { #>
-                            #sppb-addon-{{ data.id }} .sppb-img-container {
-                                <# if(_.isObject(data.feature_image_margin)){ #>
-                                    margin: {{data.feature_image_margin.md}};
-                                <# } else { #>
-                                    margin: {{data.feature_image_margin}};
-                                <# } #>
-                            }
-                        <# } #>
-                        #sppb-addon-{{ data.id }} .sppb-media .pull-left, #sppb-addon-{{ data.id }} .sppb-media .pull-right {
-                            <# if(_.isObject(data.feature_image_width)){ #>
-				width: {{ data.feature_image_width.md }}%;
-                            <# } else { #>
-                                width: {{ data.feature_image_width }}%;
-                            <# } #>
-                        }
-                        @media (min-width: 768px) and (max-width: 991px) {
-                            #sppb-addon-{{ data.id }} .sppb-media .pull-left, #sppb-addon-{{ data.id }} .sppb-media .pull-right {
-                                <# if(_.isObject(data.feature_image_width)){ #>
-                                    width: {{ data.feature_image_width.sm }}%;
-                                <# } #>
-                            }
-                            <# if(!_.isEmpty(data.feature_image_margin) && (data.title_position == "left" || data.title_position == "right")){ #>
-                                #sppb-addon-{{ data.id }} .sppb-media .pull-left, #sppb-addon-{{ data.id }} .sppb-media .pull-right {
-                                    <# if(_.isObject(data.feature_image_margin)){ #>
-                                        margin: {{data.feature_image_margin.sm}};
-                                    <# } #>
-                                }
-                            <# }
-                            if(_.isObject(data.feature_image_width) && (data.feature_image_width.sm === "100")){ #>
-                                #sppb-addon-{{ data.id }} .sppb-media .sppb-media-body {
-                                    width: 100%;
-                                }
-                            <# } else { #>
-                                #sppb-addon-{{ data.id }} .sppb-media .sppb-media-body {
-                                    width: auto;
-                                }
-                            <# }
-                            if(!_.isEmpty(data.feature_image_margin) && (data.title_position == "after" || data.title_position == "before")) { #>
-                                #sppb-addon-{{ data.id }} .sppb-img-container {
-                                    <# if(_.isObject(data.feature_image_margin)){ #>
-                                        margin: {{data.feature_image_margin.sm}};
-                                    <# } #>
-                                }
-                            <# } #>
-                        }
-                        @media (max-width: 767px) {
-                            #sppb-addon-{{ data.id }} .sppb-media .pull-left, #sppb-addon-{{ data.id }} .sppb-media .pull-right {
-                                <# if(_.isObject(data.feature_image_width)){ #>
-                                    width: {{ data.feature_image_width.xs }}%;
-                                <# } #>
-                            }
-                            <# if(!_.isEmpty(data.feature_image_margin) && (data.title_position == "left" || data.title_position == "right")){ #>
-                                #sppb-addon-{{ data.id }} .sppb-media .pull-left, #sppb-addon-{{ data.id }} .sppb-media .pull-right {
-                                    <# if(_.isObject(data.feature_image_margin)){ #>
-                                        margin: {{data.feature_image_margin.xs}};
-                                    <# } #>
-                                }
-                            <# }
-                            if(_.isObject(data.feature_image_width) && data.feature_image_width.xs === "100"){ #>
-                                #sppb-addon-{{ data.id }} .sppb-media .sppb-media-body {
-                                    width: 100%;
-                                }
-                            <# } else { #>
-                                #sppb-addon-{{ data.id }} .sppb-media .sppb-media-body {
-                                    width: auto;
-                                }
-                            <# }
-                            if(!_.isEmpty(data.feature_image_margin) && (data.title_position == "after" || data.title_position == "before")) { #>
-                                #sppb-addon-{{ data.id }} .sppb-img-container {
-                                    <# if(_.isObject(data.feature_image_margin)){ #>
-                                        margin: {{data.feature_image_margin.xs}};
-                                    <# } #>
-                                }
-                            <# } #>
-                        }
+			<# } if(data.feature_type == "image" || data.feature_type == "both") { #>
+				#sppb-addon-{{ data.id }} .sppb-img-container {
+					display:block;
+				}
+				<# if(!_.isEmpty(data.feature_image_margin) && (data.title_position == "left" || data.title_position == "right")){ #>
+					#sppb-addon-{{ data.id }} .sppb-media .pull-left, #sppb-addon-{{ data.id }} .sppb-media .pull-right {
+						<# if(_.isObject(data.feature_image_margin)){ #>
+							margin: {{data.feature_image_margin.md}};
+						<# } else { #>
+							margin: {{data.feature_image_margin}};
+						<# } #>
+					}
+				<# }
+				if(_.isObject(data.feature_image_width) && data.feature_image_width.md === "100"){ #>
+					#sppb-addon-{{ data.id }} .sppb-media .sppb-media-body {
+						width: 100%;
+					}
+				<# }
+				if(!_.isEmpty(data.feature_image_margin) && (data.title_position == "after" || data.title_position == "before")) { #>
+					#sppb-addon-{{ data.id }} .sppb-img-container {
+						<# if(_.isObject(data.feature_image_margin)){ #>
+							margin: {{data.feature_image_margin.md}};
+						<# } else { #>
+							margin: {{data.feature_image_margin}};
+						<# } #>
+					}
+				<# } #>
+				#sppb-addon-{{ data.id }} .sppb-media .pull-left, #sppb-addon-{{ data.id }} .sppb-media .pull-right {
+					<# if(_.isObject(data.feature_image_width)){ #>
+						width: {{ data.feature_image_width.md }}%;
+					<# } else { #>
+						width: {{ data.feature_image_width }}%;
+					<# } #>
+				}
+				@media (min-width: 768px) and (max-width: 991px) {
+					#sppb-addon-{{ data.id }} .sppb-media .pull-left, #sppb-addon-{{ data.id }} .sppb-media .pull-right {
+						<# if(_.isObject(data.feature_image_width)){ #>
+							width: {{ data.feature_image_width.sm }}%;
+						<# } #>
+					}
+					<# if(!_.isEmpty(data.feature_image_margin) && (data.title_position == "left" || data.title_position == "right")){ #>
+						#sppb-addon-{{ data.id }} .sppb-media .pull-left, #sppb-addon-{{ data.id }} .sppb-media .pull-right {
+							<# if(_.isObject(data.feature_image_margin)){ #>
+								margin: {{data.feature_image_margin.sm}};
+							<# } #>
+						}
+					<# }
+					if(_.isObject(data.feature_image_width) && (data.feature_image_width.sm === "100")){ #>
+						#sppb-addon-{{ data.id }} .sppb-media .sppb-media-body {
+							width: 100%;
+						}
+					<# } else { #>
+						#sppb-addon-{{ data.id }} .sppb-media .sppb-media-body {
+							width: auto;
+						}
+					<# }
+					if(!_.isEmpty(data.feature_image_margin) && (data.title_position == "after" || data.title_position == "before")) { #>
+						#sppb-addon-{{ data.id }} .sppb-img-container {
+							<# if(_.isObject(data.feature_image_margin)){ #>
+								margin: {{data.feature_image_margin.sm}};
+							<# } #>
+						}
+					<# } #>
+				}
+				@media (max-width: 767px) {
+					#sppb-addon-{{ data.id }} .sppb-media .pull-left, #sppb-addon-{{ data.id }} .sppb-media .pull-right {
+						<# if(_.isObject(data.feature_image_width)){ #>
+							width: {{ data.feature_image_width.xs }}%;
+						<# } #>
+					}
+					<# if(!_.isEmpty(data.feature_image_margin) && (data.title_position == "left" || data.title_position == "right")){ #>
+						#sppb-addon-{{ data.id }} .sppb-media .pull-left, #sppb-addon-{{ data.id }} .sppb-media .pull-right {
+							<# if(_.isObject(data.feature_image_margin)){ #>
+								margin: {{data.feature_image_margin.xs}};
+							<# } #>
+						}
+					<# }
+					if(_.isObject(data.feature_image_width) && data.feature_image_width.xs === "100"){ #>
+						#sppb-addon-{{ data.id }} .sppb-media .sppb-media-body {
+							width: 100%;
+						}
+					<# } else { #>
+						#sppb-addon-{{ data.id }} .sppb-media .sppb-media-body {
+							width: auto;
+						}
+					<# }
+					if(!_.isEmpty(data.feature_image_margin) && (data.title_position == "after" || data.title_position == "before")) { #>
+						#sppb-addon-{{ data.id }} .sppb-img-container {
+							<# if(_.isObject(data.feature_image_margin)){ #>
+								margin: {{data.feature_image_margin.xs}};
+							<# } #>
+						}
+					<# } #>
+				}
 		<# } #>
 
 		#sppb-addon-{{ data.id }} .sppb-addon-text {
@@ -798,11 +804,11 @@ class SppagebuilderAddonFeature extends SppagebuilderAddons {
 					line-height: {{ data.text_lineheight.sm }}px;
 				<# } #>
 			}
-                        #sppb-addon-{{ data.id }} .sppb-media-content {
-                                <# if(_.isObject(data.text_padding)){ #>
-                                        padding: {{ data.text_padding.sm }};
-                                <# } #>
-                        }
+			#sppb-addon-{{ data.id }} .sppb-media-content {
+				<# if(_.isObject(data.text_padding)){ #>
+					padding: {{ data.text_padding.sm }};
+				<# } #>
+			}
 		}
 
 		@media (max-width: 767px) {
@@ -815,11 +821,11 @@ class SppagebuilderAddonFeature extends SppagebuilderAddons {
 					line-height: {{ data.text_lineheight.xs }}px;
 				<# } #>
 			}
-                        #sppb-addon-{{ data.id }} .sppb-media-content {
-                                <# if(_.isObject(data.text_padding)){ #>
-                                        padding: {{ data.text_padding.xs }};
-                                <# } #>
-                        }
+			#sppb-addon-{{ data.id }} .sppb-media-content {
+				<# if(_.isObject(data.text_padding)){ #>
+					padding: {{ data.text_padding.xs }};
+				<# } #>
+			}
 		}
 
 		</style>

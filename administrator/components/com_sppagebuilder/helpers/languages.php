@@ -6,13 +6,13 @@
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 class SppagebuilderHelperLanguages {
 
 	public static function language_list() {
 
-		$language_api = 'http://sppagebuilder.com/api/languages/languages.json';
+		$language_api = 'https://sppagebuilder.com/api/languages/languages.json';
 
 		if( ini_get('allow_url_fopen') ) {
 			$components = json_decode(file_get_contents($language_api));

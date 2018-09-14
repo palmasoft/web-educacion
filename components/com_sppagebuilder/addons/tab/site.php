@@ -81,11 +81,11 @@ class SppagebuilderAddonTab extends SppagebuilderAddons {
 		$font_style .= (isset($this->addon->settings->nav_padding) && $this->addon->settings->nav_padding) ? 'padding: ' . $this->addon->settings->nav_padding . ';': '';
 		
         $font_style_sm = (isset($this->addon->settings->nav_fontsize_sm) && $this->addon->settings->nav_fontsize_sm) ? 'font-size: ' . $this->addon->settings->nav_fontsize_sm . 'px;': '';
-		$font_style_sm .= (isset($this->addon->settings->nav_margin_sm) && $this->addon->settings->nav_margin_sm) ? 'margin: ' . $this->addon->settings->nav_margin_sm . ';': '';
+$font_style_sm .= (isset($this->addon->settings->nav_margin_sm) && $this->addon->settings->nav_margin_sm) ? 'margin: ' . $this->addon->settings->nav_margin_sm . ';': '';
         $font_style_sm .= (isset($this->addon->settings->nav_padding_sm) && $this->addon->settings->nav_padding_sm) ? 'padding: ' . $this->addon->settings->nav_padding_sm . ';': '';
         
         $font_style_xs = (isset($this->addon->settings->nav_fontsize_xs) && $this->addon->settings->nav_fontsize_xs) ? 'font-size: ' . $this->addon->settings->nav_fontsize_xs . 'px;': '';
-		$font_style_xs .= (isset($this->addon->settings->nav_margin_xs) && $this->addon->settings->nav_margin_xs) ? 'margin: ' . $this->addon->settings->nav_margin_xs . ';': '';
+$font_style_xs .= (isset($this->addon->settings->nav_margin_xs) && $this->addon->settings->nav_margin_xs) ? 'margin: ' . $this->addon->settings->nav_margin_xs . ';': '';
         $font_style_xs .= (isset($this->addon->settings->nav_padding_xs) && $this->addon->settings->nav_padding_xs) ? 'padding: ' . $this->addon->settings->nav_padding_xs . ';': '';
         
         $nav_width = (isset($this->addon->settings->nav_width) && $this->addon->settings->nav_width) ? $this->addon->settings->nav_width : 30;

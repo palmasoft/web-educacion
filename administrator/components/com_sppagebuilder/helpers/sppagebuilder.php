@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 abstract class SppagebuilderHelper {
 
@@ -26,10 +26,9 @@ abstract class SppagebuilderHelper {
 			$vName == 'categories');
 
 		JHtmlSidebar::addEntry(
-				'<i class="fa fa-plug"></i> ' . JText::_('COM_SPPAGEBUILDER_INTEGRATIONS'),
-				'index.php?option=com_sppagebuilder&view=integrations',
-				$vName == 'integrations'
-	  );
+			'<i class="fa fa-plug"></i> ' . JText::_('COM_SPPAGEBUILDER_INTEGRATIONS'),
+			'index.php?option=com_sppagebuilder&view=integrations',
+			$vName == 'integrations');
 
 		JHtmlSidebar::addEntry(
 			'<i class="fa fa-globe"></i> ' . JText::_('COM_SPPAGEBUILDER_LANGUAGES'),
@@ -75,18 +74,32 @@ abstract class SppagebuilderHelper {
 		if(!self::getIntegration($attribs['option'])) return;
 
 		$db = JFactory::getDbo();
-
+		
 		if(self::checkPage($attribs['option'], $attribs['view'], $attribs['id'])) {
 
-			$fields = array(
-				$db->quoteName('title') . ' = ' . $db->quote($attribs['title']),
-				$db->quoteName('text') . ' = ' . $db->quote($attribs['text']),
-				$db->quoteName('modified') . ' = ' . $db->quote($attribs['modified']),
-				$db->quoteName('modified_by') . ' = ' . (int) $attribs['modified_by'],
-				$db->quoteName('active') . ' = ' . $db->quote($attribs['active'])
-			);
-
-			self::updatePage($attribs['id'], $fields);
+			if($attribs['action'] == 'stateChange')
+			{
+				$fields = array(
+					$db->quoteName('published') . ' = ' . $db->quote($attribs['published'])
+				);
+				self::updatePage($attribs['id'], $fields);
+			}
+			elseif($attribs['action'] == 'delete')
+			{
+				self::deleteArticlePage($attribs);
+			}
+			else
+			{
+				$fields = array(
+					$db->quoteName('title') . ' = ' . $db->quote($attribs['title']),
+					$db->quoteName('text') . ' = ' . $db->quote($attribs['text']),
+					$db->quoteName('published') . ' = ' . $db->quote($attribs['published']),
+					$db->quoteName('modified') . ' = ' . $db->quote($attribs['modified']),
+					$db->quoteName('modified_by') . ' = ' . $db->quote($attribs['modified_by']),
+					$db->quoteName('active') . ' = ' . $db->quote($attribs['active'])
+				);
+				self::updatePage($attribs['id'], $fields);
+			}
 
 		} else {
 			$values = array(
@@ -96,11 +109,11 @@ abstract class SppagebuilderHelper {
 				$db->quote($attribs['view']),
 				$db->quote($attribs['id']),
 				$db->quote($attribs['active']),
-				$db->quote(1),
+				$db->quote($attribs['published']),
 				$db->quote($attribs['created_on']),
 				$db->quote($attribs['created_by']),
 				$db->quote($attribs['modified']),
-				(int) $attribs['modified_by'],
+				$db->quote($attribs['modified_by']),
 				$db->quote($attribs['language'])
 			);
 
@@ -132,6 +145,7 @@ abstract class SppagebuilderHelper {
 			if (!$params->get('disablecss',0)) {
 				$doc->addStyleSheet(JUri::base(true) . '/components/com_sppagebuilder/assets/css/sppagebuilder.css');
 			}
+			$doc->addScript(JUri::base(true).'/components/com_sppagebuilder/assets/js/jquery.parallax-1.1.3.js');
 			$doc->addScript(JUri::base(true).'/components/com_sppagebuilder/assets/js/sppagebuilder.js');
 
 			return '<div id="sp-page-builder" class="sp-page-builder"><div class="page-content">' . AddonParser::viewAddons(json_decode($page_content->text),0,$pageName) . '</div></div>';
@@ -212,17 +226,17 @@ abstract class SppagebuilderHelper {
 	private static function getIntegration($option) {
 
 		$db = JFactory::getDbo();
-    $query = $db->getQuery(true);
-    $user = JFactory::getUser();
-    $query->select('a.id');
-    $query->from('#__sppagebuilder_integrations as a');
-    $query->where($db->quoteName('component') . ' = ' . $db->quote($option));
-    $query->where($db->quoteName('state') . ' = 1');
-    $db->setQuery($query);
-    $result = $db->loadResult();
+		$query = $db->getQuery(true);
+		$user = JFactory::getUser();
+		$query->select('a.id');
+		$query->from('#__sppagebuilder_integrations as a');
+		$query->where($db->quoteName('component') . ' = ' . $db->quote($option));
+		$query->where($db->quoteName('state') . ' = 1');
+		$db->setQuery($query);
+		$result = $db->loadResult();
 
 		return $result;
-  }
+	}
 
 	public static function getMenuId($pageId) {
 		$db = JFactory::getDbo();
@@ -239,5 +253,22 @@ abstract class SppagebuilderHelper {
 		}
 
 		return '';
+	}
+
+	private static function deleteArticlePage($params)
+	{
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true);
+
+		$conditions = array(
+			$db->quoteName('extension') . ' = ' . $db->quote($params['option']), 
+			$db->quoteName('extension_view') . ' = ' . $db->quote($params['view']),
+			$db->quoteName('view_id') . ' = ' . $db->quote($params['id']),
+		);
+
+		$query->delete($db->quoteName('#__sppagebuilder'));
+		$query->where($conditions);
+		$db->setQuery($query);
+		$db->execute();
 	}
 }

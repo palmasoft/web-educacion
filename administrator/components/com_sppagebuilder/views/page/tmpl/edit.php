@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 jimport('joomla.application.component.helper');
 require_once JPATH_COMPONENT .'/builder/classes/base.php';
 require_once JPATH_COMPONENT .'/builder/classes/config.php';
@@ -25,6 +25,7 @@ $doc->addStylesheet( JURI::base(true) . '/components/com_sppagebuilder/assets/cs
 $doc->addScript( JURI::root(true) . '/media/editors/tinymce/tinymce.min.js' );
 $doc->addScript( JURI::base(true) . '/components/com_sppagebuilder/assets/js/script.js' );
 $doc->addScript( JURI::base(true) . '/components/com_sppagebuilder/assets/js/actions.js' );
+$doc->addScript( JURI::base(true) . '/components/com_sppagebuilder/assets/js/csslint.js' );
 
 require_once JPATH_ROOT . '/administrator/components/com_sppagebuilder/helpers/language.php';
 $app = JFactory::getApplication();
@@ -44,28 +45,20 @@ $article_cats     = SpPgaeBuilderBase::getArticleCategories(); // Article Catego
 $moduleAttr       = SpPgaeBuilderBase::getModuleAttributes(); // Module Postions and Module Lits
 $rowSettings      = SpPgaeBuilderBase::getRowGlobalSettings(); // Row Settings Attributes
 $columnSettings   = SpPgaeBuilderBase::getColumnGlobalSettings(); // Column Settings Attributes
+$global_attributes = SpPgaeBuilderBase::addonOptions();
 
 // Addon List
 $addons_list    = SpAddonsConfig::$addons;
+$globalDefault = SpPgaeBuilderBase::getSettingsDefaultValue($global_attributes);
 
-usort($addons_list, function($a){
-	if (isset($a['pro']) && $a['pro']) {
-		return 1;
-	}
-});
+JPluginHelper::importPlugin( 'system' );
+$dispatcher = JEventDispatcher::getInstance();
 
-$newAddonList = array();
-
-foreach ( $addons_list as $addon ) {
-  $default_value = SpPgaeBuilderBase::getSettingsDefaultValue($addon['attr']);
-  $addon['default'] = $default_value['default'];
-  if(isset($default_value['attr'])){
-    $addon['attr'] = $default_value['attr'];
-  }
-
-  $addon_name = preg_replace('/^sp_/i', '', $addon['addon_name']);
-
-  $newAddonList[$addon_name] = $addon;
+foreach ( $addons_list as $key => &$addon ) {
+  $new_default_value = SpPgaeBuilderBase::getSettingsDefaultValue($addon['attr']);
+  $addon['default'] = array_merge($new_default_value['default'], $globalDefault['default']);
+  
+  $results = $dispatcher->trigger( 'onBeforeAddonConfigure', array($key, &$addon) );
 }
 
 $row_default_value = SpPgaeBuilderBase::getSettingsDefaultValue($rowSettings['attr']);
@@ -74,11 +67,10 @@ $rowSettings['default'] = $row_default_value;
 $column_default_value = SpPgaeBuilderBase::getSettingsDefaultValue($columnSettings['attr']);
 $columnSettings['default'] = $column_default_value;
 
-$global_attributes = SpPgaeBuilderBase::addonOptions();
-$doc->addScriptdeclaration('var addonsJSON=' . json_encode($newAddonList) . ';');
+$doc->addScriptdeclaration('var addonsJSON=' . json_encode($addons_list) . ';');
 
 // Addon Categories
-$addon_cats = SpPgaeBuilderBase::getAddonCategories($newAddonList);
+$addon_cats = SpPgaeBuilderBase::getAddonCategories($addons_list);
 $doc->addScriptdeclaration('var addonCats=' . json_encode($addon_cats) . ';');
 
 // Global Attributes

@@ -2,11 +2,11 @@
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2016 JoomShaper
+ * @copyright Copyright (c) 2010 - 2018 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 class SppagebuilderAddonImage extends SppagebuilderAddons{
 
@@ -126,7 +126,7 @@ class SppagebuilderAddonImage extends SppagebuilderAddons{
 		</style>
 		<# if(data.image){ #>
 			<div class="sppb-addon sppb-addon-single-image {{ data.position }} {{ data.class }}">
-				<# if( !_.isEmpty( data.title ) && data.title_position != "bottom" ){ #><{{ data.heading_selector }} class="sppb-addon-title">{{ data.title }}</{{ data.heading_selector }}><# } #>
+				<# if( !_.isEmpty( data.title ) && data.title_position != "bottom" ){ #><{{ data.heading_selector }} class="sppb-addon-title sp-inline-editable-element" data-id={{data.id}} data-fieldName="title" contenteditable="true">{{ data.title }}</{{ data.heading_selector }}><# } #>
 				<div class="sppb-addon-content">
 					<div class="sppb-addon-single-image-container">
 						<# if(image_overlay && open_lightbox) { #>

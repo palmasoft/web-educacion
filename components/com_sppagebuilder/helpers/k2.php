@@ -7,7 +7,7 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 $k2Route 	 = JPATH_SITE . '/components/com_k2/helpers/route.php';
 $k2Unilities = JPATH_SITE . '/components/com_k2/helpers/utilities.php';

@@ -47,6 +47,32 @@
 			<option value="0">JNO</option>
 		</field>
 
+		<field name="disable_og"
+			type="radio"
+			class="btn-group btn-group-yesno"
+			default="0"
+			label="COM_SPPAGEBUILDER_DISABLE_OG"
+			description="COM_SPPAGEBUILDER_DISABLE_OG_DESC">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+
+		<field name="fb_app_id"
+			type="text"
+			label="COM_SPPAGEBUILDER_ADDON_FACEBOOK_APP_ID"
+			description="COM_SPPAGEBUILDER_ADDON_FACEBOOK_APP_ID_DESC" 
+			showon="disable_og:0" />
+
+		<field name="disable_tc"
+			type="radio"
+			class="btn-group btn-group-yesno"
+			default="0"
+			label="COM_SPPAGEBUILDER_DISABLE_TC"
+			description="COM_SPPAGEBUILDER_DISABLE_TC_DESC">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>	
+
 	</fieldset>
 
 	<fieldset name="licenseupdate">

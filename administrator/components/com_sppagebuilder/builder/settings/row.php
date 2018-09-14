@@ -6,7 +6,7 @@
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 $row_settings = array(
 	'type' 	=> 'content',
@@ -193,9 +193,55 @@ $row_settings = array(
 				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_TEXT_COLOR'),
 			),
 
+			'background_type'=>array(
+				'type'=>'buttons',
+				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_ENABLE_BACKGROUND_OPTIONS'),
+				'std'=>'none',
+				'values'=>array(
+					array(
+						'label' => 'None',
+						'value' => 'none'
+					),
+					array(
+						'label' => 'Color',
+						'value' => 'color'
+					),
+					array(
+						'label' => 'Image',
+						'value' => 'image'
+					),
+					array(
+						'label' => 'Gradient',
+						'value' => 'gradient'
+					),
+					array(
+						'label' => 'Video',
+						'value' => 'video'
+					),
+				)
+			),
+
 			'background_color'=>array(
 				'type'=>'color',
 				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BACKGROUND_COLOR'),
+				'depends'=>array(
+					array('background_type', '!=', 'none'),
+					array('background_type', '!=', 'video'),
+					array('background_type', '!=', 'gradient'),
+				)
+			),
+			'background_gradient'=>array(
+				'type'=>'gradient',
+				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BACKGROUND_GRADIENT'),
+				'std'=> array(
+					"color" => "#00c6fb",
+					"color2" => "#005bea",
+					"deg" => "45",
+					"type" => "linear"
+				),
+				'depends'=>array(
+					array('background_type', '=', 'gradient')
+				)
 			),
 
 			'background_image'=>array(
@@ -203,13 +249,31 @@ $row_settings = array(
 				'format'=>'image',
 				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BACKGROUND_IMAGE'),
 				'std'=>'',
-				'show_input' => true
+				'show_input' => true,
+				'depends'=>array(
+					array('background_type', '=', 'image')
+				)
+			),
+
+			'background_parallax'=>array(
+				'type'=>'checkbox',
+				'title'=>JText::_('COM_SPPAGEBUILDER_ROW_BACKGROUND_PARALLAX_ENABLE'),
+				'desc'=>JText::_('COM_SPPAGEBUILDER_ROW_BACKGROUND_PARALLAX_ENABLE_DESC'),
+				'std'=>'0',
+				'depends'=>array(
+					array('background_type', '=', 'image')
+				)
 			),
 
 			'overlay'=>array(
 				'type'=>'color',
 				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_OVERLAY'),
-				'desc'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_OVERLAY_DESC')
+				'desc'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_OVERLAY_DESC'),
+				'depends'=>array(
+					array('background_type', '!=', 'none'),
+					array('background_type', '!=', 'color'),
+					array('background_type', '!=', 'gradient'),
+				)
 			),
 
 			'background_repeat'=>array(
@@ -223,9 +287,10 @@ $row_settings = array(
 					'inherit'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_INHERIT'),
 				),
 				'std'=>'no-repeat',
-				'depends' => array(
-					array('background_image', '!=', ''),
-				),
+				'depends'=>array(
+					array('background_type', '=', 'image'),
+					array('background_image', '!=', '')
+				)
 			),
 
 			'background_size'=>array(
@@ -238,9 +303,10 @@ $row_settings = array(
 					'inherit'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_INHERIT'),
 				),
 				'std'=>'cover',
-				'depends' => array(
-					array('background_image', '!=', ''),
-				),
+				'depends'=>array(
+					array('background_type', '=', 'image'),
+					array('background_image', '!=', '')
+				)
 			),
 
 			'background_attachment'=>array(
@@ -252,9 +318,10 @@ $row_settings = array(
 					'inherit'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_INHERIT'),
 				),
 				'std'=>'fixed',
-				'depends' => array(
-					array('background_image', '!=', ''),
-				),
+				'depends'=>array(
+					array('background_type', '=', 'image'),
+					array('background_image', '!=', '')
+				)
 			),
 
 			'background_position'=>array(
@@ -272,16 +339,22 @@ $row_settings = array(
 					'100% 100%'=>JText::_('COM_SPPAGEBUILDER_RIGHT_BOTTOM'),
 				),
 				'std'=>'0 0',
-				'depends' => array(
-					array('background_image', '!=', ''),
-				),
+				'depends'=>array(
+					array('background_type', '=', 'image'),
+					array('background_image', '!=', '')
+				)
 			),
 
-			'background_video'=>array(
+			
+
+			'external_background_video'=>array(
 				'type'=>'checkbox',
-				'title'=>JText::_('COM_SPPAGEBUILDER_ROW_BACKGROUND_VIDEO_ENABLE'),
-				'desc'=>JText::_('COM_SPPAGEBUILDER_ROW_BACKGROUND_VIDEO_ENABLE_DESC'),
+				'title'=>JText::_('COM_SPPAGEBUILDER_ROW_BACKGROUND_EXTERNAL_VIDEO_ENABLE'),
+				'desc'=>JText::_('COM_SPPAGEBUILDER_ROW_BACKGROUND_EXTERNAL_VIDEO_ENABLE_DESC'),
 				'std'=>'0',
+				'depends'=>array(
+					array('background_type', '=', 'video'),
+				)
 			),
 
 
@@ -290,7 +363,8 @@ $row_settings = array(
 				'format'=>'video',
 				'title'=>JText::_('COM_SPPAGEBUILDER_ROW_BACKGROUND_VIDEO_MP4'),
 				'depends'=>array(
-					array('background_video','=',1),
+					array('background_type', '=', 'video'),
+					array('external_background_video','=',0)
 				)
 			),
 
@@ -299,7 +373,226 @@ $row_settings = array(
 				'format'=>'video',
 				'title'=>JText::_('COM_SPPAGEBUILDER_ROW_BACKGROUND_VIDEO_OGV'),
 				'depends'=>array(
-					array('background_video','=',1),
+					array('background_type', '=', 'video'),
+					array('external_background_video','=',0)
+				)
+			),
+
+			'background_external_video'=>array(
+				'type'=>'text',
+				'title'=>JText::_('COM_SPPAGEBUILDER_ROW_BACKGROUND_VIDEO_YOUTUBE_VIMEO'),
+				'depends'=>array(
+					array('background_type', '=', 'video'),
+					array('external_background_video','=',1)
+				)
+			),
+			'video_loop'	=> array(
+				'type'		=> 'checkbox',
+				'title'		=> JText::_('COM_SPPAGEBUILDER_ROW_VIDEO_LOOP'),
+				'desc'		=> JText::_('COM_SPPAGEBUILDER_ROW_VIDEO_LOOP_DESC'),
+				'std'		=> false,
+				'depends'=>array(
+					array('background_type', '=', 'video')
+				)
+			),
+
+			'separator_shape_top'=>array(
+				'type'=>'separator',
+				'title'=>JText::_('COM_SPPAGEBUILDER_ROW_TOP_SHAPE')
+			),
+
+			'show_top_shape' 		=> array(
+				'type'		=> 'checkbox',
+				'title'		=> JText::_('COM_SPPAGEBUILDER_ROW_SHOW_SHAPE'),
+				'desc'		=> JText::_('COM_SPPAGEBUILDER_ROW_SHOW_TOP_SHAPE_DESC'),
+				'std'		=> '',
+			),
+
+			'shape_name'=>array(
+				'type'=>'select',
+				'title'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE'),
+				'values'=>array(
+					'clouds-flat'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_CLOUDS_FLAT'),
+					'clouds-opacity'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_CLOUDS_OPACITY'),
+					'paper-torn'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_PAPER_TORN'),
+					'pointy-wave'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_POINTY_WAVE'),
+					'rocky-mountain'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_ROCKY_MOUNTAIN'),
+					'single-wave'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_SINGLE_WAVE'),
+					'slope-opacity'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_SLOPE_OPACITY'),
+					'slope'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_SLOPE'),
+					'waves3-opacity'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_WAVES3_OPACITY'),
+					'drip'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_DRIP'),
+					'turning-slope'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_TURNING_SLOPE'),
+				),
+				'std'=>'clouds-flat',
+				'depends'=>array(
+					array('show_top_shape','=',1)
+				)
+			),
+
+			'shape_color'=>array(
+				'type'=>'color',
+				'title'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_COLOR'),
+				'std'=>'#e5e5e5',
+				'depends'=>array(
+					array('show_top_shape','=',1)
+				)
+			),
+
+			'shape_width'=>array(
+				'type'=>'slider',
+				'title'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_WIDTH'),
+				'std'=>array(
+					'md' => 100,
+					'sm' => 100,
+					'xs' => 100
+				),
+				'max'=>600,
+				'min'=>100,
+				'responsive'=>true,
+				'depends'=>array(
+					array('show_top_shape','=',1)
+				)
+			),
+
+			'shape_height'=>array(
+				'type'=>'slider',
+				'title'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_HEIGHT'),
+				'std'=>'',
+				'max'=>600,
+				'responsive'=>true,
+				'depends'=>array(
+					array('show_top_shape','=',1)
+				)
+			),
+			'shape_flip' 		=> array(
+				'type'		=> 'checkbox',
+				'title'		=> JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_FLIP'),
+				'desc'		=> JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_FLIP_DESC'),
+				'std'		=> false,
+				'depends'=>array(
+					array('show_top_shape','=',1)
+				)
+			),
+			'shape_invert' 		=> array(
+				'type'		=> 'checkbox',
+				'title'		=> JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_INVERT'),
+				'std'		=> false,
+				'depends'=>array(
+					array('show_top_shape','=',1),
+					array('shape_name','!=','clouds-opacity'),
+					array('shape_name','!=','slope-opacity'),
+					array('shape_name','!=','waves3-opacity'),
+					array('shape_name','!=','paper-torn'),
+				)
+			),
+			'shape_to_front' 		=> array(
+				'type'		=> 'checkbox',
+				'title'		=> JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_TO_FRONT'),
+				'desc'		=> JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_TO_FRONT_DESC'),
+				'std'		=> false,
+				'depends'=>array(
+					array('show_top_shape','=',1)
+				)
+			),
+
+			'separator_shape_bottom'=>array(
+				'type'=>'separator',
+				'title'=>JText::_('COM_SPPAGEBUILDER_ROW_BOTTOM_SHAPE')
+			),
+
+			'show_bottom_shape' 		=> array(
+				'type'		=> 'checkbox',
+				'title'		=> JText::_('COM_SPPAGEBUILDER_ROW_SHOW_SHAPE'),
+				'desc'		=> JText::_('COM_SPPAGEBUILDER_ROW_SHOW_BOTTOM_SHAPE_DESC'),
+				'std'		=> '',
+			),
+
+			'bottom_shape_name'=>array(
+				'type'=>'select',
+				'title'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE'),
+				'values'=>array(
+					'clouds-flat'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_CLOUDS_FLAT'),
+					'clouds-opacity'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_CLOUDS_OPACITY'),
+					'paper-torn'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_PAPER_TORN'),
+					'pointy-wave'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_POINTY_WAVE'),
+					'rocky-mountain'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_ROCKY_MOUNTAIN'),
+					'single-wave'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_SINGLE_WAVE'),
+					'slope-opacity'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_SLOPE_OPACITY'),
+					'slope'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_SLOPE'),
+					'waves3-opacity'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_WAVES3_OPACITY'),
+					'drip'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_DRIP'),
+					'turning-slope'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_TURNING_SLOPE'),
+				),
+				'std'=>'clouds-opacity',
+				'depends'=>array(
+					array('show_bottom_shape','=',1)
+				)
+			),
+
+			'bottom_shape_color'=>array(
+				'type'=>'color',
+				'title'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_COLOR'),
+				'std'=>'#e5e5e5',
+				'depends'=>array(
+					array('show_bottom_shape','=',1)
+				)
+			),
+
+			'bottom_shape_width'=>array(
+				'type'=>'slider',
+				'title'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_WIDTH'),
+				'std'=>array(
+					'md' => 100,
+					'sm' => 100,
+					'xs' => 100
+				),
+				'max'=>600,
+				'min'=>100,
+				'responsive'=>true,
+				'depends'=>array(
+					array('show_bottom_shape','=',1)
+				)
+			),
+
+			'bottom_shape_height'=>array(
+				'type'=>'slider',
+				'title'=>JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_HEIGHT'),
+				'std'=>'',
+				'max'=>600,
+				'responsive'=>true,
+				'depends'=>array(
+					array('show_bottom_shape','=',1)
+				)
+			),
+			'bottom_shape_flip' 		=> array(
+				'type'		=> 'checkbox',
+				'title'		=> JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_FLIP'),
+				'desc'		=> JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_FLIP_DESC'),
+				'std'		=> false,
+				'depends'=>array(
+					array('show_bottom_shape','=',1)
+				)
+			),
+			'bottom_shape_invert' 		=> array(
+				'type'		=> 'checkbox',
+				'title'		=> JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_INVERT'),
+				'std'		=> false,
+				'depends'=>array(
+					array('show_bottom_shape','=',1),
+					array('bottom_shape_name','!=','clouds-opacity'),
+					array('bottom_shape_name','!=','slope-opacity'),
+					array('bottom_shape_name','!=','waves3-opacity'),
+					array('bottom_shape_name','!=','paper-torn'),
+				)
+			),
+			'bottom_shape_to_front' 		=> array(
+				'type'		=> 'checkbox',
+				'title'		=> JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_TO_FRONT'),
+				'desc'		=> JText::_('COM_SPPAGEBUILDER_ROW_SHAPE_TO_FRONT_DESC'),
+				'std'		=> false,
+				'depends'=>array(
+					array('show_bottom_shape','=',1)
 				)
 			),
 

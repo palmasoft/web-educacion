@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 jimport('joomla.application.component.modellist');
 jimport('joomla.filesystem.folder');
@@ -38,13 +38,8 @@ class SppagebuilderModelMedia extends JModelList
 
 		if($date) {
 			$year_month = explode('-', $date);
-			if($db->getServerType() == 'postgresql'){
-				$query->where('date_part(\'year\', created_on) = ' . $year_month[0]);
-				$query->where('date_part(\'month\', created_on) = ' . $year_month[1]);
-			} else {
-				$query->where('YEAR(created_on) = ' . $year_month[0]);
-				$query->where('MONTH(created_on) = ' . $year_month[1]);
-			}
+			$query->where('YEAR(created_on) = ' . $year_month[0]);
+			$query->where('MONTH(created_on) = ' . $year_month[1]);
 		}
 
 		if($type != '*') {
@@ -70,11 +65,7 @@ class SppagebuilderModelMedia extends JModelList
 	public function getDateFilters($date = '', $search = '') {
 		$db = JFactory::getDbo();
 		$query = $db->getQuery(true);
-		if($db->getServerType() == 'postgresql'){
-			$query->select('DISTINCT created_on, date_part( \'year\', created_on ) AS year, date_part( \'month\', created_on ) AS month');
-		} else {
-			$query->select('DISTINCT YEAR( created_on ) AS year, MONTH( created_on ) AS month');
-		}
+		$query->select('DISTINCT YEAR( created_on ) AS year, MONTH( created_on ) AS month');
 		$query->from($db->quoteName('#__spmedia'));
 
 		if($search) {
@@ -85,13 +76,8 @@ class SppagebuilderModelMedia extends JModelList
 
 		if($date) {
 			$date = explode('-', $date);
-			if($db->getServerType() == 'postgresql'){
-				$query->where('date_part( \'year\', created_on) = ' . $date[0]);
-				$query->where('date_part( \'month\', created_on) = ' . $date[1]);
-			} else {
-				$query->where('YEAR(created_on) = ' . $date[0]);
-				$query->where('MONTH(created_on) = ' . $date[1]);
-			}
+			$query->where('YEAR(created_on) = ' . $date[0]);
+			$query->where('MONTH(created_on) = ' . $date[1]);
 		}
 
 		//Check User permission
@@ -124,13 +110,8 @@ class SppagebuilderModelMedia extends JModelList
 
 		if($date) {
 			$date = explode('-', $date);
-			if($db->getServerType() == 'postgresql'){
-				$query->where('date_part( \'year\', created_on) = ' . $date[0]);
-				$query->where('date_part( \'month\', created_on) = ' . $date[1]);
-			} else {
-				$query->where('YEAR(created_on) = ' . $date[0]);
-				$query->where('MONTH(created_on) = ' . $date[1]);
-			}
+			$query->where('YEAR(created_on) = ' . $date[0]);
+			$query->where('MONTH(created_on) = ' . $date[1]);
 		}
 
 		if($type != '*') {

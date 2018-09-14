@@ -2,11 +2,11 @@
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2016 JoomShaper
+ * @copyright Copyright (c) 2010 - 2018 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 class SppagebuilderAddonText_block extends SppagebuilderAddons {
 
@@ -55,7 +55,7 @@ class SppagebuilderAddonText_block extends SppagebuilderAddons {
 		$style_xs .= (isset($this->addon->settings->text_lineheight_xs) && $this->addon->settings->text_lineheight_xs) ? "line-height: " . $this->addon->settings->text_lineheight_xs . "px;" : "";
 
 		if(isset($this->addon->settings->dropcap) && $this->addon->settings->dropcap && !empty($dropcap_style)){
-			$css .= '#sppb-addon-' . $this->addon->id . ' .sppb-dropcap:first-letter{ ' . $dropcap_style . ' }';
+			$css .= '#sppb-addon-' . $this->addon->id . ' .sppb-dropcap .sppb-addon-content:first-letter{ ' . $dropcap_style . ' }';
 		}
 
 		if($style){
@@ -129,8 +129,8 @@ class SppagebuilderAddonText_block extends SppagebuilderAddons {
 			}
 		</style>
 		<div class="sppb-addon sppb-addon-text-block {{ dropcap }} {{ data.alignment }} {{ data.class }}">
-			<# if( !_.isEmpty( data.title ) ){ #><{{ data.heading_selector }} class="sppb-addon-title">{{{ data.title }}}</{{ data.heading_selector }}><# } #>
-			<div class="sppb-addon-content">{{{ data.text }}}</div>
+			<# if( !_.isEmpty( data.title ) ){ #><{{ data.heading_selector }} class="sppb-addon-title sp-inline-editable-element" data-id={{data.id}} data-fieldName="title" contenteditable="true">{{{ data.title }}}</{{ data.heading_selector }}><# } #>
+			<div id="addon-text-{{data.id}}" class="sppb-addon-content sp-editable-content" data-id={{data.id}} data-fieldName="text">{{{ data.text }}}</div>
 		</div>';
 		return $output;
 	}

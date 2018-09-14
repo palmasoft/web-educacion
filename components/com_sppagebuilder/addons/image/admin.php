@@ -2,11 +2,11 @@
 /**
 * @package SP Page Builder
 * @author JoomShaper http://www.joomshaper.com
-* @copyright Copyright (c) 2010 - 2016 JoomShaper
+* @copyright Copyright (c) 2010 - 2018 JoomShaper
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 SpAddonsConfig::addonConfig(
 	array(
@@ -204,7 +204,9 @@ SpAddonsConfig::addonConfig(
 				),
 
 				'link'=>array(
-					'type'=>'text',
+					'type'=>'media',
+					'format'=>'attachment',
+					'hide_preview'=>true,
 					'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_LINK'),
 					'desc'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_LINK_DESC'),
 					'std'=>'',

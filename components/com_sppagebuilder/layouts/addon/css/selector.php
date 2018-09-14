@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 $addon_id = $displayData['addon_id'];
 $selector = (isset($displayData['selector']) && $displayData['selector']) ? $displayData['selector'] : '';

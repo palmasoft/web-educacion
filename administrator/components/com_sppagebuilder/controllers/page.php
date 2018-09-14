@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 class SppagebuilderControllerPage extends JControllerForm {
 
@@ -16,9 +16,9 @@ class SppagebuilderControllerPage extends JControllerForm {
 
 	protected function allowEdit($data = array(), $key = 'id')
 	{
-		$recordId = (int) isset($data[$key]) ? $data[$key] : 0;
-		$user = JFactory::getUser();
-		$userId = $user->get('id');
+		$recordId 	= (int) isset($data[$key]) ? $data[$key] : 0;
+		$user 		= JFactory::getUser();
+		$userId 	= $user->get('id');
 
 		// Check general edit permission first.
 		if ($user->authorise('core.edit', 'com_sppagebuilder.page.' . $recordId))
@@ -188,12 +188,22 @@ class SppagebuilderControllerPage extends JControllerForm {
 				$siteApp = JApplication::getInstance('site');
 				$siteRouter = $siteApp->getRouter();
 				$Itemid = SppagebuilderHelper::getMenuId($recordId);
-
+				// Get item language code
+				$lang_code = (isset($data['language']) && $data['language'] && explode('-',$data['language'])[0])? explode('-',$data['language'])[0] : '';
+				
+				// Preview URL
 				$preview = 'index.php?option=com_sppagebuilder&view=page&id=' . $recordId . $Itemid;
 				$output['preview_url'] = str_replace('/administrator', '', $siteRouter->build($preview));
+				if($lang_code && $lang_code !== '*' ){
+					$output['preview_url'] = str_replace('/index.php/', '/index.php/' . $lang_code . '/', $output['preview_url']);
+				}
 
+				// Frontend Editing URL
 				$front_link = 'index.php?option=com_sppagebuilder&view=form&tmpl=componenet&layout=edit&id=' . $recordId . $Itemid;
 				$output['frontend_editor_url'] = str_replace('/administrator', '', $siteRouter->build($front_link));
+				if($lang_code && $lang_code !== '*' ){
+					$output['frontend_editor_url'] = str_replace('/index.php/', '/index.php/' . $lang_code . '/', $output['frontend_editor_url']);
+				}
 				$output['id'] = $recordId;
 				break;
 
@@ -248,6 +258,38 @@ class SppagebuilderControllerPage extends JControllerForm {
 		} else {
 			die('Failed');
 		}
+	}
+
+	public function getMyAddons() {
+		$model = $this->getModel();
+		die($model->getMyAddons());
+	}
+
+	public function saveAddon() {
+		$model = $this->getModel();
+		$app = JFactory::getApplication();
+		$input = $app->input;
+
+		$title = htmlspecialchars($input->get('title', '', 'STRING'));
+		$addon = $input->get('addon', '', 'RAW');
+
+		if($title && $addon) {
+			$addon_id = $model->saveAddon($title, $addon);
+			echo $addon_id;
+			die();
+		} else {
+			die('Failed');
+		}
+	}
+
+	public function deleteAddon(){
+		$model = $this->getModel();
+		$app = JFactory::getApplication();
+		$input = $app->input;
+
+		$id = $input->get('id', '', 'INT');
+
+		die($model->deleteAddon($id));
 	}
 
 }

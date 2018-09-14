@@ -13,12 +13,35 @@ $id = uniqid();
 ?>
 <style type="text/css">
     #myCarousel<?php echo $id ?> .item {
-        height: 400px;
+        height: 480px;
     }
     #myCarousel<?php echo $id ?> .item img {
         width: 100%;
-        height: 400px;
+        height: 480px;
     }
+    
+    #myCarousel<?php echo $id ?> .carousel-caption {
+      padding: 0px;
+      width: 100%;
+      padding-bottom: 30px;
+      margin: 0px;
+      left: 0px;
+     bottom: 60px;
+      background: rgba(76,76,76,0.65);
+      height: 40px;
+    }
+    
+    
+    #myCarousel<?php echo $id ?> .carousel-caption h2 {
+      height: 40px;
+      margin: 0px;
+      padding: 0px;
+      text-align: center;
+      vertical-align: middle;
+     font-size: 170%;
+    line-height: 40px;
+    }
+    
 </style>
 <div id="myCarousel<?php echo $id ?>" class="carousel slide carrusel-noticias" data-ride="carousel">
   <!-- Wrapper for slides -->
@@ -50,10 +73,10 @@ $id = uniqid();
 	    <div class="item  <?php echo ( ($i==0)? 'active' : '' ) ?>"  >
 	        <a href="<?php echo $item->link; ?>">
 	       <img src="<?= $image ?>" alt="<?= $alt ?>" title="<?= $caption ?>" class="img d-block w-100" />
-	       <!--<div class="carousel-caption d-none d-md-block">-->
-	       <!--     <h5><?= $item->title ?></h5>-->
-	       <!--     <p><?= $item->introtext ?></p>-->
-	       <!--</div>-->
+	       <div class="carousel-caption d-none d-md-block">
+	            <h2><?= $item->title ?></h2>
+	            <!--<small><?= $item->introtext ?></small>-->
+	       </div>
 	       </a>
         </div>
     <?php endfor; ?>

@@ -1,0 +1,1 @@
+var HotspotsMarker = {"id":"3","lat":11.24356,"lng":-74.204514,"title":"INSTITUCI\u00d3N EDUCATIVA DISTRITAL T\u00c9CNICO INDUSTRIAL","description":"<strong>INSTITUCI\u00d3N EDUCATIVA DISTRITAL T\u00c9CNICO INDUSTRIAL<\/strong><br\/><br\/>\n\n","icon":"https:\/\/educacion-jpllinas.c9users.io\/images\/marcador-mapa-educacion-32x52.png"};

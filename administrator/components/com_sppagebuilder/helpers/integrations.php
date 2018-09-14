@@ -6,7 +6,7 @@
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 class SppagebuilderHelperIntegrations {
 
@@ -16,7 +16,7 @@ class SppagebuilderHelperIntegrations {
 
 	public static function integrations_list() {
 
-		$integration_api = 'http://sppagebuilder.com/api/integrations/integrations.json';
+		$integration_api = 'https://sppagebuilder.com/api/integrations/integrations.json';
 
 		if( ini_get('allow_url_fopen') ) {
 			$components = json_decode(file_get_contents($integration_api));
@@ -27,7 +27,7 @@ class SppagebuilderHelperIntegrations {
 			die(json_encode($report));
 		}
 
-		$components = json_decode(file_get_contents('http://sppagebuilder.com/api/integrations/integrations.json'));
+		$components = json_decode(file_get_contents('https://sppagebuilder.com/api/integrations/integrations.json'));
 		$integrations = new stdClass;
 
 		foreach ($components as $key => $component) {
@@ -38,5 +38,19 @@ class SppagebuilderHelperIntegrations {
 
 		return $integrations;
 
+	}
+
+	public static function getCurlData($url) {
+		$headers = array();
+		$headers[] = "Content-Type: text/html";
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+		$components = curl_exec($ch);
+		curl_close($ch);
+
+		return $components;
 	}
 }

@@ -1,0 +1,1 @@
+var HotspotsMarker = {"id":"2","lat":11.243361,"lng":-74.203499,"title":"Instituci\u00f3n Educativa Distrital IED Liceo Celed\u00f3n","description":"<strong>Instituci\u00f3n Educativa Distrital IED Liceo Celed\u00f3n<\/strong><br\/><br\/>\n\n","icon":"https:\/\/educacion-jpllinas.c9users.io\/images\/marcador-mapa-educacion-32x52.png"};

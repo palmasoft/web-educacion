@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 jimport('joomla.application.component.view');
 
@@ -86,7 +86,7 @@ class SppagebuilderViewPages extends JViewLegacy {
 		}
 
 		// new page button
-		if ($canDo->get('core.admin')) {
+		if ($canDo->get('core.admin') || $canDo->get('core.create')) {
 			JToolbarHelper::addNew('page.add');
 		}
 
@@ -105,11 +105,11 @@ class SppagebuilderViewPages extends JViewLegacy {
 		// delete and trush button
 		if ($this->state->get('filter.published') == -2 && $canDo->get('core.delete')) {
 			JToolbarHelper::deleteList('', 'pages.delete', 'JTOOLBAR_EMPTY_TRASH');
-		} elseif ($canDo->get('core.edit.state')) {
+		} elseif ($canDo->get('core.edit.state') && $canDo->get('core.delete')) {
 			JToolbarHelper::trash('pages.trash');
 		}
 
-    JHtmlSidebar::addFilter(
+    	JHtmlSidebar::addFilter(
 			JText::_('JOPTION_SELECT_PUBLISHED'),
 			'filter_published',
 			JHtml::_('select.options', JHtml::_('jgrid.publishedOptions',array('archived'=>false)), 'value', 'text', $this->state->get('filter.published'), true)

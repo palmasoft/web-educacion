@@ -6,11 +6,12 @@
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined('_JEXEC') or die ('restricted aceess');
+defined('_JEXEC') or die ('Restricted access');
 
 JHtml::_('formbehavior.chosen', '.sp-pagebuilder-media-toolbar select');
 
 $doc = JFactory::getDocument();
+$doc->addScriptdeclaration('var pagebuilder_base="' . JURI::root() . 'administrator/";');
 $doc->addStylesheet( JURI::base(true) . '/components/com_sppagebuilder/assets/css/pbfont.css' );
 $doc->addStylesheet( JURI::base(true) . '/components/com_sppagebuilder/assets/css/font-awesome.min.css' );
 $doc->addStylesheet( JURI::base(true) . '/components/com_sppagebuilder/assets/css/sppagebuilder.css' );

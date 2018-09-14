@@ -6,7 +6,7 @@
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 JHtml::_('jquery.framework');
 JHtml::_('jquery.ui', array('core', 'sortable'));
@@ -23,6 +23,8 @@ $doc->addStylesheet( JURI::base(true) . '/administrator/components/com_sppagebui
 $doc->addStyleSheet(JUri::base(true).'/components/com_sppagebuilder/assets/css/font-awesome.min.css');
 $doc->addStyleSheet(JUri::base(true).'/components/com_sppagebuilder/assets/css/animate.min.css');
 $doc->addStyleSheet(JUri::base(true).'/components/com_sppagebuilder/assets/css/sppagebuilder.css');
+$doc->addStyleSheet(JUri::base(true).'/components/com_sppagebuilder/assets/css/medium-editor.min.css');
+$doc->addStyleSheet(JUri::base(true).'/components/com_sppagebuilder/assets/css/medium-editor-beagle.min.css');
 $doc->addStyleSheet(JUri::base(true).'/components/com_sppagebuilder/assets/css/edit-iframe.css');
 if ($params->get('addcontainer', 1)) {
 	$doc->addStyleSheet(JUri::base(true) . '/components/com_sppagebuilder/assets/css/sppagecontainer.css');
@@ -30,10 +32,12 @@ if ($params->get('addcontainer', 1)) {
 
 $doc->addScriptdeclaration('var pagebuilder_base="' . JURI::root() . '";');
 $doc->addScript( JUri::base(true).'/components/com_sppagebuilder/assets/js/edit.js' );
+$doc->addScript( JUri::base(true). '/components/com_sppagebuilder/assets/js/medium-editor.min.js' );
 $doc->addScript( JURI::base(true) . '/administrator/components/com_sppagebuilder/assets/js/script.js' );
 $doc->addScript( JUri::base(true). '/components/com_sppagebuilder/assets/js/actions.js' );
-$doc->addScript( JURI::base(true) . '/components/com_sppagebuilder/assets/js/sppagebuilder.js' );
 $doc->addScript( JURI::base(true) . '/components/com_sppagebuilder/assets/js/jquery.vide.js' );
+$doc->addScript( JURI::base(true) . '/components/com_sppagebuilder/assets/js/jquery.parallax-1.1.3.js' );
+$doc->addScript( JURI::base(true) . '/components/com_sppagebuilder/assets/js/sppagebuilder.js' );
 
 $menus = $app->getMenu();
 $menu = $menus->getActive();
@@ -56,7 +60,7 @@ $addons_list = SpAddonsConfig::$addons;
 
 foreach ($addons_list as &$addon) {
 	$addon['visibility'] = true;
-  unset($addon['attr']);
+	unset($addon['attr']);
 }
 SpPgaeBuilderBase::loadAssets($addons_list);
 $addon_cats = SpPgaeBuilderBase::getAddonCategories($addons_list);
@@ -86,4 +90,44 @@ if (!$this->item->text) {
 	jQuery(document).on('click', 'a', function(e){
 		e.preventDefault();
 	})
+
+	jQuery(document).on('click', '.sp-editable-content', function(e){
+		e.preventDefault();
+		var ids = jQuery(this).attr('id')
+		
+		var editor = new MediumEditor('#'+ids,{
+			toolbar: {
+				allowMultiParagraphSelection: true,
+				buttons: [
+					'bold', 'italic', 'underline',
+					{
+						name: 'anchor',
+						contentDefault: '<i class="fa fa-link"></i>',
+						anchorPreview: false,
+						formSaveLabel: '<i class="fa fa-check"></i>',
+						formCloseLabel: '<i class="fa fa-times"></i>'
+					},'h2','h3',
+					{
+						name: 'unorderedlist',
+						contentDefault: '<i class="fa fa-list-ul"></i>'
+					},
+					{
+						name: 'orderedlist',
+						contentDefault: '<i class="fa fa-list-ol"></i>'
+					}
+					],
+				diffLeft: 0,
+				diffTop: -10,
+				firstButtonClass: 'medium-editor-button-first',
+				lastButtonClass: 'medium-editor-button-last',
+				relativeContainer: null,
+				standardizeSelectionStart: false,
+				static: false,
+				align: 'center',
+				sticky: false,
+				updateOnEmptySelection: false,
+			}
+		});
+	})
+	
 </script>

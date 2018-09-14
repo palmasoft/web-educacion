@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 jimport('joomla.application.component.helper');
 
@@ -35,17 +35,7 @@ if ( $action === 'pre-page-list' ) {
 	} else {
 		$templateApi = 'https://sppagebuilder.com/api/templates/templates.php';
 
-		if(extension_loaded('curl')){
-			$headers = array();
-			$headers[] = "Content-Type: text/html";
-
-			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-			curl_setopt($ch, CURLOPT_URL, $templateApi);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-			$templatesData = curl_exec($ch);
-			curl_close($ch);
-		} else if(ini_get('allow_url_fopen')){
+		if(ini_get('allow_url_fopen')){
 			$opts = array(
 				'http' => array(
 					'method'  => 'GET',
@@ -55,6 +45,16 @@ if ( $action === 'pre-page-list' ) {
 			);
 			$context  = stream_context_create($opts);
 			$templatesData = file_get_contents($templateApi, false, $context);
+		} else if(extension_loaded('curl')){
+			$headers = array();
+			$headers[] = "Content-Type: text/html";
+
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_URL, $templateApi);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+			$templatesData = curl_exec($ch);
+			curl_close($ch);
 		} else {
 			$output = array('status' => false, 'data' => 'Please enable \'cURL\' or url_fopen in PHP or contact with your Server or Hosting administrator.');
 		}
@@ -89,17 +89,7 @@ if ( $action === 'get-pre-page-data' ) {
 
 	$pageData = '';
 
-	if(extension_loaded('curl')){
-		$headers = array();
-		$headers[] = "Content-Type: text/html";
-
-		$ch = curl_init();
-		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-		curl_setopt($ch, CURLOPT_URL, $pageApi);
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-		$pageData = curl_exec($ch);
-		curl_close($ch);
-	} else if(ini_get('allow_url_fopen')){
+	if(ini_get('allow_url_fopen')){
 		$opts = array(
 			'http' => array(
 				'method'  => 'GET',
@@ -109,6 +99,16 @@ if ( $action === 'get-pre-page-data' ) {
 		);
 		$context  = stream_context_create($opts);
 		$pageData = file_get_contents($pageApi, false, $context);
+	} else if (extension_loaded('curl')){
+		$headers = array();
+		$headers[] = "Content-Type: text/html";
+
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+		curl_setopt($ch, CURLOPT_URL, $pageApi);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+		$pageData = curl_exec($ch);
+		curl_close($ch);
 	} else {
 		$output = array('status' => false, 'data' => 'Please enable \'cURL\' or url_fopen in PHP or contact with your Server or Hosting administrator.');
 	}
@@ -152,17 +152,7 @@ if ( $action === 'pre-section-list' ) {
 		$args = '?email=' . $cParams->get('joomshaper_email') . '&api_key='.$cParams->get('joomshaper_license_key');
 		$sectionApi = 'https://sppagebuilder.com/api/sections/sections.php'. $args;
 
-		if(extension_loaded('curl')){
-			$headers = array();
-	    $headers[] = "Content-Type: text/html";
-
-			$ch = curl_init();
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-			curl_setopt($ch, CURLOPT_URL, $sectionApi);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
-			$sectionsData = curl_exec($ch);
-			curl_close($ch);
-		} else if(ini_get('allow_url_fopen')){
+		if(ini_get('allow_url_fopen')){
 			$opts = array(
 				'http' => array(
 			    'method'  => 'GET',
@@ -172,6 +162,16 @@ if ( $action === 'pre-section-list' ) {
 			);
 			$context  = stream_context_create($opts);
 			$sectionsData = file_get_contents($sectionApi, false, $context);
+		} else if(extension_loaded('curl')){
+			$headers = array();
+	    	$headers[] = "Content-Type: text/html";
+
+			$ch = curl_init();
+			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+			curl_setopt($ch, CURLOPT_URL, $sectionApi);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
+			$sectionsData = curl_exec($ch);
+			curl_close($ch);
 		} else {
 			$output = array('status' => false, 'data' => 'Please enable \'cURL\' or url_fopen in PHP or contact with your Server or Hosting administrator.');
 		}
@@ -185,7 +185,7 @@ if ( $action === 'pre-section-list' ) {
 	if (!empty($sectionsData)) {
 		$sections = json_decode($sectionsData);
 
-		if (count((array) $sections)) {
+		if ((is_array($sections) && count($sections) ) || is_object($sections)) {
 			$output['status'] = true;
 			$output['data'] = $sections;
 			echo json_encode($output); die();

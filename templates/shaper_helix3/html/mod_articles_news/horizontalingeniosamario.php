@@ -10,9 +10,24 @@
 defined('_JEXEC') or die;
 ?>
 <style type="text/css">
+	
 	#list-ult-articulos-puroingeniosamario a:before {
-		content:'';
+		content: '';
 	}
+	
+	#list-ult-articulos-puroingeniosamario > li:first-child {
+		padding-right: 5px;
+	}
+	
+	#list-ult-articulos-puroingeniosamario > li {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+	
+	#list-ult-articulos-puroingeniosamario > li:last-child {
+		padding-left: 5px;
+	}
+	
 </style>
 <ul id="list-ult-articulos-puroingeniosamario" class="newsflash-horiz<?php echo $params->get('moduleclass_sfx'); ?>">
 	<?php for ($i = 0, $n = count($list); $i < $n; $i ++) : ?>

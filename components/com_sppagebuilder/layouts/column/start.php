@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 $options = $displayData['options'];
 $custom_class  = (isset($options->class)) ? ' ' . $options->class : '';
@@ -54,7 +54,7 @@ if(isset($options->animation) && $options->animation) {
 }
 
 $html  = '';
-$html .= '<div class="sppb-' . $options->cssClassName . '">';
+$html .= '<div class="sppb-' . $options->cssClassName . '" id="column-wrap-id-'. $options->dynamicId .'">';
 $html .= '<div id="column-id-'. $options->dynamicId .'" class="sppb-column' . $custom_class . '" ' . $data_attr . '>';
 
 if (isset($options->background_image) && $options->background_image) {

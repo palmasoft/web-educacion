@@ -10,9 +10,11 @@
 defined ('_JEXEC') or die ('restricted access');
 JHtml::_('jquery.framework');
 $doc = JFactory::getDocument();
+$doc->addScriptdeclaration('var pagebuilder_base="' . JURI::root() . 'administrator/";');
 $doc->addStylesheet( JURI::base(true) . '/components/com_sppagebuilder/assets/css/font-awesome.min.css' );
 $doc->addStylesheet( JURI::base(true) . '/components/com_sppagebuilder/assets/css/pbfont.css' );
 $doc->addStylesheet( JURI::base(true) . '/components/com_sppagebuilder/assets/css/sppagebuilder.css' );
+$doc->addScript( JURI::base(true) . '/components/com_sppagebuilder/assets/js/languages.js' );
 
 require_once JPATH_ADMINISTRATOR . '/components/com_sppagebuilder/helpers/languages.php';
 $languages = SppagebuilderHelperLanguages::language_list();
@@ -30,23 +32,13 @@ $languages = SppagebuilderHelperLanguages::language_list();
 	<div id="j-main-container" class="span10">
 		<div class="sp-pagebuilder-main-container-inner">
 			<div class="sp-pagebuilder-pages-toolbar clearfix"></div>
-			<div class="sp-pagebuilder-pages top-notice-bar">
-				<div class="row-fluid">
-					<div class="span12">
-						<div class="sppb-upgrade-pro">
-							<div class="sppb-upgrade-pro-icon pull-left">
-								<img src="<?php echo JURI::root(true) . '/administrator/components/com_sppagebuilder/assets/img/notice-alert.png'; ?>" alt="Notice">
-							</div>
-							<div class="sppp-upgrade-pro-text pull-left">
-								<h4>Get SP Page Builder Pro to unlock the best experience ever</h4>
-								<p>SP Page Builder Pro offers live frontend editing, 45+ addons, 90+ ready Sections, 25+ readymade templates, premium support, and more. <a href="https://www.joomshaper.com/page-builder" target="_blank"><strong>Get SP Page Builder Pro now!</strong></a></p>
-							</div>
-							<a href="#" class="pull-right"><img alt="Close Icon" src="<?php echo JURI::root(true) . '/administrator/components/com_sppagebuilder/assets/img/close-icon.png'; ?>"></a>
-							<div class="clearfix"></div>
-						</div>
-					</div>
-				</div>
-			</div>
+			<?php
+				$app = JFactory::getApplication();
+				$messages = $app->getMessageQueue();
+				if (empty($languages)) {
+					$messages = array(array('type'=>'warning', 'message'=>JText::_('JGLOBAL_NO_MATCHING_RESULTS')));
+				}
+			?>
 
 			<?php if(isset($messages) && count((array) $messages)) { ?>
 				<div class="sp-pagebuilder-message-container">
@@ -68,7 +60,7 @@ $languages = SppagebuilderHelperLanguages::language_list();
 							<th width="5%" class="center">
 								#
 							</th>
-							<th width="50%">
+							<th width="60%">
 								<?php echo JText::_('COM_SPPAGEBUILDER_FIELD_LANGUAGE'); ?>
 							</th>
 							<th width="12%" class="hidden-phone center">
@@ -80,7 +72,7 @@ $languages = SppagebuilderHelperLanguages::language_list();
 							<th width="10%" class="hidden-phone center">
 								<?php echo JText::_('COM_SPPAGEBUILDER_FIELD_INSTALLED'); ?>
 							</th>
-							<th width="20%" class="hidden-phone center">
+							<th width="10%" class="hidden-phone">
 								<?php echo JText::_('COM_SPPAGEBUILDER_FIELD_ACTION'); ?>
 							</th>
 						</tr>
@@ -118,7 +110,7 @@ $languages = SppagebuilderHelperLanguages::language_list();
 									}
 								}
 							} ?>
-							<tr class="available" data-language="<?php echo $key; ?>">
+							<tr class="<?php echo $class . ' update-'. $update_status; ?>" data-language="<?php echo $key; ?>">
 								<td class="center">
 									<?php echo $item_no; ?>
 								</td>
@@ -138,9 +130,13 @@ $languages = SppagebuilderHelperLanguages::language_list();
 								<td class="center installed-version">
 									<span class="label <?php echo $update_class; ?>"><?php echo $installed_version; ?></span>
 								</td>
-								<td class="center">
+								<td>
 									<div class="sp-pagebuilder-lang-btns">
-										<a class="sp-pagebuilder-btn sp-pagebuilder-btn-success sp-pagebuilder-btn-sm sp-pagebuilder-btn-install" href="https://www.joomshaper.com/page-builder" target="_blank" style="color: #fff; margin: 5px 0;">Available in Pro</a>
+										<a class="sp-pagebuilder-btn sp-pagebuilder-btn-success sp-pagebuilder-btn-sm sp-pagebuilder-btn-install" href="#" style="color: #fff; margin: 5px 0;"><i></i><?php echo JText::_('COM_SPPAGEBUILDER_INSTALL'); ?></a>
+										<?php if ($update_status == 'available') { ?>
+											<a class="sp-pagebuilder-btn sp-pagebuilder-btn-warning sp-pagebuilder-btn-sm sp-pagebuilder-btn-update" href="#" style="color: #fff; margin: 5px 0;"><i></i><?php echo JText::_('COM_SPPAGEBUILDER_UPDATE'); ?></a>
+										<?php } ?>
+										<a class="sp-pagebuilder-btn sp-pagebuilder-btn-info sp-pagebuilder-btn-sm sp-pagebuilder-btn-up-to-date" href="#" style="color: #fff; margin: 5px 0;"><i></i><?php echo JText::_('COM_SPPAGEBUILDER_INSTALLED'); ?></a>
 									</div>
 								</td>
 							</tr>

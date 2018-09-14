@@ -11,6 +11,7 @@ defined ('_JEXEC') or die ('restricted access');
 require_once JPATH_ROOT .'/components/com_sppagebuilder/parser/addon-parser.php';
 $doc = JFactory::getDocument();
 $doc->addStyleSheet(JUri::base(true).'/components/com_sppagebuilder/assets/css/sppagebuilder.css');
+$doc->addScript(JUri::base(true).'/components/com_sppagebuilder/assets/js/jquery.parallax-1.1.3.js');
 $doc->addScript(JUri::base(true).'/components/com_sppagebuilder/assets/js/sppagebuilder.js');
 ?>
 <div class="mod-sppagebuilder <?php echo $moduleclass_sfx ?> sp-page-builder" >

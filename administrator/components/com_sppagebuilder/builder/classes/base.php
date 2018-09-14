@@ -6,7 +6,7 @@
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 jimport( 'joomla.filesystem.file' );
 jimport( 'joomla.filesystem.folder' );
@@ -30,8 +30,8 @@ class SpPgaeBuilderBase {
 		$query = $db->getQuery(true);
 		$query->select($db->quoteName(array('template')));
 		$query->from($db->quoteName('#__template_styles'));
-		$query->where($db->quoteName('client_id') . ' = ' . $db->quote('0'));
-		$query->where($db->quoteName('home') . ' = ' . $db->quote('1'));
+		$query->where($db->quoteName('client_id') . ' = 0');
+		$query->where($db->quoteName('home') . ' = 1');
 		$db->setQuery($query);
 
 		return $db->loadObject()->template;
@@ -56,7 +56,7 @@ class SpPgaeBuilderBase {
 			$folders = array_unique( $merge_folders );
 		}
 
-		if ( count( (array)  $folders ) ) {
+		if ( count( (array) $folders ) ) {
 			foreach ( $folders as $folder ) {
 				$tmpl_file_path = $template_path . '/sppagebuilder/addons/'.$folder.'/admin.php';
 				$com_file_path = JPATH_ROOT . '/components/com_sppagebuilder/addons/'.$folder.'/admin.php';
@@ -172,6 +172,50 @@ class SpPgaeBuilderBase {
 				$i = $i + 1;
 			}
 		}
+
+		return $result;
+	}
+	// Get article tags list
+	public static function getArticleTags() {
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true)
+			->select('DISTINCT a.id, a.title, a.level, a.published, a.lft, a.parent_id');
+		$subQuery = $db->getQuery(true)
+			->select('id,title,level,published,parent_id,lft,rgt')
+			->from('#__tags')
+			->where($db->quoteName('published') . ' = ' . $db->quote(1) 
+		);
+
+		$query->from('(' . $subQuery->__toString() . ') AS a')
+			->join('LEFT', $db->quoteName('#__tags') . ' AS b ON a.lft > b.lft AND a.rgt < b.rgt');
+		$query->where($db->quoteName('a.level') . ' != '. $db->quote(0));
+		$query->order('a.lft ASC');
+		$db->setQuery($query);
+		$tags = $db->loadObjectList();
+
+		$article_tags = array();
+		if(count((array) $tags)){
+			foreach($tags as $tag){
+				$parent_tag = '';
+				if($tag->level > 1) {
+					$parent_tag = self::getParentTag($tag->parent_id)->title . '/';
+				}
+				$article_tags[$tag->id] = $parent_tag . $tag->title;
+			}
+		}
+
+		return $article_tags;
+	}
+	// get parent tag info by tag id
+	private static function getParentTag($parentid = '') {
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true);
+		$query->select( array('a.id', 'a.title') );
+		$query->from($db->quoteName('#__tags', 'a'));
+		$query->where($db->quoteName('id')." = ".$db->quote($parentid));
+		$query->where($db->quoteName('published')." = 1");
+		$db->setQuery($query);
+		$result = $db->loadObject();
 
 		return $result;
 	}
@@ -401,5 +445,95 @@ class SpPgaeBuilderBase {
 			}
 		}
 		return $redefault;
+	}
+
+	public static function acymailingList()
+	{
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true);
+		$query->select( 'a.enabled' );
+		$query->from($db->quoteName('#__extensions', 'a'));
+		$query->where($db->quoteName('a.name')." = ".$db->quote('AcyMailing'));
+		$db->setQuery($query);
+		$is_enabled = $db->loadResult();
+
+		$listArray = array();
+
+		if($is_enabled){
+			$query2 = $db->getQuery(true);
+			$query2->select($db->quoteName(array('listid', 'name')));
+			$query2->from($db->quoteName('#__acymailing_list'));
+			$query2->where($db->quoteName('published') . ' = '. $db->quote(1));
+			$query2->order('ordering ASC');
+			$db->setQuery($query2);
+			$lists = $db->loadObjectList();
+
+			if(count((array) $lists)){
+				foreach($lists as $list){
+					$listArray[$list->listid] = $list->name;
+				}
+			}
+
+		}
+		
+		return $listArray;
+		
+	}
+
+	public static function k2CatList()
+	{
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true);
+		$query->select( 'a.enabled' );
+		$query->from($db->quoteName('#__extensions', 'a'));
+		$query->where($db->quoteName('a.name')." = ".$db->quote('com_k2'));
+		$db->setQuery($query);
+		$is_enabled = $db->loadResult();
+
+		$listArray = array('' => JText::_('COM_SPPAGEBUILDER_ADDON_ARTICLE_ALL_CAT'));
+
+		if($is_enabled){
+			$db = JFactory::getDBO();
+			$query = 'SELECT m.* FROM #__k2_categories m WHERE trash = 0 ORDER BY parent, ordering';
+			$db->setQuery($query);
+			$mitems = $db->loadObjectList();
+			$children = array();
+			if ($mitems){
+					foreach ($mitems as $v)
+					{
+							if (K2_JVERSION != '15')
+							{
+									$v->title = $v->name;
+									$v->parent_id = $v->parent;
+							}
+							$pt = $v->parent;
+							$list = @$children[$pt] ? $children[$pt] : array();
+							array_push($list, $v);
+							$children[$pt] = $list;
+					}
+			}
+
+			$list = JHTML::_('menu.treerecurse', 0, '', array(), $children, 9999, 0, 0);
+			$mitems = array();
+
+			if(count((array) $list)){
+				foreach ($list as $item)
+				{
+						$item->treename = JString::str_ireplace('&#160;', '- ', $item->treename);
+						$mitems[] = JHTML::_('select.option', $item->id, '   '.$item->treename);
+				}
+			}
+
+			if(count((array) $mitems)){
+				foreach( $mitems as $key=>$category ){
+					$listArray[$category->value] = $category->text;
+				}
+			}
+
+
+		}
+		
+		return $listArray;
+		
 	}
 }

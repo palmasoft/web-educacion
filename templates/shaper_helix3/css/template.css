@@ -846,7 +846,7 @@ dl.article-info dd.hits span[class*=" icon-"] {
   display: none;
 }
 .sp-megamenu-parent .sp-dropdown .sp-dropdown-inner {
-  background: #ffffff;
+  background: #00a5ea;
   box-shadow: 0 3px 5px 0 rgba(0,0,0,0.2);
   padding: 20px;
 }
@@ -1186,7 +1186,7 @@ dl.article-info dd.hits span[class*=" icon-"] {
   transform: translate(0,100px);
   opacity: 0;
   padding: 0 20px !important;
-  background-color: #ffffff;
+  background-color: #00a5ea;
 }
 .menu-drop-in .sp-has-child .sp-menu-item:first-child {
   padding-top: 20px !important;
@@ -2844,7 +2844,7 @@ table.category tbody >tr td {
   transition: 300ms;
 }
 .sp-pre-loader {
-  background: #3cabc3;
+  background: #00a5ea;
   height: 100%;
   left: 0;
   position: fixed;

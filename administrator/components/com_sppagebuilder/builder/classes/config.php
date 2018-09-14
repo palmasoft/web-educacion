@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 class SpAddonsConfig {
 
@@ -18,7 +18,7 @@ class SpAddonsConfig {
 	}
 
 	public static function addonConfig( $attributes ) {
-		if (empty($attributes['addon_name']) || empty($attributes)) {
+		if (empty($attributes['addon_name']) || empty($attributes) || empty($attributes['attr']) ) {
 			return false;
 		} else {
 			$addon = self::str_replace_first('sp_', '', $attributes['addon_name']);
@@ -27,6 +27,7 @@ class SpAddonsConfig {
 			$com_option = $app->input->get('option','','STR');
 			$com_view = $app->input->get('view','','STR');
 			$com_id = $app->input->get('id',0,'INT');
+
 			if($app->isAdmin() || ( $com_option == 'com_sppagebuilder' && $com_view == 'form' && $com_id)){
 				if (!isset($attributes['icon']) || !$attributes['icon']) {
 					$attributes['icon'] = self::getIcon($addon);
@@ -71,8 +72,8 @@ class SpAddonsConfig {
 		$query = $db->getQuery(true);
 		$query->select($db->quoteName(array('template')));
 		$query->from($db->quoteName('#__template_styles'));
-		$query->where($db->quoteName('client_id') . ' = ' . $db->quote('0'));
-		$query->where($db->quoteName('home') . ' = ' . $db->quote('1'));
+		$query->where($db->quoteName('client_id') . ' = 0');
+		$query->where($db->quoteName('home') . ' = 1');
 		$db->setQuery($query);
 
 		return $db->loadObject()->template;

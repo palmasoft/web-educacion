@@ -6,7 +6,7 @@
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 $column_settings = array(
 	'attr' => array(
@@ -17,9 +17,51 @@ $column_settings = array(
 				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_TEXT_COLOR'),
 			),
 
+			'background_type'=>array(
+				'type'=>'buttons',
+				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_ENABLE_BACKGROUND_OPTIONS'),
+				'std'=>'none',
+				'values'=>array(
+					array(
+						'label' => 'None',
+						'value' => 'none'
+					),
+					array(
+						'label' => 'Color',
+						'value' => 'color'
+					),
+					array(
+						'label' => 'Image',
+						'value' => 'image'
+					),
+					array(
+						'label' => 'Gradient',
+						'value' => 'gradient'
+					),
+				)
+			),
+
 			'background'=>array(
 				'type'=>'color',
 				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BACKGROUND_COLOR'),
+				'depends'=>array(
+					array('background_type', '!=', 'none'),
+					array('background_type', '!=', 'video'),
+					array('background_type', '!=', 'gradient'),
+				)
+			),
+			'background_gradient'=>array(
+				'type'=>'gradient',
+				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BACKGROUND_GRADIENT'),
+				'std'=> array(
+					"color" => "#00c6fb",
+					"color2" => "#005bea",
+					"deg" => "45",
+					"type" => "linear"
+				),
+				'depends'=>array(
+					array('background_type', '=', 'gradient')
+				)
 			),
 
 			'background_image'=>array(
@@ -27,15 +69,19 @@ $column_settings = array(
 				'format'=>'image',
 				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BACKGROUND_IMAGE'),
 				'std'=>'',
+				'depends'=>array(
+					array('background_type', '=', 'image')
+				)
 			),
 
 			'overlay'=>array(
 				'type'=>'color',
 				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_OVERLAY'),
 				'desc'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_OVERLAY_DESC'),
-				'depends' => array(
-					array('background_image', '!=', ''),
-				),
+				'depends'=>array(
+					array('background_type', '=', 'image'),
+					array('background_image', '!=', '')
+				)
 			),
 
 			'background_repeat'=>array(
@@ -49,9 +95,10 @@ $column_settings = array(
 					'inherit'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_INHERIT'),
 				),
 				'std'=>'no-repeat',
-				'depends' => array(
-					array('background_image', '!=', ''),
-				),
+				'depends'=>array(
+					array('background_type', '=', 'image'),
+					array('background_image', '!=', '')
+				)
 			),
 
 			'background_size'=>array(
@@ -64,9 +111,10 @@ $column_settings = array(
 					'inherit'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_INHERIT'),
 				),
 				'std'=>'cover',
-				'depends' => array(
-					array('background_image', '!=', ''),
-				),
+				'depends'=>array(
+					array('background_type', '=', 'image'),
+					array('background_image', '!=', '')
+				)
 			),
 
 			'background_attachment'=>array(
@@ -78,9 +126,10 @@ $column_settings = array(
 					'inherit'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_INHERIT'),
 				),
 				'std'=>'scroll',
-				'depends' => array(
-					array('background_image', '!=', ''),
-				),
+				'depends'=>array(
+					array('background_type', '=', 'image'),
+					array('background_image', '!=', '')
+				)
 			),
 
 			'background_position'=>array(
@@ -98,9 +147,10 @@ $column_settings = array(
 					'100% 100%'=>JText::_('COM_SPPAGEBUILDER_RIGHT_BOTTOM'),
 				),
 				'std'=>'0 0',
-				'depends' => array(
-					array('background_image', '!=', ''),
-				),
+				'depends'=>array(
+					array('background_type', '=', 'image'),
+					array('background_image', '!=', '')
+				)
 			),
 
 			'items_align_center'=>array(
@@ -116,7 +166,49 @@ $column_settings = array(
 				'desc'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_PADDING_DESC'),
 				'responsive'=> true
 			),
-
+			'margin'=>array(
+				'type'=>'margin',
+				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_MARGIN'),
+				'desc'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_MARGIN_DESC'),
+				'responsive'=> true
+			),
+			'use_border'=>array(
+				'type'=>'checkbox',
+				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_USE_BORDER'),
+				'std'=>0
+			),
+			'border_width'=>array(
+				'type'=>'slider',
+				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BORDER_WIDTH'),
+				'std'=>'',
+				'depends'=>array('use_border'=>1),
+				'responsive'=> true
+			),
+			'border_color'=>array(
+				'type'=>'color',
+				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BORDER_COLOR'),
+				'depends'=>array('use_border'=>1)
+			),
+			'boder_style'=>array(
+				'type'=>'select',
+				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BORDER_STYLE'),
+				'values'=>array(
+					'none'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BORDER_STYLE_NONE'),
+					'solid'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BORDER_STYLE_SOLID'),
+					'double'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BORDER_STYLE_DOUBLE'),
+					'dotted'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BORDER_STYLE_DOTTED'),
+					'dashed'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BORDER_STYLE_DASHED'),
+				),
+				'depends'=>array('use_border'=>1)
+			),
+			'border_radius'=>array(
+				'type'=>'slider',
+				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BORDER_RADIUS'),
+				'std'=>0,
+				'max'=>500,
+				'responsive'=> true
+			),
+			
 			'boxshadow'=>array(
 				'type'=>'boxshadow',
 				'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BOXSHADOW'),

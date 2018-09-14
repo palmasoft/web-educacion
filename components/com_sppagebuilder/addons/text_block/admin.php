@@ -2,11 +2,11 @@
 /**
 * @package SP Page Builder
 * @author JoomShaper http://www.joomshaper.com
-* @copyright Copyright (c) 2010 - 2016 JoomShaper
+* @copyright Copyright (c) 2010 - 2018 JoomShaper
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 SpAddonsConfig::addonConfig(
 	array(
@@ -103,14 +103,6 @@ SpAddonsConfig::addonConfig(
 						'10px'=> '10px'
 					),
 					'std'=>'0',
-					'depends'=>array(array('title', '!=', '')),
-				),
-
-				'title_fontweight'=>array(
-					'type'=>'text',
-					'title'=>JText::_('COM_SPPAGEBUILDER_ADDON_TITLE_FONT_WEIGHT'),
-					'desc'=>JText::_('COM_SPPAGEBUILDER_ADDON_TITLE_FONT_WEIGHT_DESC'),
-					'std'=>'',
 					'depends'=>array(array('title', '!=', '')),
 				),
 

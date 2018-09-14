@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 // import Joomla view library
 jimport('joomla.application.component.view');
@@ -57,7 +57,7 @@ class SppagebuilderViewForm extends JViewLegacy
 		}
 
 		// Check for errors.
-		if (count($errors = $this->get('Errors')))
+		if (count($errors = (array) $this->get('Errors')))
 		{
 			JError::raiseWarning(500, implode("\n", $errors));
 

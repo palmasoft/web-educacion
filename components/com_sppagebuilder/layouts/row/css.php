@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 $options = $displayData['options'];
 
@@ -17,7 +17,6 @@ $row_styles = '';
 $style ='';
 $style_sm ='';
 $style_xs ='';
-
 
 if( isset( $options->padding ) ){
 	if( is_object( $options->padding ) ){
@@ -39,20 +38,62 @@ if( isset( $options->margin ) ){
 	}
 }
 
-
 if (isset($options->color) && $options->color) $style .= 'color:'.$options->color.';';
-if (isset($options->background_color) && $options->background_color) $style .= 'background-color:'.$options->background_color.';';
 
-if (isset($options->background_image) && $options->background_image) {
-	if(strpos($options->background_image, "http://") !== false || strpos($options->background_image, "https://") !== false){
-		$style .= 'background-image:url(' . $options->background_image.');';
-	} else {
-		$style .= 'background-image:url('. JURI::base(true) . '/' . $options->background_image.');';
+if(isset($options->background_type)){
+	if (($options->background_type == 'image' || $options->background_type == 'color') && isset($options->background_color) && $options->background_color) $style .= 'background-color:'.$options->background_color.';';
+
+	if ($options->background_type == 'image' && isset($options->background_image) && $options->background_image) {
+	
+		if(strpos($options->background_image, "http://") !== false || strpos($options->background_image, "https://") !== false){
+			$style .= 'background-image:url(' . $options->background_image.');';
+		} else {
+			$style .= 'background-image:url('. JURI::base(true) . '/' . $options->background_image.');';
+		}
+	
+		if (isset($options->background_repeat) && $options->background_repeat) $style .= 'background-repeat:'.$options->background_repeat.';';
+		if (isset($options->background_size) && $options->background_size) $style .= 'background-size:'.$options->background_size.';';
+		if (isset($options->background_attachment) && $options->background_attachment) $style .= 'background-attachment:'.$options->background_attachment.';';
+		if (isset($options->background_position) && $options->background_position) $style .= 'background-position:'.$options->background_position.';';
+	
 	}
-	if (isset($options->background_repeat) && $options->background_repeat) $style .= 'background-repeat:'.$options->background_repeat.';';
-	if (isset($options->background_size) && $options->background_size) $style .= 'background-size:'.$options->background_size.';';
-	if (isset($options->background_attachment) && $options->background_attachment) $style .= 'background-attachment:'.$options->background_attachment.';';
-	if (isset($options->background_position) && $options->background_position) $style .= 'background-position:'.$options->background_position.';';
+
+	if($options->background_type == 'gradient' && isset($options->background_gradient) && is_object($options->background_gradient)) {
+		$radialPos = (isset($options->background_gradient->radialPos) && !empty($options->background_gradient->radialPos)) ? $options->background_gradient->radialPos : 'center center';
+	
+		$gradientColor = (isset($options->background_gradient->color) && !empty($options->background_gradient->color)) ? $options->background_gradient->color : '';
+	
+		$gradientColor2 = (isset($options->background_gradient->color2) && !empty($options->background_gradient->color2)) ? $options->background_gradient->color2 : '';
+	
+		$gradientDeg = (isset($options->background_gradient->deg) && !empty($options->background_gradient->deg)) ? $options->background_gradient->deg : '0';
+	
+		$gradientPos = (isset($options->background_gradient->pos) && !empty($options->background_gradient->pos)) ? $options->background_gradient->pos : '0';
+	
+		$gradientPos2 = (isset($options->background_gradient->pos2) && !empty($options->background_gradient->pos2)) ? $options->background_gradient->pos2 : '100';
+	
+		if(isset($options->background_gradient->type) && $options->background_gradient->type == 'radial'){
+			$style .= "\tbackground-image: radial-gradient(at " . $radialPos . ", " . $gradientColor . " " . $gradientPos . "%, " . $gradientColor2 . " " . $gradientPos2 . "%);\n";
+		} else {
+			$style .= "\tbackground-image: linear-gradient(" . $gradientDeg . "deg, " . $gradientColor . " " . $gradientPos . "%, " . $gradientColor2 . " " . $gradientPos2 . "%);\n";
+		}
+	}
+} else {
+	if (isset($options->background_color) && $options->background_color) $style .= 'background-color:'.$options->background_color.';';
+
+	if (isset($options->background_image) && $options->background_image) {
+	
+		if(strpos($options->background_image, "http://") !== false || strpos($options->background_image, "https://") !== false){
+			$style .= 'background-image:url(' . $options->background_image.');';
+		} else {
+			$style .= 'background-image:url('. JURI::base(true) . '/' . $options->background_image.');';
+		}
+	
+		if (isset($options->background_repeat) && $options->background_repeat) $style .= 'background-repeat:'.$options->background_repeat.';';
+		if (isset($options->background_size) && $options->background_size) $style .= 'background-size:'.$options->background_size.';';
+		if (isset($options->background_attachment) && $options->background_attachment) $style .= 'background-attachment:'.$options->background_attachment.';';
+		if (isset($options->background_position) && $options->background_position) $style .= 'background-position:'.$options->background_position.';';
+	
+	}
 }
 
 if($style) {
@@ -67,18 +108,24 @@ if($style_xs) {
 }
 
 // Overlay
-if (isset($options->overlay) && $options->overlay) {
-	$row_styles .= '.sp-page-builder .page-content #' . $row_id . ' > .sppb-row-overlay {background-color: '. $options->overlay .'}';
+if(isset($options->background_type)){
+	if (($options->background_type == 'image' || $options->background_type == 'video') && isset($options->overlay) && $options->overlay) {
+		$row_styles .= '.sp-page-builder .page-content #' . $row_id . ' > .sppb-row-overlay {background-color: '. $options->overlay .'}';
+	}
+} else {
+	if (isset($options->overlay) && $options->overlay) {
+		$row_styles .= '.sp-page-builder .page-content #' . $row_id . ' > .sppb-row-overlay {background-color: '. $options->overlay .'}';
+	}
 }
 
 // Row Title
 if ( (isset($options->title) && $options->title) || (isset($options->subtitle) && $options->subtitle) ) {
-	
+
 	if(isset($options->title) && $options->title) {
 		$title_style = '';
 		$title_style_sm = '';
 		$title_style_xs = '';
-		//Title Font Size
+    	//Title Font Size
 		if(isset($options->title_fontsize)) {
 			if(is_object($options->title_fontsize)) {
 				$title_style .= (isset($options->title_fontsize->md) && $options->title_fontsize->md != '') ? 'font-size:'.$options->title_fontsize->md.'px;line-height: '.$options->title_fontsize->md.'px;' : '';
@@ -89,21 +136,21 @@ if ( (isset($options->title) && $options->title) || (isset($options->subtitle) &
 			}
 		}
 
-		//Title Font Weight
+    	//Title Font Weight
 		if(isset($options->title_fontweight)) {
 			if($options->title_fontweight != '') {
 				$title_style .= 'font-weight:'.$options->title_fontweight.';';
 			}
 		}
 
-		//Title Text Color
+        //Title Text Color
 		if(isset($options->title_text_color)) {
 			if($options->title_text_color != '') {
 				$title_style .= 'color:'.$options->title_text_color. ';';
 			}
 		}
 
-		//Title Margin Top
+        //Title Margin Top
 		if(isset($options->title_margin_top)) {
 			if(is_object($options->title_margin_top)) {
 				$title_style .= (isset($options->title_margin_top->md) && $options->title_margin_top->md != '') ? 'margin-top:' . $options->title_margin_top->md . 'px;' : '';

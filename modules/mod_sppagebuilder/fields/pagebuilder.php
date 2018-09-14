@@ -42,13 +42,15 @@ class JFormFieldPagebuilder extends JFormField
 		$moduleAttr       = SpPgaeBuilderBase::getModuleAttributes(); // Module Postions and Module Lits
 		$rowSettings      = SpPgaeBuilderBase::getRowGlobalSettings(); // Row Settings Attributes
 		$columnSettings   = SpPgaeBuilderBase::getColumnGlobalSettings(); // Column Settings Attributes
+		$global_attributes = SpPgaeBuilderBase::addonOptions();
   
 		// Addon List
 		$addons_list    = SpAddonsConfig::$addons;
+		$globalDefault = SpPgaeBuilderBase::getSettingsDefaultValue($global_attributes);
   
 		foreach ( $addons_list as $key => &$addon ) {
-		  $default_value = SpPgaeBuilderBase::getSettingsDefaultValue($addon['attr']);
-		  $addon['default'] = $default_value;
+			$new_default_value = SpPgaeBuilderBase::getSettingsDefaultValue($addon['attr']);
+			$addon['default'] = array_merge($new_default_value['default'], $globalDefault['default']);
 		}
   
 		$row_default_value = SpPgaeBuilderBase::getSettingsDefaultValue($rowSettings['attr']);
@@ -57,7 +59,6 @@ class JFormFieldPagebuilder extends JFormField
 		$column_default_value = SpPgaeBuilderBase::getSettingsDefaultValue($columnSettings['attr']);
 		$columnSettings['default'] = $column_default_value;
   
-		$global_attributes = SpPgaeBuilderBase::addonOptions();
 		$doc->addScriptdeclaration('var addonsJSON=' . json_encode($addons_list) . ';');
   
 		// Addon Categories

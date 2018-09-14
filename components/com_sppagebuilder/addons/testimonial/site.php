@@ -2,11 +2,11 @@
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2016 JoomShaper
+ * @copyright Copyright (c) 2010 - 2018 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 class SppagebuilderAddonTestimonial extends SppagebuilderAddons {
 
@@ -179,12 +179,12 @@ class SppagebuilderAddonTestimonial extends SppagebuilderAddons {
 			</style>
 
 			<div class="sppb-addon sppb-addon-testimonial {{ data.class }} {{ testimonialAlignment }}">
-				<# if( !_.isEmpty( data.title ) ){ #><{{ data.heading_selector }} class="sppb-addon-title">{{ data.title }}</{{ data.heading_selector }}><# } #>
+				<# if( !_.isEmpty( data.title ) ){ #><{{ data.heading_selector }} class="sppb-addon-title sp-inline-editable-element" data-id={{data.id}} data-fieldName="title" contenteditable="true">{{ data.title }}</{{ data.heading_selector }}><# } #>
 				<div class="sppb-addon-content">
 					<# if(data.show_quote){ #>
 						<span class="fa fa-quote-left"></span>
 					<# } #>
-					<div class="sppb-addon-testimonial-review">
+					<div id="addon-review-{{data.id}}" class="sppb-addon-testimonial-review sp-editable-content" data-id={{data.id}} data-fieldName="review">
 					{{{ data.review }}}
 					</div>
 

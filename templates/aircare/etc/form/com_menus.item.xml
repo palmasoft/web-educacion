@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<form>
+
+    <fields name="params">
+
+        <fieldset name="page-options" label="Page Display" description="Page Display Description">
+
+            <field name="masthead-title" type="text" default="" label="Title" description="Title on Breadcrumbs" />
+            <field name="masthead-slogan" type="textarea" default="" label="Subtitle" description="Subtitle on Breadcrumbs" filter="RAW" />
+      			<field name="headerImg" type="media" default="" label="Breadcrumbs Background" description="Breadcrumbs Background Image"/>
+      			<field name="breadStyle" type="list" default="0" label="Breadcrumbs Style" description="Breadcrumbs Style">
+    				<option value="0">Wide Padding</option>
+    				<option value="1">Light Background</option>
+    	</field>
+
+        </fieldset>
+
+    </fields>
+
+</form>

@@ -6,12 +6,11 @@
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 $animation_names = array(
 		array( 'value' => '', 'label' => 'Select Animation' ),
 		array( 'value' => 'fadeIn', 'label' => 'fadeIn' ),
-		array( 'value' => 'fadeInDown', 'label' => 'fadeInDown' ),
 		array( 'value' => 'fadeInDown', 'label' => 'fadeInDown' ),
 		array( 'value' => 'fadeInDownBig', 'label' => 'fadeInDownBig' ),
 		array( 'value' => 'fadeInLeft', 'label' => 'fadeInLeft' ),

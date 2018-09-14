@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 // import Joomla table library
 jimport('joomla.database.table');
@@ -38,16 +38,6 @@ class SppagebuilderTablePage extends JTable {
 			$rules = new JRules($array['rules']);
 			$this->setRules($rules);
 		}
-
-		if($this->_db->getServerType() == 'postgresql'){
-			if(empty($array['id'])){
-				unset($array['id']);
-			}
-			if(empty($array['hits'])){
-				unset($array['hits']);
-			}
-		}
-		
 		return parent::bind($array, $ignore);
 	}
 	protected function _getAssetTitle(){

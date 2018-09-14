@@ -6,12 +6,21 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 class SppagebuilderControllerPage extends JControllerForm {
 
 	public function __construct($config = array()) {
 		parent::__construct($config);
+
+		// check have access
+		$user = JFactory::getUser();
+		$authorised = $user->authorise('core.edit', 'com_sppagebuilder');
+		if (!$authorised) {
+			die('Restricted Access');
+		}
+		// Check CSRF
+		\JSession::checkToken() or die('Restricted Access');
 	}
 
 	public function getModel($name = 'form', $prefix = '', $config = array('ignore_request' => true))
@@ -178,6 +187,38 @@ class SppagebuilderControllerPage extends JControllerForm {
 		} else {
 			die('Failed');
 		}
+	}
+
+	public function getMyAddons() {
+		$model = $this->getModel();
+		die($model->getMyAddons());
+	}
+
+	public function saveAddon() {
+		$model = $this->getModel();
+		$app = JFactory::getApplication();
+		$input = $app->input;
+
+		$title = htmlspecialchars($input->get('title', '', 'STRING'));
+		$addon = $input->get('addon', '', 'RAW');
+
+		if($title && $addon) {
+			$addon_id = $model->saveAddon($title, $addon);
+			echo $addon_id;
+			die();
+		} else {
+			die('Failed');
+		}
+	}
+
+	public function deleteAddon(){
+		$model = $this->getModel();
+		$app = JFactory::getApplication();
+		$input = $app->input;
+
+		$id = $input->get('id', '', 'INT');
+
+		die($model->deleteAddon($id));
 	}
 
 	public function cancel($key = 'id') {

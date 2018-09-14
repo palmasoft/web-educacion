@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 require_once JPATH_COMPONENT_ADMINISTRATOR .'/builder/classes/ajax.php';
 if(!class_exists('SppagebuilderHelperSite')) {
@@ -55,50 +55,50 @@ if ( $action === 'addon' ) {
 
 	foreach ($addon->settings as $key => &$setting) {
 		if (isset($setting->md)) {
-			$md = isset($setting->md) ? $setting->md : "";
-			$sm = isset($setting->sm) ? $setting->sm : "";
-			$xs = isset($setting->xs) ? $setting->xs : "";
-			$setting = $md;
-			$addon->settings->{$key . '_sm'} = $sm;
-			$addon->settings->{$key . '_xs'} = $xs;
+		  $md = isset($setting->md) ? $setting->md : "";
+		  $sm = isset($setting->sm) ? $setting->sm : "";
+		  $xs = isset($setting->xs) ? $setting->xs : "";
+		  $setting = $md;
+		  $addon->settings->{$key . '_sm'} = $sm;
+		  $addon->settings->{$key . '_xs'} = $xs;
 		}
 
 		if(isset($addon_options[$key]['selector'])) {
-			$addon_selector = $addon_options[$key]['selector'];
-			if(isset($addon->settings->{$key}) && !empty($addon->settings->{$key})) {
-				$selector_value = $addon->settings->{$key};
-				$addon->settings->{$key . '_selector'} = str_replace('{{ VALUE }}', $selector_value, $addon_selector);
-			}
+		  $addon_selector = $addon_options[$key]['selector'];
+		  if(isset($addon->settings->{$key}) && !empty($addon->settings->{$key})) {
+			$selector_value = $addon->settings->{$key};
+			$addon->settings->{$key . '_selector'} = str_replace('{{ VALUE }}', $selector_value, $addon_selector);
+		  }
 		}
 
 		// Repeatable
 		if( (!isset($addon->type) || $addon->type !== 'inner_row') &&  (($key == 'sp_'. $addon->name .'_item') || ($key == $addon->name .'_item')) ) {
-			if(count((array) $setting)) {
-				foreach ($setting as &$options) {
-				foreach ($options as $key2 => &$opt) {
+		  if(count((array) $setting)) {
+			foreach ($setting as &$options) {
+			  foreach ($options as $key2 => &$opt) {
 
-					if (isset($opt->md)) {
-						$md = isset($opt->md) ? $opt->md : "";
-						$sm = isset($opt->sm) ? $opt->sm : "";
-						$xs = isset($opt->xs) ? $opt->xs : "";
-						$opt = $md;
-						$options->{$key2 . '_sm'} = $sm;
-						$options->{$key2 . '_xs'} = $xs;
-					}
-
-					if(isset($addon_options[$key]['attr'][$key2]['selector'])) {
-						$addon_selector = $addon_options[$key]['attr'][$key2]['selector'];
-						if(isset($options->{$key2}) && !empty($options->{$key2})) {
-							$selector_value = $options->{$key2};
-							$options->{$key2 . '_selector'} = str_replace('{{ VALUE }}', $selector_value, $addon_selector);
-						}
-					}
-
+				if (isset($opt->md)) {
+				  $md = isset($opt->md) ? $opt->md : "";
+				  $sm = isset($opt->sm) ? $opt->sm : "";
+				  $xs = isset($opt->xs) ? $opt->xs : "";
+				  $opt = $md;
+				  $options->{$key2 . '_sm'} = $sm;
+				  $options->{$key2 . '_xs'} = $xs;
 				}
+
+				if(isset($addon_options[$key]['attr'][$key2]['selector'])) {
+				  $addon_selector = $addon_options[$key]['attr'][$key2]['selector'];
+				  if(isset($options->{$key2}) && !empty($options->{$key2})) {
+					$selector_value = $options->{$key2};
+					$options->{$key2 . '_selector'} = str_replace('{{ VALUE }}', $selector_value, $addon_selector);
+				  }
 				}
+
+			  }
 			}
+		  }
 		}
-	}
+	  }
 
 	$output = '';
 
@@ -113,7 +113,7 @@ if ( $action === 'addon' ) {
 
 			// css
 			if (method_exists($class_name, 'css')) {
-				$css .= $addon_obj->css();
+				 $css .= $addon_obj->css();
 			}
 
 			// js

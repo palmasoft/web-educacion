@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 jimport('joomla.application.component.modeladmin');
 
@@ -46,7 +46,7 @@ class SppagebuilderModelPage extends JModelAdmin {
 
     		$user = JFactory::getUser();
 
-        // Modify the form based on Edit State access controls.
+            // Modify the form based on Edit State access controls.
     		if ($id != 0 && (!$user->authorise('core.edit.state', 'com_sppagebuilder.page.' . (int) $id))
     			|| ($id == 0 && !$user->authorise('core.edit.state', 'com_sppagebuilder')))
     		{
@@ -62,22 +62,42 @@ class SppagebuilderModelPage extends JModelAdmin {
     }
 
     public function getItem($pk = NULL) {
-  		$app = JApplication::getInstance('site');
-  		$router = $app->getRouter();
+        $app = JApplication::getInstance('site');
+        $router = $app->getRouter();
+        $item = parent::getItem();
+        // get menu id
+        $Itemid = SppagebuilderHelper::getMenuId($item->id);
+        // Get item language code
+        $lang_code = (isset($item->language) && $item->language && explode('-',$item->language)[0])? explode('-',$item->language)[0] : '';
+        // check language filter plugin is enable or not
+        $enable_lang_filter = JPluginHelper::getPlugin('system', 'languagefilter');
+        // get joomla config
+        $conf = JFactory::getConfig();
 
-      $item = parent::getItem();
-      $Itemid = SppagebuilderHelper::getMenuId($item->id);
-      $item->link = 'index.php?option=com_sppagebuilder&task=page.edit&id=' . $item->id;
-      $preview = 'index.php?option=com_sppagebuilder&view=page&id=' . $item->id . $Itemid;
-      $sefURI = str_replace('/administrator', '', $router->build($preview));
-      $item->preview = $sefURI;
+        // Preview URL
+        $item->link = 'index.php?option=com_sppagebuilder&task=page.edit&id=' . $item->id;
+        $preview = 'index.php?option=com_sppagebuilder&view=page&id=' . $item->id . $Itemid;
+        $sefURI = str_replace('/administrator', '', $router->build($preview));
+        if( $lang_code && $lang_code !== '*' && $enable_lang_filter && $conf->get('sef') ){
+            $sefURI = str_replace('/index.php/', '/index.php/' . $lang_code . '/', $sefURI);
+        } elseif($lang_code && $lang_code !== '*') {
+            $sefURI = $sefURI . '&lang=' . $lang_code;
+        }
+        $item->preview = $sefURI;
 
-      $front_link = 'index.php?option=com_sppagebuilder&view=form&tmpl=componenet&layout=edit&id=' . $item->id . $Itemid;
-      $sefURI = str_replace('/administrator', '', $router->build($front_link));
-      $item->frontend_edit = $sefURI;
+        // Frontend Editing URL
+        $front_link = 'index.php?option=com_sppagebuilder&view=form&tmpl=componenet&layout=edit&id=' . $item->id . $Itemid;
+        $sefURI = str_replace('/administrator', '', $router->build($front_link));
 
-  		return $item;
-  	}
+        if( $lang_code && $lang_code !== '*' && $enable_lang_filter && $conf->get('sef') ){
+            $sefURI = str_replace('/index.php/', '/index.php/' . $lang_code . '/', $sefURI);
+        } elseif($lang_code && $lang_code !== '*') {
+            $sefURI = $sefURI . '&lang=' . $lang_code;
+        }
+        $item->frontend_edit = $sefURI;
+
+        return $item;
+    }
 
     protected function loadFormData() {
         $data = JFactory::getApplication()->getUserState('com_sppagebuilder.edit.page.data', array());
@@ -104,17 +124,17 @@ class SppagebuilderModelPage extends JModelAdmin {
     }
 
     protected function checkExistingUser($id) {
-      $currentUser = JFactory::getUser();
-      $user_id = $currentUser->id;
+        $currentUser = JFactory::getUser();
+        $user_id = $currentUser->id;
 
-      if($id) {
-        $user = JFactory::getUser($id);
-        if($user->id) {
-          $user_id = $id;
+        if($id) {
+            $user = JFactory::getUser($id);
+            if($user->id) {
+                $user_id = $id;
+            }
         }
-      }
 
-      return $user_id;
+        return $user_id;
     }
 
     public static function pageGenerateNewTitle($title ) {
@@ -145,46 +165,90 @@ class SppagebuilderModelPage extends JModelAdmin {
 	}
 
     public function getMySections() {
-      $db = JFactory::getDbo();
-      $query = $db->getQuery(true);
-      $query->select($db->quoteName(array('id', 'title', 'section')));
-      $query->from($db->quoteName('#__sppagebuilder_sections'));
-      //$query->where($db->quoteName('profile_key') . ' LIKE '. $db->quote('\'custom.%\''));
-      $query->order('id ASC');
-      $db->setQuery($query);
-      $results = $db->loadObjectList();
-      return json_encode($results);
+        $db = JFactory::getDbo();
+        $query = $db->getQuery(true);
+        $query->select($db->quoteName(array('id', 'title', 'section')));
+        $query->from($db->quoteName('#__sppagebuilder_sections'));
+        //$query->where($db->quoteName('profile_key') . ' LIKE '. $db->quote('\'custom.%\''));
+        $query->order('id ASC');
+        $db->setQuery($query);
+        $results = $db->loadObjectList();
+        return json_encode($results);
     }
 
     public function deleteSection($id){
-      $db = JFactory::getDbo();
+        $db = JFactory::getDbo();
+        $query = $db->getQuery(true);
 
-      $query = $db->getQuery(true);
+        // delete all custom keys for user 1001.
+        $conditions = array(
+            $db->quoteName('id') . ' = '.$id
+        );
 
-      // delete all custom keys for user 1001.
-      $conditions = array(
-          $db->quoteName('id') . ' = '.$id
-      );
+        $query->delete($db->quoteName('#__sppagebuilder_sections'));
+        $query->where($conditions);
 
-      $query->delete($db->quoteName('#__sppagebuilder_sections'));
-      $query->where($conditions);
+        $db->setQuery($query);
 
-      $db->setQuery($query);
-
-      return $db->execute();
+        return $db->execute();
     }
 
     public function saveSection($title, $section){
-      $db = JFactory::getDbo();
-      $user = JFactory::getUser();
-      $obj = new stdClass();
-      $obj->title = $title;
-      $obj->section = $section;
-      $obj->created = JFactory::getDate()->toSql();
-      $obj->created_by = $user->get('id');
+        $db = JFactory::getDbo();
+        $user = JFactory::getUser();
+        $obj = new stdClass();
+        $obj->title = $title;
+        $obj->section = $section;
+        $obj->created = JFactory::getDate()->toSql();
+        $obj->created_by = $user->get('id');
 
-      $db->insertObject('#__sppagebuilder_sections', $obj);
+        $db->insertObject('#__sppagebuilder_sections', $obj);
 
-      return $db->insertid();
+        return $db->insertid();
     }
+
+    public function getMyAddons() {
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true);
+		$query->select($db->quoteName(array('id', 'title', 'code')));
+		$query->from($db->quoteName('#__sppagebuilder_addons'));
+		
+		$query->order('id ASC');
+		$db->setQuery($query);
+		$results = $db->loadObjectList();
+		return json_encode($results);
+	}
+
+    public function saveAddon($title, $addon){
+        $db = JFactory::getDbo();
+        $user = JFactory::getUser();
+        $obj = new stdClass();
+        $obj->title = $title;
+        $obj->code = $addon;
+        $obj->created = JFactory::getDate()->toSql();
+        $obj->created_by = $user->get('id');
+
+        $db->insertObject('#__sppagebuilder_addons', $obj);
+
+        return $db->insertid();
+    }
+
+    public function deleteAddon($id){
+        $db = JFactory::getDbo();
+
+        $query = $db->getQuery(true);
+
+        // delete all custom keys for user 1001.
+        $conditions = array(
+            $db->quoteName('id') . ' = '.$id
+        );
+
+        $query->delete($db->quoteName('#__sppagebuilder_addons'));
+        $query->where($conditions);
+
+        $db->setQuery($query);
+
+        return $db->execute();
+    }
+    
 }

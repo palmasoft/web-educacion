@@ -6,7 +6,7 @@
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 JHtml::_('jquery.framework');
 jimport('joomla.application.component.helper');
@@ -30,6 +30,7 @@ if ($params->get('addcontainer', 1)) {
 	$doc->addStyleSheet(JUri::base(true) . '/components/com_sppagebuilder/assets/css/sppagecontainer.css');
 }
 
+$doc->addScript(JUri::base(true) . '/components/com_sppagebuilder/assets/js/jquery.parallax-1.1.3.js');
 
 $doc->addScript(JUri::base(true) . '/components/com_sppagebuilder/assets/js/sppagebuilder.js');
 
@@ -63,7 +64,7 @@ $Itemid = $input->get('Itemid', 0, 'INT');
 $url = JRoute::_('index.php?option=com_sppagebuilder&view=form&layout=edit&tmpl=component&id=' . $page->id . '&Itemid=' . $Itemid);
 $root = JURI::base();
 $root = new JURI($root);
-$link = $root->getScheme() . '://' . $root->getHost() . $url;
+$link = $root->getScheme() . '://' . $root->getHost() . (!in_array($root->getPort(),array(80,443)) ? ':'.$root->getPort() : ''). $url;
 
 ?>
 
@@ -91,8 +92,8 @@ $link = $root->getScheme() . '://' . $root->getHost() . $url;
 		<?php $pageName = 'page-' . $page->id; ?>
 		<?php echo AddonParser::viewAddons( $content, 0, $pageName ); ?>
 		<?php
-		$canEdit = $user->authorise('core.edit', 'com_sppagebuilder') || ($user->authorise('core.edit.own', 'com_sppagebuilder') && ($page->created_by == $user->id));
-		if ($canEdit) {
+		$authorised = $user->authorise('core.edit', 'com_sppagebuilder') || $user->authorise('core.edit', 'com_sppagebuilder.page.' . $page->id) || ($user->authorise('core.edit.own', 'com_sppagebuilder.page.' . $page->id) && $page->created_by == $user->id);
+		if ($authorised) {
 			echo '<a class="sp-pagebuilder-page-edit" href="'. $link . '"><i class="fa fa-edit"></i> ' . JText::_('COM_SPPAGEBUILDER_PAGE_EDIT') . '</a>';
 		}
 		?>

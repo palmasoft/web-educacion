@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 //import Joomla controller library
 jimport('joomla.application.component.controller');
@@ -40,6 +40,13 @@ class SppagebuilderController extends JControllerLegacy {
 	}
 
 	public function export(){
+		// check have access
+		$user = JFactory::getUser();
+		$authorised = $user->authorise('core.edit', 'com_sppagebuilder');
+		if (!$authorised) {
+			die('Restricted Access');
+		}
+
 		$input  = JFactory::getApplication()->input;
 		$template = $input->get('template','[]','RAW');
 		$filename = 'template'. rand(10000,99999);
@@ -90,6 +97,7 @@ class SppagebuilderController extends JControllerLegacy {
 
 	//Ajax
 	public function ajax() {
+		
 		$app = JFactory::getApplication();
 		$input = $app->input;
 		$format = strtolower($input->getWord('format'));

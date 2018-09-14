@@ -991,3 +991,55 @@
 [13-Aug-2018 13:09:37 UTC] PHP   9. Joomla\CMS\MVC\Controller\FormController->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/BaseController.php:710
 [13-Aug-2018 13:09:37 UTC] PHP  10. jdownloadsModelDownload->save() /home/ubuntu/workspace/libraries/src/MVC/Controller/FormController.php:747
 [13-Aug-2018 13:09:37 UTC] PHP  11. jdownloadsTabledownload->checkData() /home/ubuntu/workspace/administrator/components/com_jdownloads/models/download.php:242
+[12-Sep-2018 14:12:21 UTC] PHP Warning:  mysqli_query(): MySQL server has gone away in /home/ubuntu/workspace/libraries/joomla/database/driver/mysqli.php on line 177
+[12-Sep-2018 14:12:21 UTC] PHP Stack trace:
+[12-Sep-2018 14:12:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[12-Sep-2018 14:12:21 UTC] PHP   2. Joomla\CMS\Factory::getApplication() /home/ubuntu/workspace/administrator/index.php:48
+[12-Sep-2018 14:12:21 UTC] PHP   3. Joomla\CMS\Application\CMSApplication::getInstance() /home/ubuntu/workspace/libraries/src/Factory.php:140
+[12-Sep-2018 14:12:21 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->__construct() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:343
+[12-Sep-2018 14:12:21 UTC] PHP   5. Joomla\CMS\Application\CMSApplication->__construct() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:48
+[12-Sep-2018 14:12:21 UTC] PHP   6. Joomla\CMS\Application\WebApplication->__construct() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:108
+[12-Sep-2018 14:12:21 UTC] PHP   7. Joomla\CMS\Input\Input->__construct() /home/ubuntu/workspace/libraries/src/Application/WebApplication.php:203
+[12-Sep-2018 14:12:21 UTC] PHP   8. Joomla\CMS\Filter\InputFilter::getInstance() /home/ubuntu/workspace/libraries/src/Input/Input.php:64
+[12-Sep-2018 14:12:21 UTC] PHP   9. Joomla\CMS\Filter\InputFilter->__construct() /home/ubuntu/workspace/libraries/src/Filter/InputFilter.php:105
+[12-Sep-2018 14:12:21 UTC] PHP  10. JDatabaseDriverMysqli->connect() /home/ubuntu/workspace/libraries/src/Filter/InputFilter.php:72
+[12-Sep-2018 14:12:21 UTC] PHP  11. mysqli_query() /home/ubuntu/workspace/libraries/joomla/database/driver/mysqli.php:177
+[12-Sep-2018 14:12:21 UTC] PHP Warning:  mysqli_query(): Error reading result set's header in /home/ubuntu/workspace/libraries/joomla/database/driver/mysqli.php on line 177
+[12-Sep-2018 14:12:21 UTC] PHP Stack trace:
+[12-Sep-2018 14:12:21 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[12-Sep-2018 14:12:21 UTC] PHP   2. Joomla\CMS\Factory::getApplication() /home/ubuntu/workspace/administrator/index.php:48
+[12-Sep-2018 14:12:21 UTC] PHP   3. Joomla\CMS\Application\CMSApplication::getInstance() /home/ubuntu/workspace/libraries/src/Factory.php:140
+[12-Sep-2018 14:12:21 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->__construct() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:343
+[12-Sep-2018 14:12:21 UTC] PHP   5. Joomla\CMS\Application\CMSApplication->__construct() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:48
+[12-Sep-2018 14:12:21 UTC] PHP   6. Joomla\CMS\Application\WebApplication->__construct() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:108
+[12-Sep-2018 14:12:21 UTC] PHP   7. Joomla\CMS\Input\Input->__construct() /home/ubuntu/workspace/libraries/src/Application/WebApplication.php:203
+[12-Sep-2018 14:12:21 UTC] PHP   8. Joomla\CMS\Filter\InputFilter::getInstance() /home/ubuntu/workspace/libraries/src/Input/Input.php:64
+[12-Sep-2018 14:12:21 UTC] PHP   9. Joomla\CMS\Filter\InputFilter->__construct() /home/ubuntu/workspace/libraries/src/Filter/InputFilter.php:105
+[12-Sep-2018 14:12:21 UTC] PHP  10. JDatabaseDriverMysqli->connect() /home/ubuntu/workspace/libraries/src/Filter/InputFilter.php:72
+[12-Sep-2018 14:12:21 UTC] PHP  11. mysqli_query() /home/ubuntu/workspace/libraries/joomla/database/driver/mysqli.php:177
+[14-Sep-2018 02:07:49 UTC] PHP Warning:  mysqli_query(): MySQL server has gone away in /home/ubuntu/workspace/libraries/joomla/database/driver/mysqli.php on line 177
+[14-Sep-2018 02:07:49 UTC] PHP Stack trace:
+[14-Sep-2018 02:07:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[14-Sep-2018 02:07:49 UTC] PHP   2. Joomla\CMS\Factory::getApplication() /home/ubuntu/workspace/administrator/index.php:48
+[14-Sep-2018 02:07:49 UTC] PHP   3. Joomla\CMS\Application\CMSApplication::getInstance() /home/ubuntu/workspace/libraries/src/Factory.php:140
+[14-Sep-2018 02:07:49 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->__construct() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:343
+[14-Sep-2018 02:07:49 UTC] PHP   5. Joomla\CMS\Application\CMSApplication->__construct() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:48
+[14-Sep-2018 02:07:49 UTC] PHP   6. Joomla\CMS\Application\WebApplication->__construct() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:108
+[14-Sep-2018 02:07:49 UTC] PHP   7. Joomla\CMS\Input\Input->__construct() /home/ubuntu/workspace/libraries/src/Application/WebApplication.php:203
+[14-Sep-2018 02:07:49 UTC] PHP   8. Joomla\CMS\Filter\InputFilter::getInstance() /home/ubuntu/workspace/libraries/src/Input/Input.php:64
+[14-Sep-2018 02:07:49 UTC] PHP   9. Joomla\CMS\Filter\InputFilter->__construct() /home/ubuntu/workspace/libraries/src/Filter/InputFilter.php:105
+[14-Sep-2018 02:07:49 UTC] PHP  10. JDatabaseDriverMysqli->connect() /home/ubuntu/workspace/libraries/src/Filter/InputFilter.php:72
+[14-Sep-2018 02:07:49 UTC] PHP  11. mysqli_query() /home/ubuntu/workspace/libraries/joomla/database/driver/mysqli.php:177
+[14-Sep-2018 02:07:49 UTC] PHP Warning:  mysqli_query(): Error reading result set's header in /home/ubuntu/workspace/libraries/joomla/database/driver/mysqli.php on line 177
+[14-Sep-2018 02:07:49 UTC] PHP Stack trace:
+[14-Sep-2018 02:07:49 UTC] PHP   1. {main}() /home/ubuntu/workspace/administrator/index.php:0
+[14-Sep-2018 02:07:49 UTC] PHP   2. Joomla\CMS\Factory::getApplication() /home/ubuntu/workspace/administrator/index.php:48
+[14-Sep-2018 02:07:49 UTC] PHP   3. Joomla\CMS\Application\CMSApplication::getInstance() /home/ubuntu/workspace/libraries/src/Factory.php:140
+[14-Sep-2018 02:07:49 UTC] PHP   4. Joomla\CMS\Application\AdministratorApplication->__construct() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:343
+[14-Sep-2018 02:07:49 UTC] PHP   5. Joomla\CMS\Application\CMSApplication->__construct() /home/ubuntu/workspace/libraries/src/Application/AdministratorApplication.php:48
+[14-Sep-2018 02:07:49 UTC] PHP   6. Joomla\CMS\Application\WebApplication->__construct() /home/ubuntu/workspace/libraries/src/Application/CMSApplication.php:108
+[14-Sep-2018 02:07:49 UTC] PHP   7. Joomla\CMS\Input\Input->__construct() /home/ubuntu/workspace/libraries/src/Application/WebApplication.php:203
+[14-Sep-2018 02:07:49 UTC] PHP   8. Joomla\CMS\Filter\InputFilter::getInstance() /home/ubuntu/workspace/libraries/src/Input/Input.php:64
+[14-Sep-2018 02:07:49 UTC] PHP   9. Joomla\CMS\Filter\InputFilter->__construct() /home/ubuntu/workspace/libraries/src/Filter/InputFilter.php:105
+[14-Sep-2018 02:07:49 UTC] PHP  10. JDatabaseDriverMysqli->connect() /home/ubuntu/workspace/libraries/src/Filter/InputFilter.php:72
+[14-Sep-2018 02:07:49 UTC] PHP  11. mysqli_query() /home/ubuntu/workspace/libraries/joomla/database/driver/mysqli.php:177

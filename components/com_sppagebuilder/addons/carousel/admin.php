@@ -2,11 +2,11 @@
 /**
 * @package SP Page Builder
 * @author JoomShaper http://www.joomshaper.com
-* @copyright Copyright (c) 2010 - 2016 JoomShaper
+* @copyright Copyright (c) 2010 - 2018 JoomShaper
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 SpAddonsConfig::addonConfig(
 	array(
@@ -224,7 +224,7 @@ SpAddonsConfig::addonConfig(
 
 						'button_font_family'=>array(
 							'type'=>'fonts',
-							'title'=>JText::_('COM_SPPAGEBUILDER_ADDON_CAROUSEL_ITEM_BUTTOM_FONT_FAMILY'),
+							'title'=>JText::_('COM_SPPAGEBUILDER_ADDON_CAROUSEL_ITEM_BUTTON_FONT_FAMILY'),
 							'depends'=>array(array('button_text', '!=', '')),
 							'selector'=> array(
 								'type'=>'font',
@@ -316,11 +316,33 @@ SpAddonsConfig::addonConfig(
 							'desc'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BUTTON_APPEARANCE_DESC'),
 							'values'=>array(
 								''=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BUTTON_APPEARANCE_FLAT'),
+								'gradient'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BUTTON_APPEARANCE_GRADIENT'),
 								'outline'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BUTTON_APPEARANCE_OUTLINE'),
 								'3d'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BUTTON_APPEARANCE_3D'),
 							),
 							'std'=>'flat',
 							'depends'=> array(
+								array('button_text', '!=', ''),
+							)
+						),
+
+						'button_status'=>array(
+							'type'=>'buttons',
+							'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_ENABLE_BACKGROUND_OPTIONS'),
+							'std'=>'normal',
+							'values'=>array(
+								array(
+									'label' => 'Normal',
+									'value' => 'normal'
+								),
+								array(
+									'label' => 'Hover',
+									'value' => 'hover'
+								),
+							),
+							'tabs' => true,
+							'depends'=>array(
+								array('button_type', '=', 'custom'),
 								array('button_text', '!=', ''),
 							)
 						),
@@ -331,7 +353,26 @@ SpAddonsConfig::addonConfig(
 							'desc'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BUTTON_BACKGROUND_COLOR_DESC'),
 							'std' => '#444444',
 							'depends'=> array(
+								array('button_appearance', '!=', 'gradient'),
 								array('button_type', '=', 'custom'),
+								array('button_status', '=', 'normal'),
+								array('button_text', '!=', ''),
+							)
+						),
+
+						'button_background_gradient'=>array(
+							'type'=>'gradient',
+							'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BACKGROUND_GRADIENT'),
+							'std'=> array(
+								"color" => "#B4EC51",
+								"color2" => "#429321",
+								"deg" => "45",
+								"type" => "linear"
+							),
+							'depends'=>array(
+								array('button_appearance', '=', 'gradient'),
+								array('button_type', '=', 'custom'),
+								array('button_status', '=', 'normal'),
 								array('button_text', '!=', ''),
 							)
 						),
@@ -343,6 +384,7 @@ SpAddonsConfig::addonConfig(
 							'std' => '#fff',
 							'depends'=> array(
 								array('button_type', '=', 'custom'),
+								array('button_status', '=', 'normal'),
 								array('button_text', '!=', ''),
 							)
 						),
@@ -353,7 +395,26 @@ SpAddonsConfig::addonConfig(
 							'desc'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BUTTON_BACKGROUND_COLOR_HOVER_DESC'),
 							'std' => '#222',
 							'depends'=> array(
+								array('button_appearance', '!=', 'gradient'),
 								array('button_type', '=', 'custom'),
+								array('button_status', '=', 'hover'),
+								array('button_text', '!=', ''),
+							)
+						),
+
+						'button_background_gradient_hover'=>array(
+							'type'=>'gradient',
+							'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BACKGROUND_GRADIENT'),
+							'std'=> array(
+								"color" => "#429321",
+								"color2" => "#B4EC51",
+								"deg" => "45",
+								"type" => "linear"
+							),
+							'depends'=>array(
+								array('button_appearance', '=', 'gradient'),
+								array('button_type', '=', 'custom'),
+								array('button_status', '=', 'hover'),
 								array('button_text', '!=', ''),
 							)
 						),
@@ -365,6 +426,7 @@ SpAddonsConfig::addonConfig(
 							'std' => '#fff',
 							'depends'=> array(
 								array('button_type', '=', 'custom'),
+								array('button_status', '=', 'hover'),
 								array('button_text', '!=', ''),
 							)
 						),

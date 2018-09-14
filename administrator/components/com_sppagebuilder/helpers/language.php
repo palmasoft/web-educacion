@@ -6,13 +6,14 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 // Common
 JText::script('COM_SPPAGEBUILDER_FRONTEND_EDITOR');
 JText::script('COM_SPPAGEBUILDER_PREVIEW');
 JText::script('COM_SPPAGEBUILDER_APPLY');
 JText::script('COM_SPPAGEBUILDER_CANCEL');
+JText::script('COM_SPPAGEBUILDER_DELETE_COLUMN_CONFIRMATION');
 
 // Media Manager
 JText::script('COM_SPPAGEBUILDER_MEDIA_MANAGER');
@@ -43,6 +44,7 @@ JText::script('COM_SPPAGEBUILDER_DISABLE_ROW');
 JText::script('COM_SPPAGEBUILDER_ENABLE_ROW');
 JText::script('COM_SPPAGEBUILDER_COPY_ROW');
 JText::script('COM_SPPAGEBUILDER_ROW_COPIED');
+JText::script('COM_SPPAGEBUILDER_PASTED');
 JText::script('COM_SPPAGEBUILDER_PASTE_ROW');
 JText::script('COM_SPPAGEBUILDER_DELETE_ROW');
 JText::script('COM_SPPAGEBUILDER_ROW_TOGGLE');
@@ -79,6 +81,7 @@ JText::script('COM_SPPAGEBUILDER_PAGE_TEMPLATES_LIST');
 JText::script('COM_SPPAGEBUILDER_PAGE_TEMPLATE_LOAD');
 JText::script('COM_SPPAGEBUILDER_ENABLE_ADDON');
 JText::script('COM_SPPAGEBUILDER_DISABLE_ADDON');
+JText::script('COM_SPPAGEBUILDER_SAVE_ADDON');
 JText::script('COM_SPPAGEBUILDER_ADDON_PARENT_COLUMN');
 JText::script('COM_SPPAGEBUILDER_ADD_NEW_INNER_ROW');
 JText::script('COM_SPPAGEBUILDER_MOVE_COLUMN');

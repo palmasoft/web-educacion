@@ -6,7 +6,7 @@
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 $addon_global_settings = array(
 	'style' => array(
@@ -26,20 +26,86 @@ $addon_global_settings = array(
 			'type'=>'color',
 			'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_LINK_COLOR_HOVER'),
 		),
-		'global_use_background'=>array(
-			'type'=>'checkbox',
+		'global_background_type'=>array(
+			'type'=>'buttons',
 			'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_ENABLE_BACKGROUND_OPTIONS'),
-			'std'=>0
+			'std'=>'none',
+			'values'=>array(
+				array(
+					'label' => 'None',
+					'value' => 'none'
+				),
+				array(
+					'label' => 'Color',
+					'value' => 'color'
+				),
+				array(
+					'label' => 'Image',
+					'value' => 'image'
+				),
+				array(
+					'label' => 'Gradient',
+					'value' => 'gradient'
+				),
+			)
 		),
+		// 'global_use_background'=>array(
+		// 	'type'=>'checkbox',
+		// 	'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_ENABLE_BACKGROUND_OPTIONS'),
+		// 	'std'=>0
+		// ),
 		'global_background_color'=>array(
 			'type'=>'color',
 			'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BACKGROUND_COLOR'),
-			'depends'=>array('global_use_background'=>1)
+			'depends'=>array(
+				array('global_background_type', '!=', 'none'),
+				array('global_background_type', '!=', 'video'),
+				array('global_background_type', '!=', 'gradient'),
+			)
+		),
+		// 'global_use_gradient'=>array(
+		// 	'type'=>'checkbox',
+		// 	'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_ENABLE_GRADIENT_BACKGROUND'),
+		// 	'std'=>0,
+		// 	'depends'=>array(
+		// 		array('global_use_background', '=', 1)
+		// 	)
+		// ),
+		'global_background_gradient'=>array(
+			'type'=>'gradient',
+			'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BACKGROUND_GRADIENT'),
+			'std'=> array(
+				"color" => "#00c6fb",
+				"color2" => "#005bea",
+				"deg" => "45",
+				"type" => "linear"
+			),
+			'depends'=>array(
+				array('global_background_type', '=', 'gradient')
+			)
 		),
 		'global_background_image'=>array(
 			'type'=>'media',
 			'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BACKGROUND_IMAGE'),
-			'depends'=>array('global_use_background'=>1)
+			'depends'=>array(
+				array('global_background_type', '=', 'image')
+			)
+		),
+		'global_use_overlay'=>array(
+			'type'=>'checkbox',
+			'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_ENABLE_BACKGROUND_OVERLAY'),
+			'std'=>0,
+			'depends'=>array(
+				array('global_background_type', '=', 'image')
+			)
+		),
+		'global_background_overlay'=>array(
+			'type'=>'color',
+			'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_BACKGROUND_OVERLAY'),
+			'depends'=>array(
+				array('global_background_type', '=', 'image'),
+				array('global_use_overlay', '=', 1),
+			)
 		),
 		'global_background_repeat'=>array(
 			'type'=>'select',
@@ -53,8 +119,8 @@ $addon_global_settings = array(
 			),
 			'std'=>'no-repeat',
 			'depends'=>array(
-				array('global_use_background', '=', 1),
-				array('global_background_image', '!=', '')
+				array('global_background_type', '=', 'image'),
+				array('global_background_image', '!=', ''),
 			)
 		),
 		'global_background_size'=>array(
@@ -68,8 +134,8 @@ $addon_global_settings = array(
 			),
 			'std'=>'cover',
 			'depends'=>array(
-				array('global_use_background', '=', 1),
-				array('global_background_image', '!=', '')
+				array('global_background_type', '=', 'image'),
+				array('global_background_image', '!=', ''),
 			)
 		),
 		'global_background_attachment'=>array(
@@ -82,8 +148,8 @@ $addon_global_settings = array(
 			),
 			'std'=>'inherit',
 			'depends'=>array(
-				array('global_use_background', '=', 1),
-				array('global_background_image', '!=', '')
+				array('global_background_type', '=', 'image'),
+				array('global_background_image', '!=', ''),
 			)
 		),
 		'global_user_border'=>array(
@@ -125,7 +191,7 @@ $addon_global_settings = array(
 		'global_margin'=>array(
 			'type'=>'margin',
 			'title'=>JText::_('COM_SPPAGEBUILDER_GLOBAL_MARGIN'),
-			'std'=>array('md'=> '  30px ', 'sm'=> '  20px ', 'xs'=> '  10px '),
+			'std'=>array('md'=> '0 0 30px 0', 'sm'=> '0 0 20px 0', 'xs'=> '0 0 10px 0'),
 			'responsive' => true
 		),
 		'global_padding'=>array(
@@ -167,6 +233,12 @@ $addon_global_settings = array(
 			'std'=>'0',
 			'placeholder'=>'300',
 			'depends'=>array('global_use_animation'=>1)
+		),
+
+		'global_custom_css'=>array(
+			'type'=>'css',
+			'title'=>JText::_('COM_SPPAGEBUILDER_CUSTOM_CSS'),
+			'std'=>'',
 		),
 	),
 

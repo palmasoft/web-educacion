@@ -12,3 +12,7 @@
 2018-02-27T10:34:15+00:00	INFO 10.0.1.53	joomlafailure	Username and password do not match or you do not have an account yet.
 2018-08-13T12:57:04+00:00	INFO 10.240.0.118	joomlafailure	El usuario y contraseña no coinciden o usted aún no tiene una cuenta.
 2018-08-16T02:04:06+00:00	INFO 10.240.0.118	joomlafailure	No se permiten contraseñas vacías.
+2018-08-28T03:17:20+00:00	INFO 10.240.0.68	joomlafailure	No se permiten contraseñas vacías.
+2018-08-28T03:18:08+00:00	INFO 10.240.0.118	joomlafailure	El usuario y contraseña no coinciden o usted aún no tiene una cuenta.
+2018-08-28T03:18:19+00:00	INFO 10.240.1.78	joomlafailure	El usuario y contraseña no coinciden o usted aún no tiene una cuenta.
+2018-09-12T17:08:09+00:00	INFO 10.240.2.147	joomlafailure	El usuario y contraseña no coinciden o usted aún no tiene una cuenta.

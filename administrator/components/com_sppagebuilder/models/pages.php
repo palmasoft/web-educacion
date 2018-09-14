@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 jimport('joomla.application.component.modellist');
 
@@ -201,21 +201,34 @@ class SppagebuilderModelPages extends JModelList
 		$items = parent::getItems();
 		if(is_array($items) && count($items)) {
 			foreach ($items as $key => &$item) {
+				// get menu id
 				$Itemid = SppagebuilderHelper::getMenuId($item->id);
 				$item->link = 'index.php?option=com_sppagebuilder&task=page.edit&id=' . $item->id;
+				// Get item language code
+				$lang_code = (isset($item->language) && $item->language && explode('-',$item->language)[0])? explode('-',$item->language)[0] : '';
+				// check language filter plugin is enable or not
+				$enable_lang_filter = JPluginHelper::getPlugin('system', 'languagefilter');
+				// get joomla config
+				$conf = JFactory::getConfig();
+
+				// Preview URL
 				$preview = 'index.php?option=com_sppagebuilder&view=page&id=' . $item->id . $Itemid;
 				$sefURI = str_replace('/administrator', '', $router->build($preview));
+				if($lang_code && $lang_code !== '*' && $enable_lang_filter && $conf->get('sef') ){
+					$sefURI = str_replace('/index.php/', '/index.php/' . $lang_code . '/', $sefURI);
+				} elseif($lang_code && $lang_code !== '*') {
+					$sefURI = $sefURI . '&lang=' . $lang_code;
+				}
 				$item->preview = $sefURI;
 
-				$lang = '';
-				
-				if (isset($item->language) && $item->language != '*') {
-					$lang_array = explode('-',$item->language);
-					$lang = '&lang='.$lang_array[0];
-				}
-
-				$front_link = 'index.php?option=com_sppagebuilder&view=form&tmpl=componenet&layout=edit&id=' . $item->id . $Itemid.$lang;
+				// Frontend Editing URL
+				$front_link = 'index.php?option=com_sppagebuilder&view=form&tmpl=componenet&layout=edit&id=' . $item->id . $Itemid;
 				$sefURI = str_replace('/administrator', '', $router->build($front_link));
+				if($lang_code && $lang_code !== '*' && $enable_lang_filter && $conf->get('sef') ){
+					$sefURI = str_replace('/index.php/', '/index.php/' . $lang_code . '/', $sefURI);
+				} elseif($lang_code && $lang_code !== '*') {
+					$sefURI = $sefURI . '&lang=' . $lang_code;
+				}	
 				$item->frontend_edit = $sefURI;
 			}
 		}

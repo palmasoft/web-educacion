@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 $addon = $displayData['addon'];
 
@@ -31,4 +31,7 @@ if(isset($addon->settings->global_use_animation) && $addon->settings->global_use
 
 $html = '<div id="sppb-addon-'. $addon->id .'" class="'. $custom_class .'clearfix" '.  $addon_attr .'>';
 
+if(isset($addon->settings->global_use_overlay) && $addon->settings->global_use_overlay){
+    $html .= '<div class="sppb-addon-overlayer"></div>';
+}
 echo $html;

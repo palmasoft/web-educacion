@@ -2,11 +2,11 @@
 /**
  * @package SP Page Builder
  * @author JoomShaper http://www.joomshaper.com
- * @copyright Copyright (c) 2010 - 2016 JoomShaper
+ * @copyright Copyright (c) 2010 - 2018 JoomShaper
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 class SppagebuilderAddonCarousel extends SppagebuilderAddons {
 
@@ -15,13 +15,15 @@ class SppagebuilderAddonCarousel extends SppagebuilderAddons {
 		$class = (isset($this->addon->settings->class) && $this->addon->settings->class) ? ' ' . $this->addon->settings->class : '';
 
 		//Addons option
-		$autoplay = (isset($this->addon->settings->autoplay) && $this->addon->settings->autoplay) ? ' data-sppb-ride="sppb-carousel"' : 0;
+		$autoplay = (isset($this->addon->settings->autoplay) && $this->addon->settings->autoplay) ? 1 : 0;
 		$controllers = (isset($this->addon->settings->controllers) && $this->addon->settings->controllers) ? $this->addon->settings->controllers : 0;
 		$arrows = (isset($this->addon->settings->arrows) && $this->addon->settings->arrows) ? $this->addon->settings->arrows : 0;
 		$alignment = (isset($this->addon->settings->alignment) && $this->addon->settings->alignment) ? $this->addon->settings->alignment : 0;
 		$interval = (isset($this->addon->settings->interval) && $this->addon->settings->interval) ? ((int) $this->addon->settings->interval * 1000) : 5000;
 		$carousel_autoplay = ($autoplay) ? ' data-sppb-ride="sppb-carousel"':'';
-
+        if($autoplay == 0) {
+            $interval = 'false';
+        }
 		$output  = '<div id="sppb-carousel-'. $this->addon->id .'" data-interval="'.$interval.'" class="sppb-carousel sppb-slide' . $class . '"'. $carousel_autoplay .'>';
 
 		if($controllers) {
@@ -37,18 +39,19 @@ class SppagebuilderAddonCarousel extends SppagebuilderAddons {
 		if(isset($this->addon->settings->sp_carousel_item) && count((array) $this->addon->settings->sp_carousel_item)){
 			foreach ($this->addon->settings->sp_carousel_item as $key => $value) {
 				$button_url = (isset($value->button_url) && $value->button_url) ? $value->button_url : '';
-
+	
 				$output   .= '<div class="sppb-item sppb-item-'. $this->addon->id . $key . ' ' . ((isset($value->bg) && $value->bg) ? ' sppb-item-has-bg' : '') . (($key == 0) ? ' active' : '') .'">';
-				$output  .= (isset($value->bg) && $value->bg) ? '<img src="' . $value->bg . '" alt="' . $value->title . '">' : '';
+				$alt_text = isset($value->title) ? $value->title : '';
+				$output  .= (isset($value->bg) && $value->bg) ? '<img src="' . $value->bg . '" alt="'.$alt_text.'">' : '';
 
 				$output  .= '<div class="sppb-carousel-item-inner">';
 				$output  .= '<div class="sppb-carousel-caption">';
 				$output  .= '<div class="sppb-carousel-text">';
-
-				if(($value->title) || ($value->content) ) {
+	
+				if((isset($value->title) && $value->title) || (isset($value->content) && $value->content) ) {
 					$output  .= ($value->title) ? '<h2>' . $value->title . '</h2>' : '';
 					$output  .= ($value->content) ? '<div class="sppb-carousel-content">' . $value->content . '</div>': '';
-					if($value->button_text) {
+					if(isset($value->button_text) && $value->button_text) {
 						$button_class = (isset($value->button_type) && $value->button_type) ? ' sppb-btn-' . $value->button_type : ' sppb-btn-default';
 						$button_class .= (isset($value->button_size) && $value->button_size) ? ' sppb-btn-' . $value->button_size : '';
 						$button_class .= (isset($value->button_shape) && $value->button_shape) ? ' sppb-btn-' . $value->button_shape: ' sppb-btn-rounded';
@@ -57,24 +60,25 @@ class SppagebuilderAddonCarousel extends SppagebuilderAddons {
 						$button_icon = (isset($value->button_icon) && $value->button_icon) ? $value->button_icon : '';
 						$button_icon_position = (isset($value->button_icon_position) && $value->button_icon_position) ? $value->button_icon_position: 'left';
 						$button_target = (isset($value->button_target) && $value->button_target) ? $value->button_target : '_self';
-
+	
 						if($button_icon_position == 'left') {
 							$value->button_text = ($button_icon) ? '<i class="fa ' . $button_icon . '"></i> ' . $value->button_text : $value->button_text;
 						} else {
 							$value->button_text = ($button_icon) ? $value->button_text . ' <i class="fa ' . $button_icon . '"></i>' : $value->button_text;
 						}
-
+	
 						$output  .= '<a href="' . $button_url . '" target="' . $button_target . '" id="btn-'. ($this->addon->id + $key) .'" class="sppb-btn'. $button_class .'">' . $value->button_text . '</a>';
 					}
 				}
-
+	
 				$output  .= '</div>';
 				$output  .= '</div>';
-
+	
 				$output  .= '</div>';
 				$output  .= '</div>';
 			}
 		}
+
 
 		$output	.= '</div>';
 
@@ -96,7 +100,7 @@ class SppagebuilderAddonCarousel extends SppagebuilderAddons {
 		// Buttons style
 		foreach ($this->addon->settings->sp_carousel_item as $key => $value) {
 
-			if($value->button_text) {
+			if(isset($value->button_text)) {
 				$css_path = new JLayoutFile('addon.css.button', $layout_path);
 				$css .= $css_path->render(array('addon_id' => $addon_id, 'options' => $value, 'id' => 'btn-' . ($this->addon->id + $key) ));
 			}
@@ -438,6 +442,13 @@ class SppagebuilderAddonCarousel extends SppagebuilderAddons {
 						<# } else if(carousel_item.button_appearance == "3d"){ #>
 							border-bottom-color: {{ carousel_item.button_background_color_hover }};
 							background-color: {{ carousel_item.button_background_color }};
+						<# } else if(carousel_item.button_appearance == "gradient"){ #>
+							border: none;
+							<# if(typeof carousel_item.button_background_gradient.type !== "undefined" && carousel_item.button_background_gradient.type == "radial"){ #>
+								background-image: radial-gradient(at {{ carousel_item.button_background_gradient.radialPos || "center center"}}, {{ carousel_item.button_background_gradient.color }} {{ carousel_item.button_background_gradient.pos || 0 }}%, {{ carousel_item.button_background_gradient.color2 }} {{ carousel_item.button_background_gradient.pos2 || 100 }}%);
+							<# } else { #>
+								background-image: linear-gradient({{ carousel_item.button_background_gradient.deg || 0}}deg, {{ carousel_item.button_background_gradient.color }} {{ carousel_item.button_background_gradient.pos || 0 }}%, {{ carousel_item.button_background_gradient.color2 }} {{ carousel_item.button_background_gradient.pos2 || 100 }}%);
+							<# } #>
 						<# } else { #>
 							background-color: {{ carousel_item.button_background_color }};
 						<# } #>
@@ -447,7 +458,13 @@ class SppagebuilderAddonCarousel extends SppagebuilderAddons {
 						color: {{ carousel_item.button_color_hover }};
 						background-color: {{ carousel_item.button_background_color_hover }};
 						<# if(carousel_item.button_appearance == "outline"){ #>
-							border-color: {{ carousel_item.button_background_color_hover }}
+							border-color: {{ carousel_item.button_background_color_hover }};
+						<# } else if(carousel_item.button_appearance == "gradient"){ #>
+							<# if(typeof carousel_item.button_background_gradient_hover.type !== "undefined" && carousel_item.button_background_gradient_hover.type == "radial"){ #>
+								background-image: radial-gradient(at {{ carousel_item.button_background_gradient_hover.radialPos || "center center"}}, {{ carousel_item.button_background_gradient_hover.color }} {{ carousel_item.button_background_gradient_hover.pos || 0 }}%, {{ carousel_item.button_background_gradient_hover.color2 }} {{ carousel_item.button_background_gradient_hover.pos2 || 100 }}%);
+							<# } else { #>
+								background-image: linear-gradient({{ carousel_item.button_background_gradient_hover.deg || 0}}deg, {{ carousel_item.button_background_gradient_hover.color }} {{ carousel_item.button_background_gradient_hover.pos || 0 }}%, {{ carousel_item.button_background_gradient_hover.color2 }} {{ carousel_item.button_background_gradient_hover.pos2 || 100 }}%);
+							<# } #>
 						<# } #>
 					}
 
@@ -596,29 +613,53 @@ class SppagebuilderAddonCarousel extends SppagebuilderAddons {
 				#>
 
 				#sppb-addon-{{ data.id }} .sppb-item-{{ data.id }}{{ key }} .sppb-carousel-caption h2{
-					font-size: {{ carousel_item.title_fontsize.md }}px;
-					line-height: {{ carousel_item.title_lineheight.md }}px;
+					<# if(_.isObject(carousel_item.title_fontsize)){ #>
+						font-size: {{ carousel_item.title_fontsize.md }}px;
+					<# } else { #>
+						font-size: {{ carousel_item.title_fontsize }}px;
+					<# } #>
+					<# if(_.isObject(carousel_item.title_lineheight)){ #>
+						line-height: {{ carousel_item.title_lineheight.md }}px;
+					<# } else { #>
+						line-height: {{ carousel_item.title_lineheight }}px;
+					<# } #>
 					color: {{ carousel_item.title_color }};
 					padding: {{ padding }};
 					margin: {{ margin }};
 				}
 				#sppb-addon-{{ data.id }} .sppb-item-{{ data.id }}{{ key }} .sppb-carousel-caption .sppb-carousel-content{
-					font-size: {{ carousel_item.content_fontsize.md }}px;
-					line-height: {{ carousel_item.content_lineheight.md }}px;
+					<# if(_.isObject(carousel_item.content_fontsize)){ #>
+						font-size: {{ carousel_item.content_fontsize.md }}px;
+					<# } else { #>
+						font-size: {{ carousel_item.content_fontsize }}px;
+					<# } #>
+					<# if(_.isObject(carousel_item.content_lineheight)){ #>
+						line-height: {{ carousel_item.content_lineheight.md }}px;
+					<# } else { #>
+						line-height: {{ carousel_item.content_lineheight }}px;
+					<# } #>
 					color: {{ carousel_item.content_color }};
 					padding: {{ content_padding }};
 					margin: {{ content_margin }};
 				}
 				@media (min-width: 768px) and (max-width: 991px) {
 					#sppb-addon-{{ data.id }} .sppb-item-{{ data.id }}{{ key }} .sppb-carousel-caption h2{
-						font-size: {{ carousel_item.title_fontsize.sm }}px;
-						line-height: {{ carousel_item.title_lineheight.sm }}px;
+						<# if(_.isObject(carousel_item.title_fontsize)){ #>
+							font-size: {{ carousel_item.title_fontsize.sm }}px;
+						<# } #>
+						<# if(_.isObject(carousel_item.title_lineheight)){ #>
+							line-height: {{ carousel_item.title_lineheight.sm }}px;
+						<# } #>
 						padding: {{ padding_sm }};
 						margin: {{ margin_sm }};
 					}
 					#sppb-addon-{{ data.id }} .sppb-item-{{ data.id }}{{ key }} .sppb-carousel-caption .sppb-carousel-content{
-						font-size: {{ carousel_item.content_fontsize.sm }}px;
-						line-height: {{ carousel_item.content_lineheight.sm }}px;
+						<# if(_.isObject(carousel_item.content_fontsize)){ #>
+							font-size: {{ carousel_item.content_fontsize.sm }}px;
+						<# } #>
+						<# if(_.isObject(carousel_item.content_lineheight)){ #>
+							line-height: {{ carousel_item.content_lineheight.sm }}px;
+						<# } #>
 						padding: {{ content_padding_sm }};
 						margin: {{ content_margin_sm }};
 					}
@@ -626,14 +667,22 @@ class SppagebuilderAddonCarousel extends SppagebuilderAddons {
 
 				@media (max-width: 767px) {
 					#sppb-addon-{{ data.id }} .sppb-item-{{ data.id }}{{ key }} .sppb-carousel-caption h2{
-						font-size: {{ carousel_item.title_fontsize.xs }}px;
-						line-height: {{ carousel_item.title_lineheight.xs }}px;
+						<# if(_.isObject(carousel_item.title_fontsize)){ #>
+							font-size: {{ carousel_item.title_fontsize.xs }}px;
+						<# } #>
+						<# if(_.isObject(carousel_item.title_lineheight)){ #>
+							line-height: {{ carousel_item.title_lineheight.xs }}px;
+						<# } #>
 						padding: {{ padding_xs }};
 						margin: {{ margin_xs }};
 					}
 					#sppb-addon-{{ data.id }} .sppb-item-{{ data.id }}{{ key }} .sppb-carousel-caption .sppb-carousel-content{
-						font-size: {{ carousel_item.content_fontsize.xs }}px;
-						line-height: {{ carousel_item.content_lineheight.xs }}px;
+						<# if(_.isObject(carousel_item.content_fontsize)){ #>
+							font-size: {{ carousel_item.content_fontsize.xs }}px;
+						<# } #>
+						<# if(_.isObject(carousel_item.content_lineheight)){ #>
+							line-height: {{ carousel_item.content_lineheight.xs }}px;
+						<# } #>
 						padding: {{ content_padding_xs }};
 						margin: {{ content_margin_xs }};
 					}
@@ -667,9 +716,9 @@ class SppagebuilderAddonCarousel extends SppagebuilderAddons {
 								<div class="sppb-carousel-text">
 									<# if(carousel_item.title || carousel_item.content) { #>
 										<# if(carousel_item.title) { #>
-											<h2>{{ carousel_item.title }}</h2>
+											<h2 class="sp-editable-content" id="addon-title-{{data.id}}-{{key}}" data-id={{data.id}} data-fieldName="sp_carousel_item-{{key}}-title">{{ carousel_item.title }}</h2>
 										<# } #>
-										<div class="sppb-carousel-content">{{{ carousel_item.content }}}</div>
+										<div class="sppb-carousel-content sp-editable-content" id="addon-content-{{data.id}}-{{key}}" data-id={{data.id}} data-fieldName="sp_carousel_item-{{key}}-content">{{{ carousel_item.content }}}</div>
 										<# if(carousel_item.button_text) { #>
 											<#
 												var btnClass = "";

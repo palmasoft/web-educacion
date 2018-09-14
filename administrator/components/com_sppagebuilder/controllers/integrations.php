@@ -38,7 +38,7 @@ class SppagebuilderControllerIntegrations extends JControllerLegacy
 			die(json_encode($report));
 		}
 
-		$integration_api = 'http://sppagebuilder.com/api/integrations/integrations.json';
+		$integration_api = 'https://sppagebuilder.com/api/integrations/integrations.json';
 
 		if( ini_get('allow_url_fopen') ) {
 			$ch_output = file_get_contents($integration_api);

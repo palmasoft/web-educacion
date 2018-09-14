@@ -6,7 +6,7 @@
 * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 jimport( 'joomla.filesystem.file' );
 jimport('joomla.filesystem.folder');
@@ -48,8 +48,8 @@ class AddonParser {
   *
   * @since 1.0.8
   */
-  public static function getAddonPath( $addon_name = '')
-  {
+  public static function getAddonPath( $addon_name = '') {
+
     $template_path = JPATH_ROOT . '/templates/' . self::$template;
     $plugins = self::getPluginsAddons();
 
@@ -185,6 +185,7 @@ class AddonParser {
 
 
   public static function viewAddons( $content, $fluid = 0, $pageName = 'none' ) {
+
     SpPgaeBuilderBase::loadAddons();
     $addon_list = SpAddonsConfig::$addons;
 
@@ -248,53 +249,58 @@ class AddonParser {
             $addon_options = array();
             if((!isset($addon->type) || $addon->type !== 'inner_row') && isset($addon_list[$addon->name]['attr']) && $addon_list[$addon->name]['attr']) {
               $addon_groups = $addon_list[$addon->name]['attr'];
-              foreach ($addon_groups as $addon_group) {
-                $addon_options += $addon_group;
+              if (is_array($addon_groups)) {
+                foreach ($addon_groups as $addon_group) {
+                  $addon_options += $addon_group;
+                }
               }
             }
 
-            foreach ($addon->settings as $key => &$setting) {
+            if(!(isset($addon->type) && $addon->type === 'inner_row')){
 
-              if (isset($setting->md)) {
-                $md = isset($setting->md) ? $setting->md : "";
-                $sm = isset($setting->sm) ? $setting->sm : "";
-                $xs = isset($setting->xs) ? $setting->xs : "";
-                $setting = $md;
-                $addon->settings->{$key . '_sm'} = $sm;
-                $addon->settings->{$key . '_xs'} = $xs;
-              }
+              foreach ($addon->settings as $key => &$setting) {
 
-              if(isset($addon_options[$key]['selector'])) {
-                $addon_selector = $addon_options[$key]['selector'];
-                if(isset($addon->settings->{$key}) && !empty($addon->settings->{$key})) {
-                  $selector_value = $addon->settings->{$key};
-                  $addon->settings->{$key . '_selector'} = str_replace('{{ VALUE }}', $selector_value, $addon_selector);
+                if (isset($setting->md)) {
+                  $md = isset($setting->md) ? $setting->md : "";
+                  $sm = isset($setting->sm) ? $setting->sm : "";
+                  $xs = isset($setting->xs) ? $setting->xs : "";
+                  $setting = $md;
+                  $addon->settings->{$key . '_sm'} = $sm;
+                  $addon->settings->{$key . '_xs'} = $xs;
                 }
-              }
 
-              // Repeatable
-              if( (!isset($addon->type) || $addon->type !== 'inner_row') &&  (($key == 'sp_'. $addon->name .'_item') || ($key == $addon->name .'_item')) ) {
-                if(count((array) $setting)) {
-                  foreach ($setting as &$options) {
-                    foreach ($options as $key2 => &$opt) {
+                if(isset($addon_options[$key]['selector'])) {
+                  $addon_selector = $addon_options[$key]['selector'];
+                  if(isset($addon->settings->{$key}) && !empty($addon->settings->{$key})) {
+                    $selector_value = $addon->settings->{$key};
+                    $addon->settings->{$key . '_selector'} = str_replace('{{ VALUE }}', $selector_value, $addon_selector);
+                  }
+                }
 
-                      if (isset($opt->md)) {
-                        $md = isset($opt->md) ? $opt->md : "";
-                        $sm = isset($opt->sm) ? $opt->sm : "";
-                        $xs = isset($opt->xs) ? $opt->xs : "";
-                        $opt = $md;
-                        $options->{$key2 . '_sm'} = $sm;
-                        $options->{$key2 . '_xs'} = $xs;
-                      }
+                // Repeatable
+                if( (!isset($addon->type) || $addon->type !== 'inner_row') &&  (($key == 'sp_'. $addon->name .'_item') || ($key == $addon->name .'_item')) ) {
+                  if(count((array) $setting)) {
+                    foreach ($setting as &$options) {
+                      foreach ($options as $key2 => &$opt) {
 
-                      if(isset($addon_options[$key]['attr'][$key2]['selector'])) {
-                        $addon_selector = $addon_options[$key]['attr'][$key2]['selector'];
-                        if(isset($options->{$key2}) && !empty($options->{$key2})) {
-                          $selector_value = $options->{$key2};
-                          $options->{$key2 . '_selector'} = str_replace('{{ VALUE }}', $selector_value, $addon_selector);
+                        if (isset($opt->md)) {
+                          $md = isset($opt->md) ? $opt->md : "";
+                          $sm = isset($opt->sm) ? $opt->sm : "";
+                          $xs = isset($opt->xs) ? $opt->xs : "";
+                          $opt = $md;
+                          $options->{$key2 . '_sm'} = $sm;
+                          $options->{$key2 . '_xs'} = $xs;
                         }
-                      }
 
+                        if(isset($addon_options[$key]['attr'][$key2]['selector'])) {
+                          $addon_selector = $addon_options[$key]['attr'][$key2]['selector'];
+                          if(isset($options->{$key2}) && !empty($options->{$key2})) {
+                            $selector_value = $options->{$key2};
+                            $options->{$key2 . '_selector'} = str_replace('{{ VALUE }}', $selector_value, $addon_selector);
+                          }
+                        }
+
+                      }
                     }
                   }
                 }
@@ -337,10 +343,10 @@ class AddonParser {
       }
 
       if($pageName == 'module') {
-        return AddonParser::spDoAddon( $output ) . '<style type="text/css">'. self::convertCssArrayToString(self::$css_content).'</style>';
+        return  AddonParser::spDoAddon( $output ) . '<style type="text/css">'. self::convertCssArrayToString(self::minifyCss(self::$css_content)).'</style>';
       } else {
         if( $pageName != 'none' ) {
-          $doc->addStyleDeclaration( self::convertCssArrayToString( self::$css_content ) );
+          $doc->addStyleDeclaration( self::convertCssArrayToString( self::minifyCss(self::$css_content) ) );
         }
         return AddonParser::spDoAddon( $output );
       }
@@ -348,6 +354,25 @@ class AddonParser {
       return '<p>'.$content.'</p>';
     }
 
+  }
+
+  public static function minifyCss($css_code){
+    // Remove comments
+    $css_code = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $css_code);
+    
+    // Remove space after colons
+    $css_code = str_replace(': ', ':', $css_code);
+
+    // Remove whitespace
+    $css_code = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), '', $css_code);
+
+    // Remove Empty Selectors without any properties
+    $css_code = preg_replace('/(?:(?:[^\r\n{}]+)\s?{[\s]*})/', '', $css_code);
+
+    // Remove Empty Media Selectors without any properties or selector
+    $css_code = preg_replace('/@media\s?\((?:[^\r\n,{}]+)\s?{[\s]*}/', '', $css_code);
+
+    return $css_code;
   }
 
   public static function getAddonHtmlView( $addon, $layouts ) {
@@ -396,21 +421,23 @@ class AddonParser {
                 }
               }
 
-              foreach ($contentAddon->settings as $key => &$setting) {
-                if (isset($setting->md)) {
-                  $md = isset($setting->md) ? $setting->md : "";
-                  $sm = isset($setting->sm) ? $setting->sm : "";
-                  $xs = isset($setting->xs) ? $setting->xs : "";
-                  $setting = $md;
-                  $contentAddon->settings->{$key . '_sm'} = $sm;
-                  $contentAddon->settings->{$key . '_xs'} = $xs;
-                }
+              if(!(isset($addon->type) && $addon->type === 'inner_row')){
+                foreach ($contentAddon->settings as $key => &$setting) {
+                  if (isset($setting->md)) {
+                    $md = isset($setting->md) ? $setting->md : "";
+                    $sm = isset($setting->sm) ? $setting->sm : "";
+                    $xs = isset($setting->xs) ? $setting->xs : "";
+                    $setting = $md;
+                    $contentAddon->settings->{$key . '_sm'} = $sm;
+                    $contentAddon->settings->{$key . '_xs'} = $xs;
+                  }
 
-                if(isset($addon_options[$key]['selector'])) {
-                  $addon_selector = $addon_options[$key]['selector'];
-                  if(isset($contentAddon->settings->{$key}) && !empty($contentAddon->settings->{$key})) {
-                    $selector_value = $contentAddon->settings->{$key};
-                    $contentAddon->settings->{$key . '_selector'} = str_replace('{{ VALUE }}', $selector_value, $addon_selector);
+                  if(isset($addon_options[$key]['selector'])) {
+                    $addon_selector = $addon_options[$key]['selector'];
+                    if(isset($contentAddon->settings->{$key}) && !empty($contentAddon->settings->{$key})) {
+                      $selector_value = $contentAddon->settings->{$key};
+                      $contentAddon->settings->{$key . '_selector'} = str_replace('{{ VALUE }}', $selector_value, $addon_selector);
+                    }
                   }
                 }
               }
@@ -460,7 +487,7 @@ class AddonParser {
         }
 
       } else {
-        $output .= htmlspecialchars_decode(AddonParser::spDoAddon(AddonParser::generateShortcode($addon)));
+        $output .= htmlspecialchars_decode( AddonParser::spDoAddon( AddonParser::generateShortcode($addon) ) );
       }
       $output .= $layouts->addon_end->render(); // end addon
     }
@@ -550,7 +577,7 @@ class AddonParser {
     $query->select($db->quoteName(array('template')));
     $query->from($db->quoteName('#__template_styles'));
     $query->where($db->quoteName('client_id') . ' = 0');
-    $query->where($db->quoteName('home') . ' = ' . $db->quote('1'));
+    $query->where($db->quoteName('home') . ' = 1');
     $db->setQuery($query);
 
     return $db->loadObject()->template;

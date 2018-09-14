@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 class SppagebuilderAddonAccordion extends SppagebuilderAddons {
 
@@ -27,28 +27,29 @@ class SppagebuilderAddonAccordion extends SppagebuilderAddons {
 		$output .= '<div class="sppb-addon-content">';
 		$output	.= '<div class="sppb-panel-group">';
 
-		if(isset($this->addon->settings->sp_accordion_item) && count((array) $this->addon->settings->sp_accordion_item)){
+		if(isset($this->addon->settings->sp_accordion_item) && is_array($this->addon->settings->sp_accordion_item) && count($this->addon->settings->sp_accordion_item)){
 			foreach ($this->addon->settings->sp_accordion_item as $key => $item) {
 				$output  .= '<div class="sppb-panel sppb-'. $style .'">';
 				$output  .= '<div class="sppb-panel-heading'. (($key == 0) ? ' active' : '') .'">';
 				$output  .= '<span class="sppb-panel-title">';
-
+	
 				if(isset($item->icon) && $item->icon != '') {
 					$output  .= '<i class="fa ' . $item->icon . '"></i> ';
 				}
-
-				$output  .= $item->title;
+	
+				$output  .= isset($item->title) ? $item->title : '';
 				$output  .= '</span>';
 				$output  .= '<span class="sppb-toggle-direction"><i class="fa fa-chevron-right"></i></span>';
 				$output  .= '</div>';
 				$output  .= '<div class="sppb-panel-collapse"' . (($key != 0) ? ' style="display: none;"' : '') . '>';
 				$output  .= '<div class="sppb-panel-body">';
-				$output  .= $item->content;
+				$output  .= isset($item->content) ? $item->content : '';
 				$output  .= '</div>';
 				$output  .= '</div>';
 				$output  .= '</div>';
 			}
 		}
+
 
 		$output  .= '</div>';
 		$output  .= '</div>';

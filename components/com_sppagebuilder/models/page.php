@@ -6,7 +6,7 @@
  * @license http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 or later
 */
 //no direct accees
-defined ('_JEXEC') or die ('restricted aceess');
+defined ('_JEXEC') or die ('Restricted access');
 
 jimport('joomla.application.component.modelitem');
 
@@ -222,6 +222,50 @@ class SppagebuilderModelPage extends JModelItem
       $db->insertObject('#__sppagebuilder_sections', $obj);
 
       return $db->insertid();
-    }
+	}
+
+	public function getMyAddons() {
+		$db = JFactory::getDbo();
+		$query = $db->getQuery(true);
+		$query->select($db->quoteName(array('id', 'title', 'code')));
+		$query->from($db->quoteName('#__sppagebuilder_addons'));
+		
+		$query->order('id ASC');
+		$db->setQuery($query);
+		$results = $db->loadObjectList();
+		return json_encode($results);
+	}
+	
+    public function saveAddon($title, $section){
+      $db = JFactory::getDbo();
+      $user = JFactory::getUser();
+      $obj = new stdClass();
+      $obj->title = $title;
+      $obj->code = $addon;
+      $obj->created = JFactory::getDate()->toSql();
+      $obj->created_by = $user->get('id');
+
+      $db->insertObject('#__sppagebuilder_addons', $obj);
+
+      return $db->insertid();
+	}
+	
+	public function deleteAddon($id){
+        $db = JFactory::getDbo();
+  
+        $query = $db->getQuery(true);
+  
+        // delete all custom keys for user 1001.
+        $conditions = array(
+            $db->quoteName('id') . ' = '.$id
+        );
+  
+        $query->delete($db->quoteName('#__sppagebuilder_addons'));
+        $query->where($conditions);
+  
+        $db->setQuery($query);
+  
+        return $db->execute();
+      }
 
 }
